@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>ArcGIS JavaScript Tutorials: Create a JavaScript starter app</title>
+    <style>
+        html, body, #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.13/"></script>
+</head>
+<body>
+
+<div style="height: 80%">
+    <div id="viewDiv"></div>
+</div>
+<select name="" id="rico" onchange="cambioValor(event)">
+    <option >Selecciona algo </option>
+    <option value="1">Mostrar</option>
+    <option value="2">Ocultar</option>
+</select>
+<script>
+    var capaBarrios;
+    function ocultar() {
+        mapa.remove(capaBarrios)
+    }
+
+    function mostrar() {
+        capaBarrios = new FeatureLayerRico({
+
+            url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer/0?token=Uufh4OzqYWj9-T3Q2-IoegD0sCS5Jk775yu_LJ-bYQeRHSp1DZHgmNllHXpQ6I-ifCVvpSS7qgMzYitRAsjVG5mO8naAK9F0eBpei2giM3UBit1lafT7wU-ozar5K93Kcj1x1qpUgd5F8JT44pCXZF3iOioGVhuInHslDXkmz4TKBgCzf27OLo5xGGpJVnhWy3te-_eNmx4CHbLRt6uomb_bx00zmRb8YX6O-pVFBy0cg8q2_NF4YvHzrWSFtnNP"
+        });
+        mapa.add(capaBarrios)
+    }
+
+    function cambioValor(evento){
+        console.log('evento', evento);
+        const ocultarSeleccionado = evento.target.value === "2";
+        if(ocultarSeleccionado){
+            ocultar()
+        }else{
+            mostrar()
+        }
+    }
+</script>
+
+<script>
+    var mapa;
+    var FeatureLayerRico;
+    require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer"
+    ], function(Map, MapView,FeatureLayer) {
+        FeatureLayerRico = FeatureLayer
+        //Llamada al mapa base
+        var map = new Map({
+            basemap: "streets"
+        });
+        /*
+                //Llamada a la capa de Barrios de Centro Historico
+                var capaBarrios = new FeatureLayer({
+
+                    url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer/0?token=Uufh4OzqYWj9-T3Q2-IoegD0sCS5Jk775yu_LJ-bYQeRHSp1DZHgmNllHXpQ6I-ifCVvpSS7qgMzYitRAsjVG5mO8naAK9F0eBpei2giM3UBit1lafT7wU-ozar5K93Kcj1x1qpUgd5F8JT44pCXZF3iOioGVhuInHslDXkmz4TKBgCzf27OLo5xGGpJVnhWy3te-_eNmx4CHbLRt6uomb_bx00zmRb8YX6O-pVFBy0cg8q2_NF4YvHzrWSFtnNP"
+                });
+                map.add(capaBarrios,0)
+
+                //Llamada a la capa Centro Historico
+                var capaCentroHistorico = new FeatureLayer({
+
+                    url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Centro_Historico_F/FeatureServer/0?token=JEu80NMC_-6c6y1XBb8OPl3Exx56TY_B08AC3-fTYLS7kXCGXeWqqZBUWYxlkKzKcA9KKPb4dCrdm6WGP2szPX5hn3ccI3RuHV0m3FFHA05J3gVjFXkRy29teMy0PLnztXxiaXyXQr8Gs6UPpKZrsOovgQcEHWHZierpNmUIEXNvsSHk8qgHZGhOetLgWIvAsWp7cH752bk7yK4aOmIL_VoZFF8KyWXGpfAQ4YyJG1IFIb5umzUl8dbtAR3waimf"
+                });
+                map.add(capaCentroHistorico,0)
+
+                //Llamada a la capa Cabecera Cantonal
+                var capaCabeceraCantonal = new FeatureLayer({
+
+                    url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Cabecera_Cantonal_F/FeatureServer/0?token=XIockXfdJjHF0gaqIfn6kiQf8mFj6xf64d6C0qfYTI1oumyDCwlakAdq-z5Vng80SN2n1ALc0lRcbmDk-Ov_opeWloKHZWNOtS7v7z4WV39apXM2NN3iaBDOEL1w2cH6TEsE-IIJta1GS26trN0Av79GkNpmPW9iTL8Ix1Rk7NZLmpuXfHOagiilJF2b1yQXiaMZ-Br5HJVW5eQMi9aIG_bfoj1EVLRC6i8XR8YWrzduTZG4pyTByulRU-cEbS17"
+                });
+                map.add(capaCabeceraCantonal,0)
+
+                //Llamada a la capa Canton Quito
+                var capaQuito = new FeatureLayer({
+
+                    url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Quito_F/FeatureServer/0?token=-KmEte-UrXuGncGSYNKqW85icOl5FcO0cFWX0hQHDqFzn1P6U69SIh2CJp-Lt78FeC4F__nHKqWBAfQGZrHHc-vw5w2h3Fm1LAwbZg6PZSDHNPvQb0HewKvKdk-L46MJMDEvUodTCxW6WCUe93LbymBYT-ZpLcTKBHZT4c09E8xlWA9lGCZpM6cGG56ba3rsEWVQ7EpMP9YW9AGuYFWJc4WvEJwPMPqlSC1quDzOEFFH-UZ_0j-Pla463NdCCq12"
+                });
+                map.add(capaQuito,0)
+
+
+                //LLamada a la capa Provincia Pichincha
+                var capaPichincha = new FeatureLayer({
+
+                    url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Pichincha_F/FeatureServer/0?token=kVtNl1gVCC0wEJsZjYjh0-HYsOZ48A6Ji8gB3eCMPqM-0WnYMHAJ0nRftebeJBim_NH-0V_FOge6TSLqLZEEh9aPVS5_yXsfC9zpqmgvZyKK1-WLm_-2BH-ygSpbt4LSSwYXRbdHlWmBMPzFddNtciJx9yPUQSlG6aBXvO74wmf_38Y53QzUxLXpUrTv_d0pQMsFQJz4_vny6s89JkpyF0gs-qWA7ntYWkBswGuYBPMcy5usfAf2dTL0GC79VRMx",
+                    renderer: {
+                        type : "simple",
+                        symbol :{
+                            type: "simple-fill", // autocasts as new SimpleFillSymbol()
+                            outline: {
+                                // makes the outlines of all features consistently light gray
+                                color: "lightgray",
+                                width: 0.5
+                            }
+                        }
+                    }
+                });
+
+
+                map.add(capaPichincha,0)
+
+                //Visualizador del mapa con con predeterminado
+
+        */
+        var view = new MapView({
+            container: "viewDiv",
+            map: map,
+            center: [-78.183403, -1.831239], // longitude, latitude
+            zoom: 7
+        });
+        mapa = map;
+
+
+    });
+</script>
+
+</body>
+
+</html>
+
