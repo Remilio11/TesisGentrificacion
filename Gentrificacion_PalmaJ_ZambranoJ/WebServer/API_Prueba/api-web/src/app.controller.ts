@@ -15,4 +15,9 @@ export class AppController {
     return res.render('2DMap')
   }
 
+    @Get('dashboardTest')
+    getDashboard(@Response() res){
+        return res.render('dashboardTest')
+    }
+
 }
