@@ -10,14 +10,19 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('2DMap')
-  getMap1(@Response() res){
-    return res.render('2DMap')
+  @Get('home')
+  getHome(@Response() res){
+    return res.render('home')
   }
 
-    @Get('dashboardTest')
-    getDashboard(@Response() res){
-        return res.render('dashboardTest')
-    }
+  @Get('dashboardMap')
+  getDashboard(@Response() res){
+        return res.render('dashboardMap')
+  }
+
+  @Get('report')
+  getReport(@Response() res){
+        return res.render('report')
+  }
 
 }
