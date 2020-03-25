@@ -14,25 +14,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/2DMap.ejs">
+        <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/home.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="31" selection-start-line="31" selection-end-line="32" />
+            <state relative-caret-position="838">
+              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/app.controller.ts">
+        <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="261">
+              <caret line="113" column="24" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="113" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/dashboardMap.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -41,9 +53,21 @@
         <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/main.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="15" column="12" selection-start-line="13" selection-start-column="56" selection-end-line="15" selection-end-column="12" />
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/app.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,13 +86,26 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/HTML/2D_map_test.html" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/2DMap.ejs" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/css/dashboard.css" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/saas/_variables.scss" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/saas/_reset.scss" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/css/main.css" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/saas/main.scss" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/css/style.css" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/js/sidebar.js" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/js/jquery.bootstrap-autohidingnavbar.js" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/navbar.ejs" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/dashboardTest.ejs" />
         <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/app.controller.ts" />
         <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/main.ts" />
-        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/2DMap.ejs" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/css/style.css" />
+        <option value="$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/home.ejs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="683" />
     <option name="width" value="683" />
     <option name="height" value="738" />
   </component>
@@ -110,7 +147,16 @@
               <item name="WebServer" type="462c0819:PsiDirectoryNode" />
               <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
               <item name="api-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
+              <item name="WebServer" type="462c0819:PsiDirectoryNode" />
+              <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
+              <item name="api-web" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Gentrificacion_PalmaJ_ZambranoJ" type="b2602c69:ProjectViewProjectNode" />
@@ -129,9 +175,23 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="ts.external.directory.path" value="C:\Users\Dario\Documents\EPN\TESIS\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\public\images" />
+      <recent name="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\public\imagenes" />
+      <recent name="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\images" />
+      <recent name="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\js" />
+      <recent name="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\css" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -163,17 +223,30 @@
       <workItem from="1581781100781" duration="1472000" />
       <workItem from="1582766161646" duration="556000" />
       <workItem from="1583203531860" duration="376000" />
+      <workItem from="1583376818207" duration="1142000" />
+      <workItem from="1584638237132" duration="19514000" />
+      <workItem from="1584714233427" duration="11106000" />
+      <workItem from="1584898769926" duration="17399000" />
+      <workItem from="1584978890188" duration="3202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26527000" />
+    <option name="totallyTimeSpent" value="78890000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.234375" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26636904" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -182,51 +255,139 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.08739496" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" visible="true" weight="0.41680673" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50074404" side_tool="true" weight="0.589916" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26636904" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" visible="true" weight="0.5411765" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50074404" side_tool="true" weight="0.589916" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/HTML/2D_map_test.html" />
-    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/2DMap.ejs">
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/css/dashboard.css" />
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/app.controller.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="31" selection-start-line="31" selection-end-line="32" />
+        <state>
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/app.controller.ts">
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/saas/main.scss" />
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/saas/_reset.scss" />
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/saas/_variables.scss" />
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/css/main.css" />
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/images/title-img.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/images/admin.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/images/img1.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/js/script.js" />
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/js/sidebar.js" />
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/js/jquery.bootstrap-autohidingnavbar.js" />
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/report.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1554">
+          <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/dashboardMap.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="15" column="12" selection-start-line="13" selection-start-column="56" selection-end-line="15" selection-end-column="12" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/src/app.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="113" column="24" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="113" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/home.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
