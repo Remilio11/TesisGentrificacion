@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/home.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="74" column="135" selection-start-line="74" selection-start-column="135" selection-end-line="74" selection-end-column="135" />
+            <state relative-caret-position="380">
+              <caret line="82" column="6" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -225,7 +225,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87240000" />
+    <option name="totallyTimeSpent" value="87752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -354,8 +354,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebServer/API_Prueba/api-web/views/home.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="74" column="135" selection-start-line="74" selection-start-column="135" selection-end-line="74" selection-end-column="135" />
+        <state relative-caret-position="380">
+          <caret line="82" column="6" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
