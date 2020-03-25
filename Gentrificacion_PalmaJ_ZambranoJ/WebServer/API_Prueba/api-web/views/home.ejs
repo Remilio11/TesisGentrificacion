@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Gentrificación Centro Historico</title>
 
+
 </head>
 <body>
 
 <!--sidebar-->
 
-<div id="mySidebar" class="sidebar">
+<div id="mySidebar" class="sidebar barnav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
     <img href="#" src="/images/logo-EPN-blanco.png" style="padding-top: 8px">
@@ -37,12 +38,12 @@
 <section>
 <div id="main" style="background: #1A1A1D">
     <div class="row" style="background: #1A1A1D">
-        <div class="col-sm-10">
+        <div class="col-sm-10 col-10">
             <div class="col-sm-6 navbar-brand" style="color: #eeeeee; font-size: 20px">
                 <img src="/images/logo-epn.png" alt="Logo" style="height: 50px; margin-bottom: -10px; margin-top: -20px">
             </div>
         </div>
-        <div class="col-2 text-center" >
+        <div class="col-sm-2 col-2 text-center" >
             <button class="openbtn btn-sm"  onclick="openNav()" >
                 <i class="fas fa-bars"></i> MENU
             </button>
@@ -55,20 +56,22 @@
 <section>
 <div id="cover">
     <div class="row CoverImage">
-        <div class="col-sm-12" style=" max-height: 400px; max-width: 100%;">
+
             <div class="card text-center" style="margin-top: 80px; background-color: transparent">
                 <div class="card-body" style="background: rgba(0,0,0,0.41); padding: 40px 35px; min-width: 300px; display: inline-block">
-                    <h5 class="card-title" style="font-size: 5em; color:#ffffff">Gentrificación</h5>
+                    <h5 class="card-title h5Ed">Gentrificación</h5>
                     <p class="card-text" style="color: #fff">Centro Histórico de Quito: 1990 - 2010</p>
                 </div>
             </div>
         </div>
+
     </div>
 
 </div>
 </section>
 
 <section>
+
 <div id="content2" style="background: #1A1A1D">
     
     <div class="card text-center" style="background-color: transparent">
@@ -78,6 +81,7 @@
                     <h5 class="card-title h5Ed" style="font-size: 2em; color:#ffffff">¿Qué es la Gentrificación?</h5>
                     <p class="card-text" style="color: #fff">Es un fenómeno que hace referencia a la la proliferación de políticas públicas que tienen el objetivo de desplazar a las clases populares de las áreas centrales acompañado por una inversión inmobiliaria masiva que materializa la reconquista de los centros urbanos para las clases pudientes </p>
                 </div>
+
         </div>
     </div>
 </div>
@@ -100,9 +104,9 @@
 <script >
     function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.getElementById("cover").style.marginLeft = "250px";
-        document.getElementById("content2").style.marginLeft = "250px";
+        //document.getElementById("main").style.marginLeft = "250px";
+        //document.getElementById("cover").style.marginLeft = "250px";
+        //document.getElementById("content2").style.marginLeft = "250px";
     }
 
     function closeNav() {
