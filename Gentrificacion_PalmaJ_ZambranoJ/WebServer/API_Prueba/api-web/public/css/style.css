@@ -1,6 +1,6 @@
 .body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #eee;
+  background-color: #404040;
 }
 
 .wrapper {
@@ -114,6 +114,23 @@
     padding-bottom: 50%;
 }
 
+.h5Ed{
+    font-size: 5em;
+    color:#ffffff
+}
+
+@media screen and (max-width: 610px) {
+    .h5Ed {
+        font-size: 3em;
+        color: #ffffff
+    }
+}
+@media screen and (max-width: 410px) {
+    .h5Ed {
+        font-size: 2em;
+        color: #ffffff
+    }
+}
 
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
