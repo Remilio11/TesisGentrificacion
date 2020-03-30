@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Dashboard - Map</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.13/esri/themes/light/main.css">
+
+
+    <style>
+        html, body, #viewDiv {
+            padding: 0;
+            margin:0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+<!--sidebar
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+    <img href="#" src="/images/logo-EPN-blanco.png" style="padding-top: 8px">
+    <a class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"></a>
+
+    <ul class="navbar-nav flex-column mt-4">
+        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-light fa-lg mr-3"></i>Inicio</a></li>
+        <li class="nav-item"><a href="../api/dashboardMap" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-map text-light fa-lg mr-3"></i>Mapa</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart-bar text-light fa-lg mr-3"></i>Reportes</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-file-alt text-light fa-lg mr-3"></i>Documentación</a></li>
+    </ul>
+    <a class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"></a>
+
+    <p style="text-align: center; color:white ">Quito - 2020 </p>
+</div>
+end sidebar -->
+
+<!-- navbar
+<section>
+    <div id="main" style="background: #1A1A1D ">
+        <div class="row" style="background: #1A1A1D">
+            <div id="btn"class="col-sm-10 col-6">
+                <button class="openbtn btn-sm"  onclick="openNav()" >
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="col-sm-2 col-6" align="right">
+
+                <div class="col-sm-6 navbar-brand" style="color: #eeeeee; font-size: 20px; float:right">
+
+                    <img src="/images/logo-epn.png" alt="Logo" style="height: 50px; margin-bottom: -10px; margin-top: -10px">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+ end navbar -->
+
+<!--DASHBOARD----->
+<section>
+   <!-- <div id="content2" style="margin-top: 75px">-->
+        <div style="height: 80%">
+            <div id="viewDiv"></div>
+       </div>
+  <!--  </div>-->
+
+    <select name="" id="rico" onchange="cambioValor(event)">
+        <option >Selecciona algo </option>
+        <option value="1">Mostrar</option>
+        <option value="2">Ocultar</option>
+    </select>
+
+
+</section>
+<!-- end DASHBOARD -->
+
+
+
+<!-- Footer
+<footer class="page-footer font-small" style="background-color: #265077">
+
+    Copyright -->
+<!-- <div class="footer-copyright text-center py-3" style="color: white; font-weight: bold">
+    2020 - Escuela Politécnica Nacional
+</div>
+Copyright
+
+</footer>
+ Footer -->
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://js.arcgis.com/4.13/"></script>
+
+
+<script >
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("content2").style.marginLeft = "250px";
+        //document.getElementById("content3").style.marginLeft = "250px";
+        document.getElementById('btn').style.visibility = 'hidden';
+    }
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("content2").style.marginLeft= "0";
+       // document.getElementById("content3").style.marginLeft = "0";
+        document.getElementById('btn').style.visibility = 'visible';
+    }
+</script>
+
+<script>
+    var mapa;
+    var FeatureLayerRico;
+    require([
+        "esri/Map",
+        "esri/views/MapView",
+        "esri/layers/FeatureLayer"
+    ], function(Map, MapView,FeatureLayer) {
+        FeatureLayerRico = FeatureLayer
+        //Llamada al mapa base
+        var map = new Map({
+            basemap: "streets"
+        });
+        mapa = map;
+
+
+    });
+</script>
+
+<script>
+    var capaBarrios;
+    function ocultar() {
+        mapa.remove(capaBarrios)
+    }
+
+    function mostrar() {
+        capaBarrios = new FeatureLayerRico({
+
+            url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer/0?token=Uufh4OzqYWj9-T3Q2-IoegD0sCS5Jk775yu_LJ-bYQeRHSp1DZHgmNllHXpQ6I-ifCVvpSS7qgMzYitRAsjVG5mO8naAK9F0eBpei2giM3UBit1lafT7wU-ozar5K93Kcj1x1qpUgd5F8JT44pCXZF3iOioGVhuInHslDXkmz4TKBgCzf27OLo5xGGpJVnhWy3te-_eNmx4CHbLRt6uomb_bx00zmRb8YX6O-pVFBy0cg8q2_NF4YvHzrWSFtnNP"
+        });
+        mapa.add(capaBarrios)
+    }
+
+    function cambioValor(evento){
+        console.log('evento', evento);
+        const ocultarSeleccionado = evento.target.value === "2";
+        if(ocultarSeleccionado){
+            ocultar()
+        }else{
+            mostrar()
+        }
+    }
+</script>
+
+
+</body>
