@@ -70,18 +70,18 @@
 
 <div id="content2" class="row" style="margin-top: 75px">
 
-    <div class="col-sm-6" style="height: 500px">
+    <div class="col-sm-8" style="height: 500px">
             <div id="viewDiv"></div>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-4 dashImage" style="text-align: center">
+        <br><br>
+        <h2 style="margin-top: 30%">Selector de Capas</h2>
         <select name="" id="rico" onchange="cambioValor(event)">
             <option >Selecciona algo </option>
             <option value="1">Mostrar</option>
             <option value="2">Ocultar</option>
         </select>
-    </div>
-
 
 </div>
 
@@ -141,6 +141,9 @@ Footer -->
             basemap: "streets"
         });
 
+        map.basemap = "dark-gray"
+
+
         var view = new MapView({
             container: "viewDiv",
             map: map,
@@ -153,6 +156,7 @@ Footer -->
 
 <script>
     var capaBarrios;
+    var capaBarriosManzanas;
     function ocultar() {
         mapa.remove(capaBarrios)
     }
@@ -163,6 +167,12 @@ Footer -->
             url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer/0?token=Uufh4OzqYWj9-T3Q2-IoegD0sCS5Jk775yu_LJ-bYQeRHSp1DZHgmNllHXpQ6I-ifCVvpSS7qgMzYitRAsjVG5mO8naAK9F0eBpei2giM3UBit1lafT7wU-ozar5K93Kcj1x1qpUgd5F8JT44pCXZF3iOioGVhuInHslDXkmz4TKBgCzf27OLo5xGGpJVnhWy3te-_eNmx4CHbLRt6uomb_bx00zmRb8YX6O-pVFBy0cg8q2_NF4YvHzrWSFtnNP"
         });
         mapa.add(capaBarrios)
+
+        capaBarriosManzanas = new FeatureLayerRico({
+
+            url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Barrios_Manzanas_F/FeatureServer"
+        });
+        mapa.add(capaBarriosManzanas)
     }
 
     function cambioValor(evento){
