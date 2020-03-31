@@ -20,6 +20,11 @@ export class AppController {
         return res.render('dashboardMap')
   }
 
+  @Get('dashboardNew')
+  getDashboard1(@Response() res){
+    return res.render('dashboardNew')
+  }
+
   @Get('report')
   getReport(@Response() res){
         return res.render('report')
