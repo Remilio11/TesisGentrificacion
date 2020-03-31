@@ -102,6 +102,8 @@ require([
         },]
     };
 
+
+    //***** POPUP DE NOMBRES DE LA CAPA ********
     popUpNombres={
         "title": "INFORMACIÓN DEL BARRIO",
         "content": function () {
@@ -114,7 +116,8 @@ require([
             url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer",
             renderer: renderColor,
             outFields: ["FID","NOMBRE"],
-            popupTemplate: popUpNombres
+            popupTemplate: popUpNombres,
+            opacity: 0.7
 
     });
 
