@@ -4,6 +4,7 @@ var mapa;
 var capaInicial;
 var FeatureLayerRico;
 var renderColor;
+var popUpNombres;
 require([
     "esri/Map",
     "esri/views/MapView",
@@ -15,6 +16,7 @@ require([
         basemap: "streets"
     });
 
+    // ***** AÑADE COLOR A LA CAPA INICIAL *********
     renderColor= {
         type: "unique-value",
         field: "FID",
@@ -100,11 +102,19 @@ require([
         },]
     };
 
+    popUpNombres={
+        "title": "INFORMACIÓN DEL BARRIO",
+        "content": function () {
+            return "Numero de Barrio: {FID} <br> Nombre: {NOMBRE}";
+        }
+    };
 
     capaInicial = new FeatureLayer({
 
             url : "https://services6.arcgis.com/a7URR860GLlM8vfi/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer",
-            renderer: renderColor
+            renderer: renderColor,
+            outFields: ["FID","NOMBRE"],
+            popupTemplate: popUpNombres
 
     });
 
