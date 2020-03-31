@@ -140,7 +140,7 @@
 
 .dashImage{
     color:white;
-    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .5)), url(https://cdn.pixabay.com/photo/2014/04/02/19/06/quito-ecuador-308159_960_720.jpg);
+    background: linear-gradient( 180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .6)), url(https://cdn.pixabay.com/photo/2014/04/02/19/06/quito-ecuador-308159_960_720.jpg);
     background-position: center;
     justify-items: center;
 }
