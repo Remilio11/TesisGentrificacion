@@ -11,7 +11,6 @@
 
 
 
-
 /* navbar */
 .sidebar {
     height: 100vh;
@@ -64,10 +63,6 @@
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-
-
-
-
 }
 
 .openbtn:hover {
@@ -135,8 +130,15 @@
     color:#ffffff
 }
 
+.dashImage{
+    color:white;
+    background: linear-gradient( 180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .6)), url(https://cdn.pixabay.com/photo/2014/04/02/19/06/quito-ecuador-308159_960_720.jpg);
+    background-position: center;
+    justify-items: center;
+}
 
-#main, #cover, #content2, #content3, #footer {
+
+#main, #cover, #content2, #content3, #footer, #selcapa {
     overflow: hidden;
 
 }
@@ -177,3 +179,4 @@
     }
 }
 /* end of navbar */
+
