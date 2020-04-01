@@ -46,14 +46,7 @@
 .sidebar a:hover {
     color: #f1f1f1;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-.sticky + .content {
-    padding-top: 60px;
-}
+
 
 .sidebar .closebtn {
     position: absolute;
@@ -93,6 +86,7 @@
 }
 
 
+
 .bottom-border {
   border-bottom: 1px groove #eee;
 }
@@ -127,7 +121,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
-    max-height: 800px;
     max-width: 100%;
 }
 
@@ -143,18 +136,20 @@
 }
 
 
-#main, #cover, #content2{
+#main, #cover, #content2, #content3, #footer {
     overflow: hidden;
+
 }
 
 
-@media screen and (max-width: 610px) {
+
+@media screen and (max-width: 630px) {
     .h5Ed {
         font-size: 3em;
         color: #ffffff
     }
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 430px) {
     .h5Ed {
         font-size: 2em;
         color: #ffffff
@@ -166,6 +161,19 @@
     .sidebar a {font-size: 18px;}
 }
 
+.col-xs-4 {
+    float: left;
+    width: 33%;
+    padding: 10px;
+    margin-left: -5px;
+}
 
-
+@media screen and (max-width: 750px){
+    .col-xs-4 {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+        margin-right:35px;
+    }
+}
 /* end of navbar */
