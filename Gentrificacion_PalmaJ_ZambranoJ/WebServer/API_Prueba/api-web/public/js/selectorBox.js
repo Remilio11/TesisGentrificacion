@@ -16,6 +16,8 @@ const closeDropdown = () => {
 dropdownArray.forEach(item => {
     item.addEventListener('click', evt => {
         inputField.value = item.textContent;
+        console.log("CAPA " + inputField.value);
+        cambioCapa(inputField.value);
         dropdownArray.forEach(dropdown => {
             dropdown.classList.add('closed');
         });
