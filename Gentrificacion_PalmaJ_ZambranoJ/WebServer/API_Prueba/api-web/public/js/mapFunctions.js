@@ -1,17 +1,15 @@
 // ******* MAPA DESPLEGADO AL INICIO **********
 var mapa;
 var vista;
+var legend;
 // Varaibles para Capas
 var capaInicial;
-var capaBarrios;
 var capaBarriosSector;
 var capaResultados2010;
 //Variables de features
 var FeatureLayerRico;
-var renderColor;
-
 //PopUps
-var popUpNombres;
+var popUp1;
 var popUp2;
 require([
     "esri/Map",
@@ -28,27 +26,14 @@ require([
     });
 
 
-
-
-    //***** POPUP DE NOMBRES DE LA CAPA ********
-    popUpNombres={
-        "title": "INFORMACIÓN DEL BARRIO",
-        "content": function () {
-            return "Numero de Barrio: {FID} <br> Nombre: {NOMBRE}";
-        }
-    };
-
     capaInicial = new FeatureLayer({
-
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer",
-            outFields: ["FID","NOMBRE"],
-            popupTemplate: popUpNombres,
-            opacity: 0.7
+            opacity: 0.9
 
     });
 
     map.basemap = "gray";
-    map.add(capaInicial,0);
+    map.add(capaInicial);
 
 
     var view = new MapView({
@@ -59,46 +44,36 @@ require([
     });
     mapa = map;
     vista = view;
+
+    legend = new Leyenda({
+        view: vista,
+        layerInfos: [
+            {
+                layer: capaInicial,
+                title: "Barrios - Centro Histórico"
+            }
+        ]
+    });
+
+    view.ui.add(legend,"bottom-right");
 });
 
 //******** LLAMADA A NUEVAS CAPAS ***********
 function cambioCapa(arreglo) {
     console.log("recibi mi arreglo "+ arreglo);
     if(arreglo=="Barrios - Sector"){
-
-        capaBarrios = new FeatureLayerRico({
-            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer"
-        });
-
-        var legend = new Leyenda({
-            view: vista,
-            layerInfos: [
-                {
-                    layer: capaBarrios,
-                    title: "Barrios - Centro Histórico"
-                }
-            ]
-        });
-
         capaBarriosSector = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/barrios_sector/FeatureServer",
             opacity: 0.1
         });
-
-        mapa.remove(capaInicial);
-        mapa.add(capaBarrios);
+        mapa.add(capaInicial);
         mapa.add(capaBarriosSector);
-        vista.ui.add(legend,"bottom-right")
-
-
-
-
-    }else if(arreglo == "Resultados Análisis 2010"){
-
-        popUp2={
+    }
+    else if(arreglo == "Resultados Análisis 2010"){
+        popUp1={
             "title": "INFORMACIÓN DEL SECTOR",
             "content": function () {
-                return "Total Hogares: {T_HO_S}" +
+                return "Total Viviendas: {T_VI_S}" +
                     "<br> Total Personas: {T_PE_S}" +
                     "<br> Total de Personas Gentrificables: {T_GENT_S}" +
                     "<br> Total Personas >25 años: {T_PE_25_S}" +
@@ -109,20 +84,40 @@ function cambioCapa(arreglo) {
                     "<br> Promedio de Personas por Vivienda: {P_PE_V}";
             }
         };
-
-        capaBarrios = new FeatureLayerRico({
-            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer",
-
-        });
         capaResultados2010 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector2010_f/FeatureServer",
-            outFields: ["T_HO_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S","P_PE_V"],
-            popupTemplate:popUp2,
-            opacity: 0.3
+            outFields: ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S","P_PE_V"],
+            popupTemplate:popUp1,
+            opacity: 0.1
         });
-        mapa.remove(capaInicial);
-        mapa.add(capaBarrios);
+        mapa.add(capaInicial);
         mapa.add(capaResultados2010);
+
+
+    }
+    else if(arreglo=="Resultados Análisis 2001"){
+        popUp2={
+            "title": "INFORMACIÓN DEL SECTOR",
+            "content": function () {
+                return "Total Viviendas: {T_VI_S}" +
+                    "<br> Total Personas: {T_PE_S}" +
+                    "<br> Total de Personas Gentrificables: {T_GENT_S}" +
+                    "<br> Total Personas >25 años: {T_PE_25_S}" +
+                    "<br> Total Personas con Educación Superior: {T_PE_ES_S}" +
+                    "<br> Total Personas con Empleo: {T_PE_EM_S}" +
+                    "<br> Total Personas sin Empleo: {T_PE_SE_S}" +
+                    "<br> Total Personas con Empleo Gerencial: {T_PE_EG_S}" +
+                    "<br> Promedio de Personas por Vivienda: {P_PE_V}";
+            }
+        };
+        capaResultados2001 = new FeatureLayerRico({
+            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector2001_f/FeatureServer",
+            outFields: ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S","P_PE_V"],
+            popupTemplate:popUp2,
+            opacity: 0.1
+        });
+        mapa.add(capaInicial);
+        mapa.add(capaResultados2001);
 
     }
 }
