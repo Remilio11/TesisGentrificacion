@@ -27,7 +27,7 @@ require([
 
     capaInicial = new FeatureLayer({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer",
-            opacity: 0.9
+            opacity: 1.0
 
     });
 
@@ -60,13 +60,14 @@ require([
 
 //******** LLAMADA A NUEVAS CAPAS ***********
 function cambioCapa(arreglo) {
+    mapa.removeAll()
     console.log("recibi mi arreglo "+ arreglo);
     if(arreglo=="Barrios - Sector"){
         capaBarriosSector = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/barrios_sector/FeatureServer",
             opacity: 0.1
         });
-        mapa.removeAl
+
         mapa.add(capaInicial);
         mapa.add(capaBarriosSector);
     }
@@ -91,7 +92,7 @@ function cambioCapa(arreglo) {
             popupTemplate:popUp1,
             opacity: 0.1
         });
-        mapa.remove()
+
         mapa.add(capaInicial);
         mapa.add(capaResultados2010);
 
@@ -118,6 +119,7 @@ function cambioCapa(arreglo) {
             popupTemplate:popUp2,
             opacity: 0.1
         });
+
         mapa.add(capaInicial);
         mapa.add(capaResultados2001);
 
@@ -143,6 +145,7 @@ function cambioCapa(arreglo) {
             popupTemplate:popUp2,
             opacity: 0.1
         });
+
         mapa.add(capaInicial);
         mapa.add(capaResultados1990);
     }
