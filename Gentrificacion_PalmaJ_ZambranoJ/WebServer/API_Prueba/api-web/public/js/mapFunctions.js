@@ -87,7 +87,7 @@ function cambioCapa(arreglo) {
             }
         };
         capaResultados2010 = new FeatureLayerRico({
-            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector2010_f/FeatureServer",
+            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector_2010_f/FeatureServer",
             outFields: ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S","P_PE_V"],
             popupTemplate:popUp1,
             opacity: 0.1
@@ -114,7 +114,7 @@ function cambioCapa(arreglo) {
             }
         };
         capaResultados2001 = new FeatureLayerRico({
-            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector2001_f/FeatureServer",
+            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector_2001_f/FeatureServer",
             outFields: ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S","P_PE_V"],
             popupTemplate:popUp2,
             opacity: 0.1
@@ -140,7 +140,7 @@ function cambioCapa(arreglo) {
             }
         };
         capaResultados1990 = new FeatureLayerRico({
-            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector1990_f/FeatureServer",
+            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector_1990_f/FeatureServer",
             outFields: ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S","P_PE_V"],
             popupTemplate:popUp2,
             opacity: 0.1
