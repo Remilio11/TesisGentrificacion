@@ -37,7 +37,7 @@ require([
     var view = new MapView({
         container: "viewDiv",
         map: map,
-        center: [-78.5197643, -0.2174367], // longitude, latitude
+        center: [-78.5155452, -0.2220584], // longitude, latitude
         zoom: 15
     });
 
