@@ -138,7 +138,8 @@
 }
 
 
-#main, #cover, #content2, #content3, #footer, #selcapa {
+
+#main, #cover, #content2, #content3, #content4, #footer, #selcapa {
     overflow: hidden;
 
 }
