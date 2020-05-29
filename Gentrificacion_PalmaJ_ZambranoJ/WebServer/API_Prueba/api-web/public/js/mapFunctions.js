@@ -69,6 +69,7 @@ function cambioCapa(arreglo) {
     vista.ui.remove(swipe1);
     vista.ui.remove(swipe2);
     vista.ui.remove(swipe3);
+    vista.ui.remove(swipe4);
     vista.ui.remove(legend);
     vista.ui.remove(legend2);
     vista.ui.remove(legend3);
@@ -76,6 +77,8 @@ function cambioCapa(arreglo) {
     vista.ui.remove(legend5);
     vista.ui.remove(legend6);
     vista.ui.remove(legend7);
+    vista.ui.remove(legend8);
+    vista.ui.remove(legend9);
     mapa.removeAll();
 
     console.log("recibi mi arreglo "+ arreglo);
@@ -295,6 +298,51 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend6,"bottom-left");
         vista.ui.add(legend7,"bottom-right");
         vista.ui.add(swipe3)
+    }
+    else if(arreglo == "Gentrificación 2001 - 2010 - Barrios"){
+        capaGentri7 = new FeatureLayerRico({
+            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2001_f/FeatureServer",
+            opacity: 0.9
+        });
+        capaGentri8 = new FeatureLayerRico({
+            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2010_f/FeatureServer",
+            opacity: 0.9
+        });
+
+        swipe4 = new SwipeRico({
+            view: vista,
+            leadingLayers: [capaGentri7],
+            trailingLayers: [capaGentri8],
+            position: 50,
+            state: "ready"
+
+        });
+
+        legend8 = new Leyenda({
+            view: vista,
+            layerInfos: [
+                {
+                    layer: capaGentri7,
+                    title: "Gentrificación Barrios 2001"
+                }
+            ]
+        });
+        legend9 = new Leyenda({
+            view: vista,
+            layerInfos: [
+                {
+                    layer: capaGentri8,
+                    title: "Gentrificación Barrios 2010"
+                }
+            ]
+        });
+
+        mapa.add(capaGentri7);
+        mapa.add(capaGentri8);
+        vista.ui.remove(legend);
+        vista.ui.add(legend8,"bottom-left");
+        vista.ui.add(legend9,"bottom-right");
+        vista.ui.add(swipe4)
     }
 }
 
