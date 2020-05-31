@@ -7,9 +7,11 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/CollapsibleSelector.css">
     <link rel="stylesheet" href="/css/selectBox.css">
-    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
 
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
     <title>Dashboard - Map</title>
 
 
@@ -74,29 +76,60 @@
 <div id="content2" class="row" style="margin-top: 75px">
 
     <!-- MAP -->
-    <div class="col-sm-8" style="height: 500px">
+    <div class="col-sm-9" style="height: 500px">
             <div id="viewDiv"></div>
     </div>
     <!-- end MAP -->
 
     <!-- LAYER SELECTOR -->
-    <div class="col-sm-4 dashImage" style="text-align: center">
-        <br><br>
-        <h1 style="margin-top: 50%; justify-self: center">Selector de Capas</h1>
-        <br>
+    <div class="col-sm-3 dashImage" >
 
-        <form>
-            <input id="selcapa" class="chosen-value" type="text" value="" placeholder="Seleccione una capa">
-            <ul class="value-list">
-                <li>Resultados Análisis 2010</li>
-                <li>Resultados Análisis 2001</li>
-                <li>Resultados Análisis 1990</li>
-                <li>Gentrificación 1990 - 2001 - Sectores</li>
-                <li>Gentrificación 2001 - 2010 - Sectores</li>
-                <li>Gentrificación 1990 - 2001 - Barrios</li>
-                <li>Gentrificación 2001 - 2010 - Barrios</li>
-            </ul>
-        </form>
+        <h2 style="margin-top: 5%; text-align: center; justify-self: center">Selector de Capas</h2>
+
+        <button type="button" class="collapsible" style="border-radius: 10px 10px 0px 0px" >Resultados Censo</button>
+        <div class="content" onclick="obtenerValor()">
+        <label class="container">Resultados Análisis 2010
+            <input id="1" type="radio"  name="radio" value="1">
+            <span class="checkmark" ></span>
+
+        </label>
+        <label class="container">Resultados Análisis 2001
+            <input type="radio" name="radio" value="2">
+            <span class="checkmark"> </span>
+        </label>
+        <label class="container">Resultados Análisis 1990
+            <input type="radio" name="radio" value="3">
+            <span class="checkmark"></span>
+        </label>
+        </div>
+        <button type="button" class="collapsible" >Gentrificación - Sectores</button>
+        <div class="content" onclick="obtenerValor()">
+            <label class="container">Gentrificación 1990-2001
+                <input id="1" type="radio"  name="radio" value="4">
+                <span class="checkmark" ></span>
+
+            </label>
+            <label class="container">Gentrificación 2001-2010
+                <input type="radio" name="radio" value="5">
+                <span class="checkmark"></span>
+            </label>
+
+        </div>
+
+        <button type="button" class="collapsible" style="border-radius: 0px 0px 10px 10px">Gentrificación - Barrios</button>
+        <div class="content" onclick="obtenerValor()">
+            <label class="container">Gentrificación 1990-2001
+                <input id="1" type="radio"  name="radio" value="6">
+                <span class="checkmark" ></span>
+
+            </label>
+            <label class="container">Gentrificación 2001-2010
+                <input type="radio" name="radio" value="7">
+                <span class="checkmark"></span>
+            </label>
+
+        </div>
+
     </div>
     <!-- end LAYER SELECTOR -->
 
@@ -127,7 +160,7 @@ Footer -->
 <script src="https://js.arcgis.com/4.13/"></script>
 <script src="/js/mapFunctions.js"></script>
 <script src="/js/selectorBox.js"></script>
-
+<script src="/js/CollapsibleSelector.js"></script>
 
 <script >
     function openNav() {
