@@ -82,7 +82,7 @@ function cambioCapa(arreglo) {
     mapa.removeAll();
 
     console.log("recibi mi arreglo "+ arreglo);
-    if(arreglo == "Resultados Análisis 2010"){
+    if(arreglo == "1"){
         popUp1={
             "title": "INFORMACIÓN DEL SECTOR",
             "content": function () {
@@ -110,7 +110,7 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend,"bottom-right");
 
     }
-    else if(arreglo=="Resultados Análisis 2001"){
+    else if(arreglo=="2"){
         popUp2={
             "title": "INFORMACIÓN DEL SECTOR",
             "content": function () {
@@ -137,7 +137,7 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend,"bottom-right");
 
     }
-    else if (arreglo == "Resultados Análisis 1990"){
+    else if (arreglo == "3"){
         popUp2={
             "title": "INFORMACIÓN DEL SECTOR",
             "content": function () {
@@ -163,7 +163,7 @@ function cambioCapa(arreglo) {
         mapa.add(capaResultados1990);
         vista.ui.add(legend,"bottom-right");
     }
-    else if (arreglo == "Gentrificación 1990 - 2001 - Sectores"){
+    else if (arreglo == "4"){
         capaGentri1 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_1990_f/FeatureServer",
             opacity: 0.9
@@ -209,7 +209,7 @@ function cambioCapa(arreglo) {
        vista.ui.add(swipe1)
 
     }
-    else if (arreglo == "Gentrificación 2001 - 2010 - Sectores"){
+    else if (arreglo == "5"){
         capaGentri3 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_2001_f/FeatureServer",
             opacity: 0.9
@@ -254,7 +254,7 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend5,"bottom-right");
         vista.ui.add(swipe2)
     }
-    else if(arreglo == "Gentrificación 1990 - 2001 - Barrios"){
+    else if(arreglo == "6"){
         capaGentri5 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_1990_f/FeatureServer",
             opacity: 0.9
@@ -299,7 +299,7 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend7,"bottom-right");
         vista.ui.add(swipe3)
     }
-    else if(arreglo == "Gentrificación 2001 - 2010 - Barrios"){
+    else if(arreglo == "7"){
         capaGentri7 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2001_f/FeatureServer",
             opacity: 0.9
