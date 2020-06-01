@@ -391,19 +391,14 @@ function cambioCapa(arreglo) {
         // Create a data object, this will include the data from the feature layer and other information like color or labels.
         var data = {
             datasets:[{
+                label:'Total',
                 data: [results.T_VI_S, results.T_PE_S, results.T_GENT_S, results.T_PE_25_S,results.T_PE_ES_S,
                     results.T_PE_EM_S, results.T_PE_SE_S,results.T_PE_EG_S],
                 backgroundColor: ["#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4"]
             }],
+
             labels:[
-                'Total Viviendas ',
-                'Total Personas ',
-                'Total Personas Gentrificables',
-                'Total Personas >25 años',
-                'Total Personas con Educación Superior',
-                'Total Personas con Empleo ',
-                'Total Personas sin Empleo',
-                'Total Personas con Emple0 G/T/ADM'
+                "VIV","PERS","PER_GENT","PER_MAY_25","PERS_ES","PERS_EMP","PERS_SE","PERS_EG"
 
             ]
         };
@@ -411,7 +406,28 @@ function cambioCapa(arreglo) {
         // Create a new Chart and hook it to the canvas and then return the canvas.
         var myPieChart = new Chart(canvas,{
             type: 'bar',
-            data: data
+            data: data,
+            options: {
+                responsive:true,
+                maintainAspectRatio:true,
+                title: {display:true,text:'Información Censal por Sector',fontSize:18},
+                scaleShowValues: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    xAxes: [{
+                        display:true,
+                        fontSize:8,
+                        ticks: {
+                            autoSkip: false
+                        }
+                    }]
+                }
+            }
+
         });
 
         return canvas;
