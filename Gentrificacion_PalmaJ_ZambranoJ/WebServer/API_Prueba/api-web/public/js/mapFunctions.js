@@ -1,6 +1,7 @@
 // ******* MAPA DESPLEGADO AL INICIO **********
 var mapa;
 var vista;
+var arreglo;
 var legend, legend2, legend3, legend4, legend5, legend6, legend7, legend8, legend9;
 var swipe1, swipe2, swipe3, swipe4;
 // Varaibles para Capas
@@ -12,18 +13,26 @@ var FeatureLayerRico;
 //PopUps
 var popUp1;
 var popUp2;
+//variables que cambian de acuerdo a la seleccion
+let graficaResumen
 require([
     "esri/Map",
     "esri/views/MapView",
     "esri/layers/FeatureLayer",
+    "esri/tasks/support/Query",
     "esri/widgets/Legend",
     "esri/widgets/Swipe",
-    "esri/views/ui/DefaultUI"
-], function(Map, MapView,FeatureLayer,Legend,Swipe) {
+    "esri/views/ui/DefaultUI",
+    "esri/tasks/QueryTask",
+    "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js",
+    "dojo/domReady!"
+
+],
+    function(Map, MapView,FeatureLayer,Query,Legend,Swipe,QueryTask ,Chart) {
     FeatureLayerRico = FeatureLayer;
     SwipeRico = Swipe;
     Leyenda = Legend;
-
+    QueryR=Query;
     //Llamada al mapa base
     const map = new Map({
         basemap: "streets"
@@ -43,7 +52,16 @@ require([
         container: "viewDiv",
         map: map,
         center: [-78.5155452, -0.2220584], // longitude, latitude
-        zoom: 15
+        zoom: 15,
+        popup: {
+            dockEnabled: true,
+            visible: false,
+            dockOptions: {
+                buttonEnabled: true,
+                breakpoint: false,
+                position: "auto"
+            }
+        }
     });
 
     mapa = map;
@@ -96,7 +114,7 @@ function cambioCapa(arreglo) {
                     "<br> Total Personas con Empleo Gerencial: {T_PE_EG_S}" +
                     "<br> Promedio de Personas por Vivienda: {P_PE_V}";
             }
-        };
+        }
         capaResultados2010 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector_2010_f/FeatureServer",
             outFields: ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S","P_PE_V"],
@@ -104,10 +122,30 @@ function cambioCapa(arreglo) {
             opacity: 0.1
         });
 
+
         mapa.add(capaInicial);
+        var query = new QueryR();
+
+        query.returnGeometry = true;
+        query.outFields = ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S"];
+        query.where = "1=1";
+        query.num = 50;
+
+        // On view click, query the feature layer and pass the results to setContentInfo function.
+        vista.on("click", (e) => {
+            query.geometry = e.mapPoint;
+            capaResultados2010.queryFeatures(query).then((results) =>{
+
+                    setContentInfo(results.features[0].attributes);
+
+                }
+            );
+        });
         mapa.add(capaResultados2010);
 
         vista.ui.add(legend,"bottom-right");
+
+
 
     }
     else if(arreglo=="2"){
@@ -344,6 +382,42 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend9,"bottom-right");
         vista.ui.add(swipe4)
     }
+
+    function setContentInfo(results){
+        // Create a new canvas element, this is where the graph will be placed.
+        var canvas = document.getElementById('grafico1');
+
+
+        // Create a data object, this will include the data from the feature layer and other information like color or labels.
+        var data = {
+            datasets:[{
+                data: [results.T_VI_S, results.T_PE_S, results.T_GENT_S, results.T_PE_25_S,results.T_PE_ES_S,
+                    results.T_PE_EM_S, results.T_PE_SE_S,results.T_PE_EG_S],
+                backgroundColor: ["#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4"]
+            }],
+            labels:[
+                'Total Viviendas ',
+                'Total Personas ',
+                'Total Personas Gentrificables',
+                'Total Personas >25 años',
+                'Total Personas con Educación Superior',
+                'Total Personas con Empleo ',
+                'Total Personas sin Empleo',
+                'Total Personas con Emple0 G/T/ADM'
+
+            ]
+        };
+
+        // Create a new Chart and hook it to the canvas and then return the canvas.
+        var myPieChart = new Chart(canvas,{
+            type: 'bar',
+            data: data
+        });
+
+        return canvas;
+    }
+
+
 }
 
 
