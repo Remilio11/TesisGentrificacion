@@ -5,12 +5,13 @@ var legend, legend2, legend3, legend4, legend5, legend6, legend7, legend8, legen
 var swipe1, swipe2, swipe3, swipe4;
 // Varaibles para Capas
 var capaInicial;
-var capaResultados2010, capaResultados2001, capaResultados1990, capaGentri1, capaGentri2,
-    capaGentri3, capaGentri4, capaGentri5, capaGentri6, capaGentri7, capaGentri8;
+var capaBarriosSector, capaResultados2010, capaResultados2001, capaResultados1990, capaGentri1, capaGentri2,
+    capaGentri3, capaGentri4, capaGentri5, capaGentri6;
 //Variables de features
 var FeatureLayerRico;
 //PopUps
-var popUp1, popUp2,popUp3,popUp4,popUp5,popUp6,popUp7,popUp8,popUp9;
+var popUp1;
+var popUp2;
 require([
     "esri/Map",
     "esri/views/MapView",
@@ -81,7 +82,7 @@ function cambioCapa(arreglo) {
     mapa.removeAll();
 
     console.log("recibi mi arreglo "+ arreglo);
-    if(arreglo == "Resultados Análisis 2010"){
+    if(arreglo == "1"){
         popUp1={
             "title": "INFORMACIÓN DEL SECTOR",
             "content": function () {
@@ -109,7 +110,7 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend,"bottom-right");
 
     }
-    else if(arreglo=="Resultados Análisis 2001"){
+    else if(arreglo=="2"){
         popUp2={
             "title": "INFORMACIÓN DEL SECTOR",
             "content": function () {
@@ -136,7 +137,7 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend,"bottom-right");
 
     }
-    else if (arreglo == "Resultados Análisis 1990"){
+    else if (arreglo == "3"){
         popUp2={
             "title": "INFORMACIÓN DEL SECTOR",
             "content": function () {
@@ -162,32 +163,16 @@ function cambioCapa(arreglo) {
         mapa.add(capaResultados1990);
         vista.ui.add(legend,"bottom-right");
     }
-    else if (arreglo == "Gentrificación 1990 - 2001 - Sectores"){
-
-       popUp3={
-            "title": "INFORMACIÓN DEL SECTOR",
-            "content": function () {
-                return "Barrio: {BARRIO}" +
-                    "<br>SECTOR: {DPA_SECTOR}"+
-                    "<br>Personas >25 años: {T_PE_25_S}"+
-                    "<br>Personas empleo G/T/ADM: {T_PE_EG_S}"+
-                    "<br>Personas con educación superior: {T_PE_ES_S}"+
-                    "<br>Pormedio de cambios vivienda: {PROM_POBR}"+
-                    "<br>Estado de Gentrificación: {DESC_FEN}"
-            }
-        };
-       capaGentri1 = new FeatureLayerRico({
+    else if (arreglo == "4"){
+        capaGentri1 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_1990_f/FeatureServer",
-            outFields: ["BARRIO","DPA_SECTOR","T_PE_25_S","T_PE_EG_S","T_PE_ES_S","PROM_POBR","DESC_FEN"],
-            popupTemplate:popUp3,
             opacity: 0.9
         });
        capaGentri2 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_2001_f/FeatureServer",
-           outFields: ["BARRIO","DPA_SECTOR","T_PE_25_S","T_PE_EG_S","T_PE_ES_S","PROM_POBR","DESC_FEN"],
-           popupTemplate:popUp3,
             opacity: 0.9
         });
+
        swipe1 = new SwipeRico({
             view: vista,
             leadingLayers: [capaGentri1],
@@ -196,7 +181,8 @@ function cambioCapa(arreglo) {
             state: "ready"
 
        });
-       legend2 = new Leyenda({
+
+        legend2 = new Leyenda({
             view: vista,
             layerInfos: [
                 {
@@ -205,7 +191,7 @@ function cambioCapa(arreglo) {
                 }
             ]
         });
-       legend3 = new Leyenda({
+        legend3 = new Leyenda({
             view: vista,
             layerInfos: [
                 {
@@ -223,29 +209,13 @@ function cambioCapa(arreglo) {
        vista.ui.add(swipe1)
 
     }
-    else if (arreglo == "Gentrificación 2001 - 2010 - Sectores"){
-        popUp5={
-            "title": "INFORMACIÓN DEL SECTOR",
-            "content": function () {
-                return "Barrio: {BARRIO}" +
-                    "<br>SECTOR: {DPA_SECTOR}"+
-                    "<br>Personas >25 años: {T_PE_25_S}"+
-                    "<br>Personas empleo G/T/ADM: {T_PE_EG_S}"+
-                    "<br>Personas con educación superior: {T_PE_ES_S}"+
-                    "<br>Pormedio de cambios vivienda: {PROM_POBR}"+
-                    "<br>Estado de Gentrificación: {DESC_FEN}"
-            }
-        };
+    else if (arreglo == "5"){
         capaGentri3 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_2001_f/FeatureServer",
-            outFields: ["BARRIO","DPA_SECTOR","T_PE_25_S","T_PE_EG_S","T_PE_ES_S","PROM_POBR","DESC_FEN"],
-            popupTemplate:popUp5,
             opacity: 0.9
         });
         capaGentri4 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_2010_f/FeatureServer",
-            outFields: ["BARRIO","DPA_SECTOR","T_PE_25_S","T_PE_EG_S","T_PE_ES_S","PROM_POBR","DESC_FEN"],
-            popupTemplate:popUp5,
             opacity: 0.9
         });
 
@@ -284,39 +254,13 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend5,"bottom-right");
         vista.ui.add(swipe2)
     }
-    else if(arreglo == "Gentrificación 1990 - 2001 - Barrios"){
-        popUp6={
-            "title": "INFORMACIÓN DEL SECTOR",
-            "content": function () {
-                return "Barrio: {NOMBRE}" +
-                    "<br>Personas >25 años: {T_PE_25_B}"+
-                    "<br>Personas empleo G/T/ADM: {T_PE_EG_B}"+
-                    "<br>Personas con educación superior: {T_PE_ES_B}"+
-                    "<br>Pormedio de cambios vivienda: {P_POBR_B}"+
-                    "<br>Estado de Gentrificación: {DESC_FEN}"
-            }
-        };
+    else if(arreglo == "6"){
         capaGentri5 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_1990_f/FeatureServer",
-            outFields: ["NOMBRE","T_PE_25_B","T_PE_EG_B","T_PE_ES_B","P_POBR_B","DESC_FEN"],
-            popupTemplate:popUp6,
             opacity: 0.9
         });
-        popUp7={
-            "title": "INFORMACIÓN DEL SECTOR",
-            "content": function () {
-                return "Barrio: {BARRIO}" +
-                    "<br>Personas >25 años: {T_PE_25_B}"+
-                    "<br>Personas empleo G/T/ADM: {T_PE_EG_B}"+
-                    "<br>Personas con educación superior: {T_PE_ES_B}"+
-                    "<br>Pormedio de cambios vivienda: {P_POBR_B}"+
-                    "<br>Estado de Gentrificación: {DESC_FEN}"
-            }
-        };
         capaGentri6 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2001_f/FeatureServer",
-            outFields: ["BARRIO","T_PE_25_B","T_PE_EG_B","T_PE_ES_B","P_POBR_B","DESC_FEN"],
-            popupTemplate:popUp7,
             opacity: 0.9
         });
 
@@ -355,28 +299,13 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend7,"bottom-right");
         vista.ui.add(swipe3)
     }
-    else if(arreglo == "Gentrificación 2001 - 2010 - Barrios"){
-        popUp8={
-            "title": "INFORMACIÓN DEL SECTOR",
-            "content": function () {
-                return "Barrio: {NOMBRE}" +
-                    "<br>Personas >25 años: {T_PE_25_B}"+
-                    "<br>Personas empleo G/T/ADM: {T_PE_EG_B}"+
-                    "<br>Personas con educación superior: {T_PE_ES_B}"+
-                    "<br>Pormedio de cambios vivienda: {P_POBR_B}"+
-                    "<br>Estado de Gentrificación: {DESC_FEN}"
-            }
-        };
+    else if(arreglo == "7"){
         capaGentri7 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2001_f/FeatureServer",
-            outFields: ["NOMBRE","T_PE_25_B","T_PE_EG_B","T_PE_ES_B","P_POBR_B","DESC_FEN"],
-            popupTemplate:popUp8,
             opacity: 0.9
         });
         capaGentri8 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2010_f/FeatureServer",
-            outFields: ["NOMBRE","T_PE_25_B","T_PE_EG_B","T_PE_ES_B","P_POBR_B","DESC_FEN"],
-            popupTemplate:popUp8,
             opacity: 0.9
         });
 
