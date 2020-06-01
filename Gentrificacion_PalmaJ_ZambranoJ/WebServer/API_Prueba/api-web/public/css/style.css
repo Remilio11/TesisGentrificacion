@@ -180,5 +180,17 @@
         margin-right:35px;
     }
 }
+canvas{
+    width: 400px;
+    height:300px;
+}
+.chart-container {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #D0D4DC;
+    box-shadow: 3px 3px 2px 4px #888888;
+    border-radius: 5px;
+}
 /* end of navbar */
 
