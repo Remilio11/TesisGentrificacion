@@ -18,20 +18,17 @@ let graficaResumen
 require([
     "esri/Map",
     "esri/views/MapView",
-    "esri/PopupTemplate",
     "esri/layers/FeatureLayer",
-    "esri/widgets/Popup",
     "esri/tasks/support/Query",
     "esri/widgets/Legend",
     "esri/widgets/Swipe",
     "esri/views/ui/DefaultUI",
-    "esri/layers/MapImageLayer",
     "esri/tasks/QueryTask",
     "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js",
     "dojo/domReady!"
 
 ],
-    function(Map, MapView,PopupTemplate,FeatureLayer,Popup,Query,MapImageLayer,Legend,QueryTask,Swipe, Chart) {
+    function(Map, MapView,FeatureLayer,Query,Legend,Swipe,QueryTask ,Chart) {
     FeatureLayerRico = FeatureLayer;
     SwipeRico = Swipe;
     Leyenda = Legend;
@@ -127,7 +124,6 @@ function cambioCapa(arreglo) {
 
 
         mapa.add(capaInicial);
-        mapa.add(capaResultados2010);
         var query = new QueryR();
 
         query.returnGeometry = true;
@@ -140,11 +136,13 @@ function cambioCapa(arreglo) {
             query.geometry = e.mapPoint;
             capaResultados2010.queryFeatures(query).then((results) =>{
 
-                        setContentInfo(results.features[0].attributes);
+                    setContentInfo(results.features[0].attributes);
 
                 }
             );
         });
+        mapa.add(capaResultados2010);
+
         vista.ui.add(legend,"bottom-right");
 
 
