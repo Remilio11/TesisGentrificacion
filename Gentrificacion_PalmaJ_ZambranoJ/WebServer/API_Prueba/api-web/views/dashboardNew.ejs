@@ -30,11 +30,13 @@
 
 
     <style>
-        html, body, #viewDiv {
+        html,
+        body, #viewDiv {
             padding: 0;
             margin:0;
             height: 100%;
             width: 100%;
+            position:absolute;
         }
     </style>
 
@@ -42,7 +44,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #404040">
 <!--sidebar -->
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -67,15 +69,14 @@
     <div id="main" style="background: #1A1A1D ">
         <div class="row" style="background: #1A1A1D">
             <div id="btn" class="col-sm-10 col-6">
-                <button class="openbtn btn-sm"  onclick="openNav()" >
+                <button class="openbtn btn-sm" onclick="openNav()">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
             <div class="col-sm-2 col-6" align="right">
-
-                <div class="col-sm-6 navbar-brand" style="color: #eeeeee; font-size: 20px; float:right">
-
-                    <img src="/images/logo-epn.png" alt="Logo" style="height: 50px; margin-bottom: -10px; margin-top: -10px">
+                <div class="col-sm-6 navbar-brand" style="color: #eeeeee; font-size: 20px; float:right;">
+                    <img src="/images/logo-epn.png" alt="Logo"
+                         style="height: 50px; margin-bottom: -10px; margin-top: -10px">
                 </div>
 
             </div>
@@ -86,16 +87,16 @@
 
 <!--DASHBOARD----->
 
-<div id="content2" class="row" style="margin-top: 75px">
+<div id="content2" class="row" style="margin-top: 75px; height: 650px;">
 
     <!-- MAP -->
-    <div class="col-sm-9" style="height: 500px">
+    <div class="col-sm-9">
             <div id="viewDiv"></div>
     </div>
     <!-- end MAP -->
 
     <!-- LAYER SELECTOR -->
-    <div class="col-sm-3 dashImage" >
+    <div class="col-sm-3 dashImage" style="width: 100%">
 
         <h2 style="margin-top: 5%; text-align: center; justify-self: center">Selector de Capas</h2>
 
@@ -148,10 +149,10 @@
 
 </div>
 
-<div id="content3" class="row">
-    <div class="col-sm-6" >
+<div id="content3" class="row" style="background-color:#404040;display: none ">
+    <div class="col-sm-12" >
         <div class="chart-container">
-            <canvas id="grafico1" >
+            <canvas id="grafico1" style="height: 500px" >
 
 
             </canvas>
@@ -159,18 +160,73 @@
         </div>
 
     </div>
+
+</div>
+<div id="content4" class="row" style="background-color:#404040; margin-top:30px;display: none ">
+    <div class="col-sm-6" >
+        <div class="chart-container">
+            <canvas id="grafico2" style="margin-bottom: 10px">
+
+
+            </canvas>
+
+        </div>
+
+    </div>
+    <div class="col-sm-6" >
+        <div class="chart-container">
+            <canvas id="grafico3" style="margin-bottom: 10px" >
+
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="content5" class="row" style="background-color:#404040; margin-top:30px; display: none ">
+    <div class="col-sm-6" >
+        <div class="chart-container" >
+            <canvas id="grafico4"  style="margin-bottom: 10px">
+
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+    <div class="col-sm-6" >
+        <div class="chart-container">
+            <canvas id="grafico5"  style="margin-bottom: 10px">
+
+
+            </canvas>
+
+        </div>
+
+    </div>
+
 </div>
 <!-- end DASHBOARD -->
+<section>
+    <!-- Footer -->
+    <footer id="footer1" class="font-small" style="background-color: #265077; bottom: 0px; display: none;">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="color: white; font-weight: bold">
+            2020 - Escuela Politécnica Nacional
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+</section>
+<!-- Footer -->
 
 
 
-<!-- Footer
-<footer class="page-footer font-small" style="background-color: #265077">
-<div class="footer-copyright text-center py-3" style="color: white; font-weight: bold">
-    2020 - Escuela Politécnica Nacional
-</div>
-</footer>
-Footer -->
+
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -180,6 +236,9 @@ Footer -->
 <script src="/js/mapFunctions.js"></script>
 <script src="/js/selectorBox.js"></script>
 <script src="/js/CollapsibleSelector.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 <script >
     function openNav() {
@@ -202,3 +261,4 @@ Footer -->
 
 
 </body>
+
