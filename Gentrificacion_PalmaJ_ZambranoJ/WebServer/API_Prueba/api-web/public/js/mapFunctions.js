@@ -13,6 +13,8 @@ var FeatureLayerRico;
 //PopUps
 var popUp1;
 var popUp2;
+var evento;
+var myBarChart,myPieChart,myDonutChart, myPieChart1, myDonutChart1
 //variables que cambian de acuerdo a la seleccion
 let graficaResumen
 require([
@@ -54,12 +56,12 @@ require([
         center: [-78.5155452, -0.2220584], // longitude, latitude
         zoom: 15,
         popup: {
-            dockEnabled: true,
+
             visible: false,
             dockOptions: {
                 buttonEnabled: true,
-                breakpoint: false,
-                position: "auto"
+                breakpoint: false
+
             }
         }
     });
@@ -84,6 +86,7 @@ require([
 
 //******** LLAMADA A NUEVAS CAPAS ***********
 function cambioCapa(arreglo) {
+
     vista.ui.remove(swipe1);
     vista.ui.remove(swipe2);
     vista.ui.remove(swipe3);
@@ -97,6 +100,7 @@ function cambioCapa(arreglo) {
     vista.ui.remove(legend7);
     vista.ui.remove(legend8);
     vista.ui.remove(legend9);
+
     mapa.removeAll();
 
     console.log("recibi mi arreglo "+ arreglo);
@@ -124,26 +128,13 @@ function cambioCapa(arreglo) {
 
 
         mapa.add(capaInicial);
-        var query = new QueryR();
 
-        query.returnGeometry = true;
-        query.outFields = ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S"];
-        query.where = "1=1";
-        query.num = 50;
 
-        // On view click, query the feature layer and pass the results to setContentInfo function.
-        vista.on("click", (e) => {
-            query.geometry = e.mapPoint;
-            capaResultados2010.queryFeatures(query).then((results) =>{
-
-                    setContentInfo(results.features[0].attributes);
-
-                }
-            );
-        });
         mapa.add(capaResultados2010);
 
         vista.ui.add(legend,"bottom-right");
+
+        alistar(capaResultados2010);
 
 
 
@@ -171,8 +162,11 @@ function cambioCapa(arreglo) {
         });
 
         mapa.add(capaInicial);
+
         mapa.add(capaResultados2001);
         vista.ui.add(legend,"bottom-right");
+        alistar(capaResultados2001);
+
 
     }
     else if (arreglo == "3"){
@@ -198,8 +192,12 @@ function cambioCapa(arreglo) {
         });
 
         mapa.add(capaInicial);
+
         mapa.add(capaResultados1990);
         vista.ui.add(legend,"bottom-right");
+
+        alistar(capaResultados1990);
+
     }
     else if (arreglo == "4"){
         capaGentri1 = new FeatureLayerRico({
@@ -244,7 +242,8 @@ function cambioCapa(arreglo) {
        vista.ui.remove(legend);
        vista.ui.add(legend3,"bottom-right");
        vista.ui.add(legend2,"bottom-left");
-       vista.ui.add(swipe1)
+       vista.ui.add(swipe1);
+        esconderDivs();
 
     }
     else if (arreglo == "5"){
@@ -290,7 +289,8 @@ function cambioCapa(arreglo) {
         vista.ui.remove(legend);
         vista.ui.add(legend4,"bottom-left");
         vista.ui.add(legend5,"bottom-right");
-        vista.ui.add(swipe2)
+        vista.ui.add(swipe2);
+        esconderDivs();
     }
     else if(arreglo == "6"){
         capaGentri5 = new FeatureLayerRico({
@@ -335,7 +335,8 @@ function cambioCapa(arreglo) {
         vista.ui.remove(legend);
         vista.ui.add(legend6,"bottom-left");
         vista.ui.add(legend7,"bottom-right");
-        vista.ui.add(swipe3)
+        vista.ui.add(swipe3);
+        esconderDivs();
     }
     else if(arreglo == "7"){
         capaGentri7 = new FeatureLayerRico({
@@ -380,11 +381,17 @@ function cambioCapa(arreglo) {
         vista.ui.remove(legend);
         vista.ui.add(legend8,"bottom-left");
         vista.ui.add(legend9,"bottom-right");
-        vista.ui.add(swipe4)
+        vista.ui.add(swipe4);
+
     }
 
-    function setContentInfo(results){
+    function crearGraficoBarras(resultados){
         // Create a new canvas element, this is where the graph will be placed.
+        if(myBarChart){
+            myBarChart.clear();
+            myBarChart.destroy();
+
+        }
         var canvas = document.getElementById('grafico1');
 
 
@@ -392,37 +399,55 @@ function cambioCapa(arreglo) {
         var data = {
             datasets:[{
                 label:'Total',
-                data: [results.T_VI_S, results.T_PE_S, results.T_GENT_S, results.T_PE_25_S,results.T_PE_ES_S,
-                    results.T_PE_EM_S, results.T_PE_SE_S,results.T_PE_EG_S],
-                backgroundColor: ["#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4","#4286f4"]
+                data: [resultados.T_VI_S, resultados.T_PE_S, resultados.T_GENT_S, resultados.T_PE_25_S,resultados.T_PE_ES_S,
+                    resultados.T_PE_EM_S,resultados.T_PE_EG_S,resultados.PROM_POBR],
+                backgroundColor: ["#066F6C","#0AB87E","#C5DA0B","#F54245","#AA97A6","#6E3091","#BF7140","#14183D"],
+                borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+                borderWidth: [1,1,1,1,1,1,1,1]
             }],
 
             labels:[
-                "VIV","PERS","PER_GENT","PER_MAY_25","PERS_ES","PERS_EMP","PERS_SE","PERS_EG"
+                "Vivienda","Personas","Personas Gentrificables","Personas > 25 años","Personas con Educación Superior","Personas con empleo","Personas con empleo gerencial","Total Pobreza"
 
-            ]
+            ], fontColor:"#fff", borderWidth:2
         };
 
         // Create a new Chart and hook it to the canvas and then return the canvas.
-        var myPieChart = new Chart(canvas,{
+
+
+        myBarChart = new Chart(canvas,{
             type: 'bar',
             data: data,
             options: {
+                legend: {
+                    labels: {
+                        fontColor: "white",
+                        fontSize: 16,
+                        borderColor: "white",
+                        borderWidth: 6
+                    }},
                 responsive:true,
-                maintainAspectRatio:true,
-                title: {display:true,text:'Información Censal por Sector',fontSize:18},
+                maintainAspectRatio:false,
+                title: {display:true,text:'Información Censal por Sector',fontSize:18,fontColor:"#fff"},
                 scaleShowValues: true,
                 scales: {
                     yAxes: [{
+                        gridLines: {color:"white"},
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            fontColor: "white",
+
                         }
                     }],
                     xAxes: [{
+
                         display:true,
                         fontSize:8,
+                        gridLines: {color:"white"},
                         ticks: {
-                            autoSkip: false
+                            autoSkip: false,
+                            fontColor: "white",
+
                         }
                     }]
                 }
@@ -432,8 +457,226 @@ function cambioCapa(arreglo) {
 
         return canvas;
     }
+    function crearGraficoPie(results){
+        // Create a new canvas element, this is where the graph will be placed.
+
+        var canvas = document.getElementById('grafico2');
+        canvas.style.visibility='visible';
+        // Create a data object, this will include the data from the feature layer and other information like color or labels.
+        var data = {
+            datasets:[{
+                label:'Total',
+                data: [((results.T_PE_EM_S/results.T_PE_S)*100).toFixed(2),(((results.T_PE_S-results.T_PE_EM_S)/results.T_PE_S)*100).toFixed(2)],
+                backgroundColor: ["#145251","#0b182d"]
+            }],
+
+            labels:[
+               "% Personas con empleo ","% Personas sin empleo"
+
+            ]
+        };
+
+        // Create a new Chart and hook it to the canvas and then return the canvas.
+        if(myPieChart){
+            myPieChart.destroy();
+        }
+
+        myPieChart = new Chart(canvas,{
+            type: 'pie',
+            data: data,
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: "white",
+                        fontSize: 16
+
+                    }},
+
+                responsive:true,
+                maintainAspectRatio:true,
+                title: {display:true,text:'Condición laboral del sector',fontSize:18,fontColor:"#fff"},
+                scaleShowValues: false
+            }
+
+        });
+
+        return canvas;
+    }
+
+    function crearGraficoDona(results){
+        // Create a new canvas element, this is where the graph will be placed.
+
+        var canvas = document.getElementById('grafico3');
+        canvas.style.visibility='visible';
+        // Create a data object, this will include the data from the feature layer and other information like color or labels.
+        var data = {
+            datasets:[{
+                label:'Total',
+                data: [((results.T_PE_EG_S/results.T_PE_EM_S)*100).toFixed(2),(((results.T_PE_EM_S-results.T_PE_EG_S)/results.T_PE_EM_S)*100).toFixed(2)],
+                backgroundColor: ["#0c6a6a","#d0d317"]
+            }],
+
+            labels:[
+                "% Personas con empleo T/G/ADM","% Personas con otro tipo de empleo"
+
+            ]
+        };
+
+        // Create a new Chart and hook it to the canvas and then return the canvas.
+        if(myDonutChart){
+            myDonutChart.destroy();
+        }
+
+        myDonutChart = new Chart(canvas,{
+            type: 'doughnut',
+            data: data,
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: "white",
+                        fontSize: 16
+
+                    }},
+
+                responsive:true,
+                maintainAspectRatio:true,
+                title: {display:true,text:'Condición de tipos de empleo del sector',fontSize:18,fontColor:"#fff"},
+                scaleShowValues: false
+            }
+
+        });
+
+        return canvas;
+    }
+
+    function crearGraficoPie1(results){
+        // Create a new canvas element, this is where the graph will be placed.
+
+        var canvas = document.getElementById('grafico4');
+        canvas.style.visibility='visible';
+        // Create a data object, this will include the data from the feature layer and other information like color or labels.
+        var data = {
+            datasets:[{
+                label:'Total',
+                data: [((results.T_PE_ES_S/results.T_PE_S)*100).toFixed(2),(((results.T_PE_S-results.T_PE_ES_S)/results.T_PE_S)*100).toFixed(2)],
+                backgroundColor: ["#f49b2f","#5c0548"]
+            }],
+
+            labels:[
+                "% Personas con Educación Superior","% Personas sin Educación Superior"
+
+            ]
+        };
+
+        // Create a new Chart and hook it to the canvas and then return the canvas.
+        if(myPieChart1){
+            myPieChart1.destroy();
+        }
+
+        myPieChart1 = new Chart(canvas,{
+            type: 'pie',
+            data: data,
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: "white",
+                        fontSize: 16
+
+                    }},
+
+                responsive:true,
+                maintainAspectRatio:true,
+                title: {display:true,text:'Escolaridad por sector',fontSize:18,fontColor:"#fff"},
+                scaleShowValues: false
+            }
+
+        });
+
+        return canvas;
+    }
+
+    function crearGraficoDona1(results){
+        // Create a new canvas element, this is where the graph will be placed.
+
+        var canvas = document.getElementById('grafico5');
+        canvas.style.visibility='visible';
+        // Create a data object, this will include the data from the feature layer and other information like color or labels.
+        var data = {
+            datasets:[{
+                label:'Total',
+                data: [((results.T_PE_25_S/results.T_PE_S)*100).toFixed(2),(((results.T_PE_S-results.T_PE_25_S)/results.T_PE_S)*100).toFixed(2)],
+                backgroundColor: ["#077683","#f69e51"]
+            }],
+
+            labels:[
+                "% Personas mayores a 25 años","% Personas menores a 25 años"
+
+            ]
+        };
+
+        // Create a new Chart and hook it to the canvas and then return the canvas.
+        if(myDonutChart1){
+            myDonutChart1.destroy();
+        }
+
+        myDonutChart1 = new Chart(canvas,{
+            type: 'doughnut',
+            data: data,
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: "white",
+                        fontSize: 16
+
+                    }},
+
+                responsive:true,
+                maintainAspectRatio:true,
+                title: {display:true,text:'Condición de tipos de empleo del sector',fontSize:18,fontColor:"#fff"},
+                scaleShowValues: false
+            }
+
+        });
+
+        return canvas;
+    }
+    function mostrarDivs(){
+        document.getElementById("content3").style.display = "flex";
+        document.getElementById("content4").style.display = "flex";
+        document.getElementById("content5").style.display = "flex";
+        document.getElementById("footer1").style.display = "block";
+    }
+
+    function alistar(capa){
+        if(evento){
+            evento.remove();
+        }
+        //vista.refresh()
+        var query = new QueryR();
+        query.outFields = ["T_VI_S","T_PE_S","T_GENT_S","T_PE_25_S","T_PE_ES_S","T_PE_EM_S","T_PE_SE_S","T_PE_EG_S","PROM_POBR"];
+        query.where = "1=1";
+        query.num = 50;
+
+        // On view click, query the feature layer and pass the results to crearGraficoBarras function.
+
+         evento=vista.on("click", (e) => {
+            query.geometry = e.mapPoint;
 
 
+            capa.queryFeatures(query).then((results) =>{
+                    mostrarDivs();
+                    crearGraficoBarras(results.features[0].attributes);
+                    crearGraficoPie(results.features[0].attributes);
+                    crearGraficoDona(results.features[0].attributes);
+                    crearGraficoPie1(results.features[0].attributes);
+                    crearGraficoDona1(results.features[0].attributes);
+                }
+            );
+
+        });
+
+
+    }
 }
 
 
