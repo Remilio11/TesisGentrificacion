@@ -183,7 +183,7 @@
 }
 canvas{
     width: 400px;
-    height:300px;
+    height:400px;
     font-color:white;
     border-width: 2px;
     border-color: white;
@@ -200,6 +200,26 @@ canvas{
     border-style: solid;
     border-width: 2px;
     border-color: white;
+    height:400px;
+
+
+
+
+}
+
+.chart-container2 {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #404040;
+    font-color:white;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    height:500px;
+
 
 
 
