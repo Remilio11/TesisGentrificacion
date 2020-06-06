@@ -652,7 +652,7 @@ function cambioCapa(arreglo) {
 
                 responsive:true,
                 maintainAspectRatio:true,
-                title: {display:true,text:'Condición de tipos de empleo del sector',fontSize:18,fontColor:"#fff"},
+                title: {display:true,text:'Condición de edad por sector',fontSize:18,fontColor:"#fff"},
                 scaleShowValues: false
             }
 
@@ -774,20 +774,20 @@ function cambioCapa(arreglo) {
         var data = {
             datasets:[{
                 label:'Total '+anio1,
-                data:[resultados.T_PE_25_B.toFixed(2),resultados.P_POBR_B.toFixed(2),resultados.T_PE_GE_B.toFixed(2),resultados.T_PE_EM_B.toFixed(2),resultados.T_PE_EG_B.toFixed(2),resultados.T_PE_ES_B.toFixed(2)],
+                data:[resultados.T_PE_25_B,resultados.P_POBR_B,resultados.T_PE_GE_B,resultados.T_PE_EM_B,resultados.T_PE_EG_B,resultados.T_PE_ES_B],
                 backgroundColor: ["#066F6C","#066F6C","#066F6C","#066F6C","#066F6C","#066F6C"],
                 borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
                 borderWidth: [1,1,1,1,1,1]
             },{
                 label:'Total '+anio2,
-                data:[resultados1.T_PE_25_B.toFixed(2),resultados1.P_POBR_B.toFixed(2),resultados1.T_PE_GE_B.toFixed(2),resultados1.T_PE_EM_B.toFixed(2),resultados1.T_PE_EG_B.toFixed(2),resultados1.T_PE_ES_B.toFixed(2)],
+                data:[resultados1.T_PE_25_B,resultados1.P_POBR_B,resultados1.T_PE_GE_B,resultados1.T_PE_EM_B,resultados1.T_PE_EG_B,resultados1.T_PE_ES_B],
                 backgroundColor: ["#f3b309","#f3b309","#f3b309","#f3b309","#f3b309","#f3b309"],
                 borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
                 borderWidth: [1,1,1,1,1,1]
             }],
 
             labels:[
-                "Personas > 25 años","Cambio de Viviendas","Personas Gentrificables","Personas con empleo","Personas con empleo gerencial","Personas con Educación Superior"
+                "Personas > 25 años","Cambio de Viviendas","Personas Gentrificables","Personas con Empleo","Personas con Empleo G-T-ADM","Personas con Educación Superior"
 
             ], fontColor:"#fff", borderWidth:2
         };
@@ -844,6 +844,7 @@ function cambioCapa(arreglo) {
     }
 
     function alistarGentrificacionSectores(capa,capa1,anio1,anio2) {
+        console.log("entre alistar")
         if (evento) {
             evento.remove();
         }
@@ -879,6 +880,7 @@ function cambioCapa(arreglo) {
 
 
         });
+
     }
 
     function crearGraficoDobleBarraSectores(resultados,resultados1,anio1,anio2){
@@ -892,22 +894,23 @@ function cambioCapa(arreglo) {
             datasets:[ {
                 label:'Total '+anio1,
                 data:[resultados.T_PE_25_S,resultados.T_PE_ES_S,resultados.T_PE_GE_S,resultados.T_PE_EM_S,resultados.T_PE_EG_S,resultados.PROM_POBR],
-                backgroundColor: ["#066F6C","#066F6C","#066F6C","#066F6C","#066F6C","#066F6C","#066F6C"],
-                borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
-                borderWidth: [1,1,1,1,1,1,1]
+                backgroundColor: ["#066F6C","#066F6C","#066F6C","#066F6C","#066F6C","#066F6C"],
+                borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+                borderWidth: [1,1,1,1,1,1]
             },{
                 label:'Total '+anio2,
                 data:[resultados1.T_PE_25_S,resultados1.T_PE_ES_S,resultados1.T_PE_GE_S,resultados1.T_PE_EM_S,resultados1.T_PE_EG_S,resultados1.PROM_POBR],
-                backgroundColor: ["#f3b309","#f3b309","#f3b309","#f3b309","#f3b309","#f3b309","#f3b309"],
-                borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
-                borderWidth: [1,1,1,1,1,1,1]
+                backgroundColor: ["#f3b309","#f3b309","#f3b309","#f3b309","#f3b309","#f3b309"],
+                borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+                borderWidth: [1,1,1,1,1,1]
             }],
 
             labels:[
-                "Personas > 25 años","Personas con Educacion Superior","Personas Gentrificables","Personas con Empleo","Personas con Empleo G-T-ADM","Cambio Viviendas"
+                "Personas > 25 años","Personas con Educación Superior","Personas Gentrificables","Personas con Empleo","Personas con G-T-ADM","Cambio Viviendas"
 
             ], fontColor:"#fff", borderWidth:2
         }
+        console.log("HICE GRAFICO");
         console.log(data);
 
         // Create a new Chart and hook it to the canvas and then return the canvas.
@@ -957,6 +960,7 @@ function cambioCapa(arreglo) {
             }
 
         });
+        console.log("HICE GRAFICO");
 
         return canvas;
     }
@@ -1179,4 +1183,3 @@ function cambioCapa(arreglo) {
 
 
 }
-
