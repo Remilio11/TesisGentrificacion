@@ -30,7 +30,7 @@
                         class="fas fa-home text-light fa-lg mr-3"></i>Inicio</a></li>
         <li class="nav-item"><a href="../api/dashboardNew" class="nav-link text-white p-3 mb-2 sidebar-link"><i
                         class="fas fa-table text-light fa-lg mr-3"></i>Mapa</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i
+        <li class="nav-item"><a href="../api/report" class="nav-link text-white p-3 mb-2 current"><i
                         class="fas fa-chart-bar text-light fa-lg mr-3"></i>Reportes</a></li>
         <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i
                         class="fas fa-file-alt text-light fa-lg mr-3"></i>Documentación</a></li>
@@ -62,9 +62,143 @@
 </section>
 <!-- end navbar -->
 
-<section>
+<!--DASHBOARD----->
 
-</section>
+<div id="content2" class="row" style="margin-top: 75px; height: 650px;">
+
+    <!-- MAP -->
+    <div id="mapa"  class="col-sm-9">
+        <div id="viewDiv"></div>
+    </div>
+    <!-- end MAP -->
+
+    <!-- LAYER SELECTOR -->
+    <div id="selector" class="col-sm-3 dashImage" style="width: 100%">
+
+        <h2 style="margin-top: 5%; text-align: center; justify-self: center">Selector de Capas</h2>
+
+        <button type="button" class="collapsible" style="border-radius: 10px 10px 0px 0px" >Resultados Censo</button>
+        <div class="content" onclick="obtenerValor()">
+            <label class="container">Resultados Análisis 2010
+                <input id="1" type="radio"  name="radio" value="1">
+                <span class="checkmark" ></span>
+
+            </label>
+            <label class="container">Resultados Análisis 2001
+                <input type="radio" name="radio" value="2">
+                <span class="checkmark"> </span>
+            </label>
+            <label class="container">Resultados Análisis 1990
+                <input type="radio" name="radio" value="3">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <button type="button" class="collapsible" >Gentrificación - Sectores</button>
+        <div class="content" onclick="obtenerValor()">
+            <label class="container">Gentrificación 1990-2001
+                <input id="1" type="radio"  name="radio" value="4">
+                <span class="checkmark" ></span>
+
+            </label>
+            <label class="container">Gentrificación 2001-2010
+                <input type="radio" name="radio" value="5">
+                <span class="checkmark"></span>
+            </label>
+
+        </div>
+
+        <button type="button" class="collapsible" style="border-radius: 0px 0px 10px 10px">Gentrificación - Barrios</button>
+        <div class="content" onclick="obtenerValor()">
+            <label class="container">Gentrificación 1990-2001
+                <input id="1" type="radio"  name="radio" value="6">
+                <span class="checkmark" ></span>
+
+            </label>
+            <label class="container">Gentrificación 2001-2010
+                <input type="radio" name="radio" value="7">
+                <span class="checkmark"></span>
+            </label>
+
+        </div>
+
+
+        <div> <button id="conv" type="button"  style="border-radius: 0px 0px 10px 10px" onclick="imprimirPDF1()">CREAR PDF</button></div>
+
+
+    </div>
+
+    <!-- end LAYER SELECTOR -->
+
+</div>
+
+<div id="print">
+    <div id="content3" class="row" style="background-color:#404040;display: none ">
+        <div class="col-sm-12" >
+            <div class="chart-container2">
+                <canvas id="grafico1" style="height: 600px!important" >
+
+                </canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="content4" class="row" style="background-color:#404040; margin-top:30px;display: flex ">
+        <div id="imprimir" class="col-sm-6" >
+            <div id="chart1" class="chart-container">
+
+                <canvas id="grafico2" style="margin-bottom: 10px">
+
+
+
+
+                </canvas>
+
+
+
+
+            </div>
+
+        </div>
+        <div class="col-sm-6" >
+            <div class="chart-container">
+                <div id="grafico3" style="margin-bottom: 10px; color:black" >
+
+                    1HOLA MUNDO hola mundoaasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="content5" class="row" style="background-color:#404040; margin-top:30px; display: flex ;align-items: center">
+        <div class="col-sm-6" >
+            <div class="chart-container" >
+                <div id="grafico4"  style="margin-bottom: 10px">
+                    2HOLA MUNDO hola mundoaasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-6" style="justify-content:center">
+            <div class="chart-container" style="height:200px ; width:250px;justify-content: center;margin:0 auto">
+                <canvas id="grafico5"  style=" height: 150px;width:150px; justify-content:center;margin:0 auto">
+
+
+                </canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
 
 <section>
     <!-- Footer -->
@@ -90,7 +224,9 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+<script src="/js/selectorBox.js"></script>
+<script src="/js/CollapsibleSelector.js"></script>
+<script src="/js/reportFunction.js"></script>
 
 <script>
     function openNav() {
@@ -118,6 +254,62 @@
 
 <script>
     AOS.init();
+</script>
+
+<script>
+    function imprimirPDF() {
+        var w = document.body.offsetWidth;
+        var h = document.body.offsetHeight;
+        html2canvas(document.body,{ letterRendering: 1, allowTaint: true, useCORS: true,
+            dpi: 300, // Set to 300 DPI
+            scale: 4, // Adjusts your resolution
+            onrendered:function(canvas){
+                var img = canvas.toDataURL("image/jpeg", 1);
+                var doc = new jsPDF('L', 'px', [w, h]);
+                doc.addImage(img, 'JPEG', 0, 0, w, h);
+                doc.save('sample-file.pdf');
+            }
+        });
+    }
+
+    function imprimirPDF1() {
+        console.log('entre print');
+        html2canvas(document.getElementById("grafico3"), {
+            useCORS: true,
+            allowTaint:true,
+            logging:true,
+            onrendered: function(canvas) {
+                canvasx=canvas.toDataURL("image/png")
+                html2canvas(document.getElementById("grafico4"), {
+                    useCORS: true,
+                    allowTaint:true,
+                    logging:true,
+                    onrendered: function(canvas6) {
+
+                        console.log("ccccccc");
+                        console.log(canvasx)
+                        var ctx = canvas2.getContext('2d')
+
+                        canvas2.setAttribute('style', "justify-content=center");
+
+
+                        ctx.fillStyle = '#000'
+                        ctx.font = '15px sans-serif'
+                        ctx.textAlign = "left";
+
+
+                        printJS({printable:[canvas1.toDataURL("image/png"),canvas.toDataURL("image/png"),canvas2.toDataURL("image/png"),canvas2.toDataURL("image/png")],type:'image',style:'justify-content: center'});
+
+                    }
+                });
+            }
+        });
+
+    }
+
+    function convertirdiv(canvasx){
+
+    }
 </script>
 
 </body>
