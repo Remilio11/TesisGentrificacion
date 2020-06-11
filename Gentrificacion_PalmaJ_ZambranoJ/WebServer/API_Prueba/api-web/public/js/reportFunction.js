@@ -20,9 +20,15 @@ var popUp2;
 var evento;
 var json1, json2;
 var myBarChart, myPieChart, myDonutChart, myPieChart1, myDonutChart1, myDoubleBarChart, myDoubleBarChart1,
+<<<<<<< HEAD
     myDoubleBarChart2, myDoubleBarChart3, myDoubleBarChart4;
 //variables que cambian de acuerdo a la seleccion
 var canvas1,canvas2,canvas3,canvas4;
+=======
+    myDoubleBarChart2, myDoubleBarChart3, myDoubleBarChart4,canvasMapa,nombreBarrio;
+//variables que cambian de acuerdo a la seleccion
+var canvas1,canvas2,canvas3,canvas4,estadoGent1,estadoGent2;
+>>>>>>> DesarrolloJZ
 require([
         "esri/Map",
         "esri/views/MapView",
@@ -45,11 +51,26 @@ require([
         const map = new Map({
             basemap: "streets"
         });
+<<<<<<< HEAD
 
 
         capaInicial = new FeatureLayer({
             url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer",
             opacity: 1.0
+=======
+        popUp1={
+            "title": "BARRIO",
+            "content": function () {
+                return "Nombre: {NOMBRE}";
+            }
+        }
+
+        capaInicial = new FeatureLayer({
+            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer",
+            opacity: 1.0,
+            outFields:['NOMBRE'],
+            popupTemplate:popUp1
+>>>>>>> DesarrolloJZ
 
         });
 
@@ -86,6 +107,35 @@ require([
         });
 
         view.ui.add(legend, "bottom-right");
+<<<<<<< HEAD
+=======
+        if (evento) {
+            evento.remove();
+        }
+        var query = new QueryR();
+        query.outFields = ["BARRIO_ID"];
+        query.where = "1=1";
+        query.num = 50;
+
+        // On view click, query the feature layer and pass the results to crearGraficoBarras function.
+
+        evento = vista.on("click", (e) => {
+            query.geometry = e.mapPoint;
+
+
+            capaInicial.queryFeatures(query).then((results1) => {
+
+
+
+                }
+            );
+
+
+
+
+        });
+
+>>>>>>> DesarrolloJZ
 
 
     });
@@ -112,6 +162,7 @@ function cambioCapa(arreglo) {
     mapa.removeAll();
     destruirGraficos();
     console.log("recibi mi arreglo " + arreglo);
+<<<<<<< HEAD
     if (arreglo == "1") {
         popUp1 = {
             "title": "INFORMACIÓN DEL SECTOR",
@@ -305,6 +356,9 @@ function cambioCapa(arreglo) {
         vista.ui.add(swipe2);
         alistarGentrificacionSectores(capaGentri3, capaGentri4, "2001", "2010");
     } else if (arreglo == "6") {
+=======
+    if (arreglo == "6") {
+>>>>>>> DesarrolloJZ
         capaGentri5 = new FeatureLayerRico({
             url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_1990_f/FeatureServer",
             opacity: 0.9
@@ -342,12 +396,17 @@ function cambioCapa(arreglo) {
             ]
         });
 
+<<<<<<< HEAD
         mapa.add(capaGentri5);
         mapa.add(capaGentri6);
         vista.ui.remove(legend);
         vista.ui.add(legend6, "bottom-left");
         vista.ui.add(legend7, "bottom-right");
         vista.ui.add(swipe3);
+=======
+        mapa.add();
+        mapa.add(capaInicial);
+>>>>>>> DesarrolloJZ
         alistarGentrificacionBarrios(capaGentri5, capaGentri6, "1990", "2001");
     } else if (arreglo == "7") {
         capaGentri7 = new FeatureLayerRico({
@@ -387,12 +446,17 @@ function cambioCapa(arreglo) {
             ]
         });
 
+<<<<<<< HEAD
         mapa.add(capaGentri7);
         mapa.add(capaGentri8);
         vista.ui.remove(legend);
         vista.ui.add(legend8, "bottom-left");
         vista.ui.add(legend9, "bottom-right");
         vista.ui.add(swipe4);
+=======
+        mapa.add(capaInicial);
+
+>>>>>>> DesarrolloJZ
         alistarGentrificacionBarrios(capaGentri7, capaGentri8, "2001", "2010");
 
     }
@@ -606,7 +670,11 @@ function mostrarDivs1() {
 function mostrarDivs2() {
     document.getElementById("content4").style.display = "flex";
     document.getElementById("content5").style.display = "flex";
+<<<<<<< HEAD
 
+=======
+    document.getElementById("content3").style.display = "flex";
+>>>>>>> DesarrolloJZ
     document.getElementById("footer1").style.display = "block";
 }
 
@@ -648,8 +716,14 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
     if (evento) {
         evento.remove();
     }
+<<<<<<< HEAD
     var query = new QueryR();
     query.outFields = ["T_PE_25_B", "P_POBR_B", "T_PE_EG_B", "T_PE_ES_B", "T_PE_GE_B", "T_PE_EM_B"];
+=======
+    console.log('entre cargar 2')
+    var query = new QueryR();
+    query.outFields = ["BARRIO_ID","DESC_FEN","NOMBRE"];
+>>>>>>> DesarrolloJZ
     query.where = "1=1";
     query.num = 50;
 
@@ -657,6 +731,7 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
 
     evento = vista.on("click", (e) => {
         query.geometry = e.mapPoint;
+<<<<<<< HEAD
         capa.queryFeatures(query).then((results) => {
 
 
@@ -668,6 +743,29 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
                         canvas2=crearGraficoDoblePobrPGent(results.features[0].attributes, results1.features[0].attributes, anio1, anio2);
                         canvas3=crearGraficoDoblePobrPGent(results.features[0].attributes, results1.features[0].attributes, anio1, anio2);
                         // esconderDivs();
+=======
+
+
+
+
+
+        capaGentri5.queryFeatures(query).then((results1) => {
+                console.log('entre cargar 3')
+                capaGentri6.queryFeatures(query).then((results2) => {
+                        console.log('entre cargar 4');
+                        mostrarDivs2();
+                        canvasMapa=cargarMapa(results1.features[0].attributes)
+                        nombreBarrio=pasarNombre(results1.features[0].attributes);
+                        estadoGent1=pasarEstado1(results1.features[0].attributes);
+                        estadoGent2=pasarEstado2(results2.features[0].attributes);
+                        console.log('estadoGent1');
+                        console.log(estadoGent1);
+
+
+
+
+
+>>>>>>> DesarrolloJZ
 
                     }
                 );
@@ -676,6 +774,11 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
         );
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> DesarrolloJZ
     });
 
 
@@ -1240,3 +1343,55 @@ function tomaCaptura() {
         console.log(imageElement)
     });
 }
+<<<<<<< HEAD
+=======
+function cargarMapa(results){
+    console.log("entre cargar mapa");
+    console.log(results)
+    var mapa="../images/mapa/"+results.BARRIO_ID+".PNG";
+    console.log(mapa);
+    var canvas=document.getElementById('grafico1');
+    var chart=document.getElementById('chart1');
+    var ctx = canvas.getContext("2d");
+    var img = new Image();
+
+    console.log("imagen src");
+    console.log(img.src);
+    img.onload = function() {
+        canvas.height=img.height;
+        canvas.width=img.width;
+        chart.height=img.height;
+        chart.width=img.width;
+        // get the top left position of the image
+
+
+        ctx.drawImage(img, 0, 0,canvas.width,canvas.height);
+
+        ctx.beginPath();
+
+        ctx.stroke();
+    };
+    img.src=mapa;
+    return canvas;
+
+    //ctx.drawImage(img, 10, 10);
+
+
+
+
+
+}
+function pasarEstado1(resultados){
+    return resultados.DESC_FEN;
+
+}
+function pasarEstado2(resultados){
+    return resultados.DESC_FEN;
+
+}
+function pasarNombre(resultados){
+    return resultados.NOMBRE;
+
+}
+
+>>>>>>> DesarrolloJZ
