@@ -1,6 +1,6 @@
 function obtenerValor(){
     //esconderDivs();
-    var rdb = document.getElementsByName("radio");
+    var rdb = document.getElementsByName("periodo");
     for(var x=0;x<rdb.length;x++){
         if(rdb[x].checked){
             cambioCapa(rdb[x].value)
