@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/CollapsibleSelector.css">
     <link rel="stylesheet" href="/css/selectBox.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
 
 
 
@@ -40,6 +42,24 @@
             width: 100%;
             position:absolute;
         }
+        @media screen and (max-width: 500px) {
+
+            #viewDiv{
+                padding: 0;
+                margin:0;
+                height: 100%;
+                width: 100%;
+                position:absolute;
+            }
+            #mapa{
+                padding: 0;
+                margin:0;
+                height: 400px;
+                width: 400px;
+
+            }
+        }
+
     </style>
 
 
@@ -131,33 +151,33 @@
         <button type="button" class="collapsible" style="border-radius: 0px 0px 10px 10px" >Variables de Gentrificación</button>
         <div class="content">
             <label class="container">Todas
-                <input type="checkbox" name="check">
+                <input id="todas" type="checkbox" name="check">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Personas > 25 años
-                <input id="1" type="checkbox"  name="radio">
+                <input id="anios" id="1" type="checkbox"  name="radio">
                 <span class="checkmark" ></span>
 
             </label>
             <label class="container">Personas con Empleo
-                <input type="checkbox" name="radio">
+                <input id="empleo" type="checkbox" name="radio">
                 <span class="checkmark"> </span>
             </label>
             <label class="container">Personas con G-T-ADM
-                <input type="checkbox" name="radio">
+                <input id="empleog" type="checkbox" name="radio">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Personas Gentrificables
-                <input id="1" type="checkbox"  name="radio">
+                <input id="gentrificables" type="checkbox"  name="radio">
                 <span class="checkmark" ></span>
 
             </label>
             <label class="container">Personas con Educación Superior
-                <input type="checkbox" name="radio">
+                <input id="edusup" type="checkbox" name="radio">
                 <span class="checkmark"> </span>
             </label>
             <label class="container">Cambios de vivienda
-                <input type="checkbox" name="radio">
+                <input id="vivienda" type="checkbox" name="radio">
                 <span class="checkmark"></span>
             </label>
 
@@ -173,96 +193,137 @@
 
 <div id="print">
     <div id="header"style="background-color:white;">
-        <div class=h2 style="text-align: center;font-weight: bold">Reporte-Fenómeno de Gentrificación Centro Histórico de Quito</div>
-        <div id="periodo" class=h2 style="text-align: center; font-weight: bold; border-bottom: black solid">
+        <div  style="text-align: center;font-weight: bold; font-size: 50px">Reporte-Fenómeno de Gentrificación Centro Histórico de Quito</div>
+        <div id="periodo"  style="text-align: center; font-weight: bold; border-bottom: black solid;font-size: 50px">
 
         </div>
-        <div class="h3" style="font-weight: bold;border-bottom: black solid; color:#1c3454">Datos Generales</div>
+        <div class="h1" style="font-weight: bold;border-bottom: black solid; color:#1c3454;">Datos Generales</div>
         <br>
-        <div id="nombreBarrio" class="h4"></div>
-        <div id="fenomeno1" class="h4"></div>
-        <div id="fenomeno2" class="h4" style=""></div>
+        <div id="nombreBarrio" class="h2"></div>
+        <div id="fenomeno1" class="h2"></div>
+        <div id="fenomeno2" class="h2" style=""></div>
         <br>
-        <div class="h3" style="font-weight: bold ; color:#1c3454;border-bottom: black solid;border-top: black solid">Mapa</div>
-
+        <div class="h1" style="font-weight: bold ; color:#1c3454;border-bottom: black solid;border-top: black solid">Mapa</div>
+        <br>
     </div>
-        <div class="col-sm-12" >
-            <div id="chart1" class="chart-container2">
-                <canvas id="grafico1"  >
+    <div style="background-color: white">
+        <div id="chart1" class="chart-container2">
+            <canvas id="grafico1"  >
 
-                </canvas>
-
-            </div>
+            </canvas>
 
         </div>
 
     </div>
-    <div id="content3" class="row" style="background-color:#404040;display: none ">
-        <div class="col-sm-12" >
-            <div id="chart1" class="chart-container2">
-                <canvas id="grafico1"  >
 
-                </canvas>
+    <div id="grafico"style="background-color:white;">
+
+        <div class="h1" style="font-weight: bold ; color:#1c3454;border-bottom: black solid;border-top: black solid">Gráficos</div>
+        <br>
+    </div>
+    <div style="background-color: white">
+        <div id="chart1" class="chart-container" style="height: 800px">
+
+            <canvas id="grafico2" style="margin-bottom: 10px; height: 800px;">
+
+
+
+
+            </canvas>
+
+
+
+
+        </div>
+    </div>
+
+    <div id="textoGraficoBarra" class="h2" style="background-color:white; text-align: justify"></div>
+
+    <div style="background-color: white">
+        <div class="chart-container">
+            <canvas id="grafico3" style="margin-bottom: 10px; color:black" >
+
+
+            </canvas>
+
+
+        </div>
+
+    </div>
+
+    <div id="varAnios" class="h2" style="background-color:white; text-align: justify"></div>
+
+    <div style="background-color: white">
+        <div class="chart-container">
+            <canvas id="grafico4" style="margin-bottom: 10px; color:black" >
+
+
+            </canvas>
+
+
+        </div>
+
+    </div>
+    <div id="varEmp" class="h2" style="background-color:white; text-align: justify"></div>
+
+
+
+
+</div>
+<div id="content3" class="row" style="background-color:#404040;display: none ">
+    <div class="col-sm-12" >
+        <div id="chart1" class="chart-container2">
+            <canvas   >
+
+            </canvas>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="content4" class="row" style="background-color:#404040; margin-top:30px;display: flex ">
+    <div id="imprimir" class="col-sm-6" >
+
+
+    </div>
+    <div class="col-sm-6" >
+        <div class="chart-container">
+            <div id="asdf" style="margin-bottom: 10px; color:black" >
+
+                1HOLA MUNDO hola mundoaasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<div id="content5" class="row" style="background-color:#404040; margin-top:30px; display: flex ;align-items: center">
+    <div class="col-sm-6" >
+        <div class="chart-container" >
+            <div   style="margin-bottom: 10px">
+                2HOLA MUNDO hola mundoaasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
             </div>
 
         </div>
 
     </div>
-    <div id="content4" class="row" style="background-color:#404040; margin-top:30px;display: flex ">
-        <div id="imprimir" class="col-sm-6" >
-            <div id="chart1" class="chart-container">
 
-                <canvas id="grafico2" style="margin-bottom: 10px">
-
+    <div class="col-sm-6" style="justify-content:center">
+        <div class="chart-container" style="height:200px ; width:250px;justify-content: center;margin:0 auto">
+            <canvas id="grafico5"  style=" height: 150px;width:150px; justify-content:center;margin:0 auto">
 
 
-
-                </canvas>
-
-
-
-
-            </div>
-
-        </div>
-        <div class="col-sm-6" >
-            <div class="chart-container">
-                <div id="grafico3" style="margin-bottom: 10px; color:black" >
-
-                    1HOLA MUNDO hola mundoaasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                </div>
-
-
-            </div>
+            </canvas>
 
         </div>
 
     </div>
-    <div id="content5" class="row" style="background-color:#404040; margin-top:30px; display: flex ;align-items: center">
-        <div class="col-sm-6" >
-            <div class="chart-container" >
-                <div id="grafico4"  style="margin-bottom: 10px">
-                    2HOLA MUNDO hola mundoaasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-sm-6" style="justify-content:center">
-            <div class="chart-container" style="height:200px ; width:250px;justify-content: center;margin:0 auto">
-                <canvas id="grafico5"  style=" height: 150px;width:150px; justify-content:center;margin:0 auto">
-
-
-                </canvas>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 </div>
 
 <section>
@@ -332,11 +393,41 @@
             anio1='2001';
             anio2='2010';
         }
+        console.log('resultadosquery1');
+        console.log(resultadosquery1);
+
+        console.log('resultadosquery2');
+        console.log(resultadosquery2);
+        var variacionAnios=((resultadosquery2.T_PE_25_B-resultadosquery1.T_PE_25_B)/100).toFixed(2);
+        var variacionEmp=((resultadosquery2.T_PE_EM_B-resultadosquery1.T_PE_EM_B)/100).toFixed(2);
+        llenarGrafico(resultadosquery1,resultadosquery2);
+        canvasGraficoDobleBarra=crearGraficoDobleBarraReporte(resultadosquery1,resultadosquery2,anio1,anio2,datagrafico1,datagrafico2,backGroundColor1,backGroundColor2,bordercolorgrafico,borderwidthgraifoc,labelsgrafico);
+        canvasgraficoAniosReporte=crearGraficoDonaAnios(resultadosquery1,resultadosquery2,anio1,anio2);
+        canvasgraficoEmpReporte=crearGraficoDonaEmp(resultadosquery1,resultadosquery2,anio1,anio2);
         var arregloImprimir=[];
+        var textovariacionGraficoAnios= '';
+        var textoVarEmp='';
+        if(variacionAnios>=0){
+            textovariacionGraficoAnios= 'La variación muestra un crecimiento del ' +variacionAnios+ '% en la población mayor a 25 años, esto puede darse por distintos factores sociales, como el aumento de edad propio de la población así como la llegada de nuevos pobladores con esa edad.';
+        }else {
+            textovariacionGraficoAnios='La variación muestra un decrecimiento del '+ variacionAnios+ '% en la población mayor a 25 años, lo que se representa en factores como una mayor tasa de natalidad en el sector o nuevos núcleos familiares en los que hay mayor cantidad de población infantil y adolescente.'
+        }
+
+        if(variacionEmp>=0){
+            textoVarEmp= 'La variación muestra un crecimiento del '+variacionEmp+ ' en la cantidad de personas con empleo. Cabe recalcar que la condición de empleo no indica necesariamente un empleo propio o que sea dentro del Centro Histórico, por tanto esta estadística representa solamente la condición laboral de la persona.'
+        }else {
+            textoVarEmp= 'La variación muestra un decrecimiento del (%) en la cantidad de personas con empleo.Cabe recalcar que la condición de empleo no indica necesariamente un empleo propio o que sea dentro del Centro Histórico, por tanto esta estadística representa solamente la condición laboral de la persona. Cabe recalcar que en los últimos años del período censal existe el cambio de moneda en el Ecuador como un factor de desestabilización económica.'
+        }
+
+        var textovariacionGraficoAniosTodo= 'El gráfico muestra como ha variado la cantidad de personas con más de 25 años de edad en el período censal entre '+anio1+ ' y '+anio2+'. Los estadísticas obtenidas son a partir del Total de Personas que existen en el barrio y el Total de Personas que tienen edad igual o mayor a 25. '+textovariacionGraficoAnios;
+        var textovariacionGracioEmpleoTodo='El gráfico muestra la variación de la cantidad de Personas con Empleo existentes en el barrio durante el período censal de '+anio1+' y '+anio2+ '. Los datos obtenidos son a partir de las respuestas obtenidas en la pregunta "¿Qué hizo la semana pasada?". Esta variable permite identificar la actividad principal de sustento para el hogar que realiza la persona encuestada, identificando así su condición laboral.'+ textoVarEmp;
         document.getElementById('periodo').innerHTML = 'Período ' + periodo;
         document.getElementById('nombreBarrio').innerHTML = 'Nombre: ' + nombreBarrio;
         document.getElementById('fenomeno1').innerHTML = 'Estado Fenómeno ' + anio1+': '+estadoGent1;
         document.getElementById('fenomeno2').innerHTML = 'Estado Fenómeno ' + anio2+': '+estadoGent2;
+        document.getElementById('textoGraficoBarra').innerHTML = 'La figura de barras, presenta los totales de las variables de gentrificación ocurridas en el barrio '+nombreBarrio+'. Estos datos han sido obtenidos a partir del análisis de los censos de '+anio1+ ' y '+ anio2+'. El gráfico permite visualizar el aumento o decrecimiento de las variables que identifican al fenómeno de gentrificación dentro del período censal.';
+        document.getElementById('varAnios').innerHTML=textovariacionGraficoAniosTodo;
+        document.getElementById('varEmp').innerHTML=textovariacionGracioEmpleoTodo;
         console.log('entre print');
         html2canvas(document.getElementById("header"), {
             useCORS: true,
@@ -344,15 +435,91 @@
             logging:true,
             onrendered: function(canvas) {
 
+                html2canvas(document.getElementById("grafico"), {
+                    useCORS: true,
+                    allowTaint:true,
+                    logging:true,
+                    onrendered: function(canvas1) {
 
 
 
-                arregloImprimir.push(canvas.toDataURL("image/png"));
-                arregloImprimir.push(canvasMapa.toDataURL("image/png"));
-                console.log('arregloImprimir');
-                console.log(arregloImprimir);
-                console.log(canvasMapa.toDataURL("image/png"));
-                printJS({printable:arregloImprimir,type:'image',style:'justify-content: center',documentTitle:'Reporte'});
+
+
+                        html2canvas(document.getElementById("textoGraficoBarra"), {
+                            useCORS: true,
+                            allowTaint:true,
+                            logging:true,
+                            onrendered: function(canvas2) {
+
+
+
+
+
+
+
+                                html2canvas(document.getElementById("varAnios"), {
+                                    useCORS: true,
+                                    allowTaint:true,
+                                    logging:true,
+                                    onrendered: function(canvas3) {
+
+
+
+
+
+                                        html2canvas(document.getElementById("varEmp"), {
+                                            useCORS: true,
+                                            allowTaint:true,
+                                            logging:true,
+                                            onrendered: function(canvas4) {
+
+
+
+
+                                                arregloImprimir.push(canvas.toDataURL("image/png"));
+                                                arregloImprimir.push(canvasMapa.toDataURL("image/png"));
+                                                arregloImprimir.push(canvas1.toDataURL("image/png"));
+                                                arregloImprimir.push(canvasGraficoDobleBarra.toDataURL("image/png"));
+                                                arregloImprimir.push(canvas2.toDataURL("image/png"));
+                                                if(document.getElementById('anios').checked){
+                                                    arregloImprimir.push(canvasgraficoAniosReporte.toDataURL("image/png"));
+                                                    arregloImprimir.push(canvas3.toDataURL("image/png"));
+                                                }
+
+                                                if(document.getElementById('empleo').checked){
+                                                    arregloImprimir.push(canvasgraficoEmpReporte.toDataURL("image/png"));
+                                                    arregloImprimir.push(canvas4.toDataURL("image/png"));
+                                                }
+
+                                                console.log('arregloImprimir');
+                                                console.log(arregloImprimir);
+                                                console.log(canvasMapa.toDataURL("image/png"));
+                                                printJS({printable:arregloImprimir,type:'image',style:'justify-content: center',documentTitle:'Reporte'});
+
+
+
+
+
+                                            }
+                                        });
+
+
+
+                                    }
+                                });
+
+
+                            }
+                        });
+
+
+
+
+                    }
+                });
+
+
+
 
 
 
@@ -370,9 +537,6 @@
 
     }
 
-    function convertirdiv(canvasx){
-
-    }
 
 </script>
 

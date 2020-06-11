@@ -159,6 +159,13 @@
         font-size: 2em;
         color: #ffffff
     }
+    #viewDiv{
+        padding: 0;
+        margin:0;
+        height: 900px;
+        width: 400px;
+        position:absolute;
+    }
 }
 
 @media screen and (max-height: 450px) {
