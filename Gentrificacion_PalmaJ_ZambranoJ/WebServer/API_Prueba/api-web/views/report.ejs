@@ -1,45 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
-            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Gentrificación Centro Historico</title>
+    <link rel="stylesheet" href="/css/CollapsibleSelector.css">
+    <link rel="stylesheet" href="/css/selectBox.css">
 
+
+
+    <script>
+        const options = {
+            // tell Dojo where to load other packages
+            dojoConfig: {
+                async: true,
+                packages: [
+                    {
+                        location: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js',
+                        name: 'Chart'
+                    }
+                ]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css">
+    <title>Reportes</title>
+
+
+
+    <style>
+        html,
+        body, #viewDiv {
+            padding: 0;
+            margin:0;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+        }
+    </style>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.0.63/print.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.0.63/print.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
 </head>
-<body>
 
-<!--sidebar-->
-
+<body  style="background-color: #404040" >
+<!--sidebar -->
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
-    <img href="#" src="/images/logo-EPN-blanco.png" style="padding-top: 8px">
+    <img href="../api/home" src="/images/logo-EPN-blanco.png" style="padding-top: 8px">
     <a class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"></a>
 
     <ul class="navbar-nav flex-column mt-4">
-        <li class="nav-item"><a href="../api/home" class="nav-link text-white p-3 mb-2 sidebar-link"><i
-                        class="fas fa-home text-light fa-lg mr-3"></i>Inicio</a></li>
-        <li class="nav-item"><a href="../api/dashboardNew" class="nav-link text-white p-3 mb-2 sidebar-link"><i
-                        class="fas fa-table text-light fa-lg mr-3"></i>Mapa</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i
-                        class="fas fa-chart-bar text-light fa-lg mr-3"></i>Reportes</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i
-                        class="fas fa-file-alt text-light fa-lg mr-3"></i>Documentación</a></li>
+        <li class="nav-item"><a href="../api/home" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-home text-light fa-lg mr-3"></i>Inicio</a></li>
+        <li class="nav-item"><a href="../api/dashboardNew" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-map text-light fa-lg mr-3"></i>Mapa</a></li>
+        <li class="nav-item"><a href="../api/report" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart-bar text-light fa-lg mr-3"></i>Reportes</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-file-alt text-light fa-lg mr-3"></i>Documentación</a></li>
     </ul>
     <a class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"></a>
 
     <p style="text-align: center; color:white ">Quito - 2020 </p>
 </div>
-<!-- end sidebar -->
+
+<!--end sidebar -->
 
 <!-- navbar -->
 <section>
@@ -60,15 +91,183 @@
         </div>
     </div>
 </section>
-<!-- end navbar -->
+<!--end navbar -->
 
-<section>
+<!--DASHBOARD----->
 
-</section>
+<div id="content2" class="row" style="margin-top: 75px; height: 650px;">
+
+    <!-- MAP -->
+    <div id="mapa"  class="col-sm-9">
+        <div id="viewDiv"></div>
+    </div>
+    <!-- end MAP -->
+
+    <!-- LAYER SELECTOR -->
+    <div id="selector" class="col-sm-3 dashImage" style="width: 100%">
+
+        <h2 style="margin-top: 5%; text-align: center; justify-self: center">Reportes</h2>
+
+
+
+
+        <button type="button" class="collapsible" style="border-radius: 10px 10px 0px 0px ">Periódo de Gentrificación</button>
+        <div class="content" onclick="obtenerValor()">
+            <label class="container">1990-2001
+                <input id="r1" type="radio"  name="periodo" value="6">
+                <span class="checkmark" ></span>
+
+            </label>
+            <label class="container">2001-2010
+                <input id="r2"  type="radio" name="periodo" value="7">
+                <span class="checkmark"></span>
+            </label>
+
+
+
+
+        </div>
+
+        <button type="button" class="collapsible" style="border-radius: 0px 0px 10px 10px" >Variables de Gentrificación</button>
+        <div class="content">
+            <label class="container">Todas
+                <input type="checkbox" name="check">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Personas > 25 años
+                <input id="1" type="checkbox"  name="radio">
+                <span class="checkmark" ></span>
+
+            </label>
+            <label class="container">Personas con Empleo
+                <input type="checkbox" name="radio">
+                <span class="checkmark"> </span>
+            </label>
+            <label class="container">Personas con G-T-ADM
+                <input type="checkbox" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Personas Gentrificables
+                <input id="1" type="checkbox"  name="radio">
+                <span class="checkmark" ></span>
+
+            </label>
+            <label class="container">Personas con Educación Superior
+                <input type="checkbox" name="radio">
+                <span class="checkmark"> </span>
+            </label>
+            <label class="container">Cambios de vivienda
+                <input type="checkbox" name="radio">
+                <span class="checkmark"></span>
+            </label>
+
+        </div>
+        <div> <button id="conv" type="button"  style="border-radius: 0px 0px 10px 10px" onclick="imprimirPDF1()">CREAR PDF</button></div>
+
+
+    </div>
+
+    <!-- end LAYER SELECTOR -->
+
+</div>
+
+<div id="print">
+    <div id="header"style="background-color:white;">
+        <div class=h2 style="text-align: center;font-weight: bold">Reporte-Fenómeno de Gentrificación Centro Histórico de Quito</div>
+        <div id="periodo" class=h2 style="text-align: center; font-weight: bold; border-bottom: black solid">
+
+        </div>
+        <div class="h3" style="font-weight: bold;border-bottom: black solid; color:#1c3454">Datos Generales</div>
+        <br>
+        <div id="nombreBarrio" class="h4"></div>
+        <div id="fenomeno1" class="h4"></div>
+        <div id="fenomeno2" class="h4" style=""></div>
+        <br>
+        <div class="h3" style="font-weight: bold ; color:#1c3454;border-bottom: black solid;border-top: black solid">Mapa</div>
+
+    </div>
+        <div class="col-sm-12" >
+            <div id="chart1" class="chart-container2">
+                <canvas id="grafico1"  >
+
+                </canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="content3" class="row" style="background-color:#404040;display: none ">
+        <div class="col-sm-12" >
+            <div id="chart1" class="chart-container2">
+                <canvas id="grafico1"  >
+
+                </canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="content4" class="row" style="background-color:#404040; margin-top:30px;display: flex ">
+        <div id="imprimir" class="col-sm-6" >
+            <div id="chart1" class="chart-container">
+
+                <canvas id="grafico2" style="margin-bottom: 10px">
+
+
+
+
+                </canvas>
+
+
+
+
+            </div>
+
+        </div>
+        <div class="col-sm-6" >
+            <div class="chart-container">
+                <div id="grafico3" style="margin-bottom: 10px; color:black" >
+
+                    1HOLA MUNDO hola mundoaasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="content5" class="row" style="background-color:#404040; margin-top:30px; display: flex ;align-items: center">
+        <div class="col-sm-6" >
+            <div class="chart-container" >
+                <div id="grafico4"  style="margin-bottom: 10px">
+                    2HOLA MUNDO hola mundoaasdfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-6" style="justify-content:center">
+            <div class="chart-container" style="height:200px ; width:250px;justify-content: center;margin:0 auto">
+                <canvas id="grafico5"  style=" height: 150px;width:150px; justify-content:center;margin:0 auto">
+
+
+                </canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
 
 <section>
     <!-- Footer -->
-    <footer id="footer" class="font-small" style="background-color: #265077; bottom: 0px">
+    <footer id="footer1" class="font-small" style="background-color: #265077; bottom: 0px; display: none;">
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3" style="color: white; font-weight: bold">
@@ -80,46 +279,105 @@
 </section>
 <!-- Footer -->
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
-<script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://js.arcgis.com/4.13/"></script>
+<script src="/js/reportFunction.js"></script>
+<script src="/js/parametersBox.js"></script>
+<script src="/js/CollapsibleSelector.js"></script>
+
+
+<script >
     function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
-        document.getElementById("cover").style.marginLeft = "250px";
         document.getElementById("content2").style.marginLeft = "250px";
-        document.getElementById("content4").style.marginLeft = "250px";
         document.getElementById("content3").style.marginLeft = "250px";
-        document.getElementById("footer").style.marginLeft = "250px";
         document.getElementById('btn').style.visibility = 'hidden';
     }
+    function imprimirPDF() {
+        var w = document.body.offsetWidth;
+        var h = document.body.offsetHeight;
+        html2canvas(document.body,{ letterRendering: 1, allowTaint: true, useCORS: true,
+            dpi: 300, // Set to 300 DPI
+            scale: 4, // Adjusts your resolution
+            onrendered:function(canvas){
 
-    function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.getElementById("cover").style.marginLeft = "0";
-        document.getElementById("content2").style.marginLeft = "0";
-        document.getElementById("content4").style.marginLeft = "0";
-        document.getElementById("content3").style.marginLeft = "0";
-        document.getElementById("footer").style.marginLeft = "0";
-        document.getElementById('btn').style.visibility = 'visible';
+
+                var img = canvas.toDataURL("image/jpeg", 1);
+                var doc = new jsPDF('L', 'px', [w, h]);
+                doc.addImage(img, 'JPEG', 0, 0, w, h);
+                doc.save('sample-file.pdf');
+            }
+
+        });
     }
+    function imprimirPDF1() {
+        var periodo;
+        var anio1,anio2
+
+        if(document.getElementById("r1").checked){
+            periodo="1990-2001";
+            anio1='1990';
+            anio2='2001';
+        }
+        if(document.getElementById("r2").checked){
+            periodo="2001-2010";
+            anio1='2001';
+            anio2='2010';
+        }
+        var arregloImprimir=[];
+        document.getElementById('periodo').innerHTML = 'Período ' + periodo;
+        document.getElementById('nombreBarrio').innerHTML = 'Nombre: ' + nombreBarrio;
+        document.getElementById('fenomeno1').innerHTML = 'Estado Fenómeno ' + anio1+': '+estadoGent1;
+        document.getElementById('fenomeno2').innerHTML = 'Estado Fenómeno ' + anio2+': '+estadoGent2;
+        console.log('entre print');
+        html2canvas(document.getElementById("header"), {
+            useCORS: true,
+            allowTaint:true,
+            logging:true,
+            onrendered: function(canvas) {
+
+
+
+
+                arregloImprimir.push(canvas.toDataURL("image/png"));
+                arregloImprimir.push(canvasMapa.toDataURL("image/png"));
+                console.log('arregloImprimir');
+                console.log(arregloImprimir);
+                console.log(canvasMapa.toDataURL("image/png"));
+                printJS({printable:arregloImprimir,type:'image',style:'justify-content: center',documentTitle:'Reporte'});
+
+
+
+
+
+            }
+        });
+
+
+
+
+
+
+
+
+    }
+
+    function convertirdiv(canvasx){
+
+    }
+
 </script>
 
-<script>
-    AOS.init();
-</script>
+
+
 
 </body>
 
-</html>
