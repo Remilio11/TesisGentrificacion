@@ -414,13 +414,13 @@
         }
 
         if(variacionEmp>=0){
-            textoVarEmp= 'La variación muestra un crecimiento del '+variacionEmp+ ' en la cantidad de personas con empleo. Cabe recalcar que la condición de empleo no indica necesariamente un empleo propio o que sea dentro del Centro Histórico, por tanto esta estadística representa solamente la condición laboral de la persona.'
+            textoVarEmp= 'La variación muestra un crecimiento del '+variacionEmp+ '% en la cantidad de personas con empleo. Cabe recalcar que la condición de empleo no indica necesariamente un empleo propio o que sea dentro del Centro Histórico, por tanto esta estadística representa solamente la condición laboral de la persona.'
         }else {
-            textoVarEmp= 'La variación muestra un decrecimiento del (%) en la cantidad de personas con empleo.Cabe recalcar que la condición de empleo no indica necesariamente un empleo propio o que sea dentro del Centro Histórico, por tanto esta estadística representa solamente la condición laboral de la persona. Cabe recalcar que en los últimos años del período censal existe el cambio de moneda en el Ecuador como un factor de desestabilización económica.'
+            textoVarEmp= 'La variación muestra un decrecimiento del ' +variacionEmp+ '% en la cantidad de personas con empleo.Cabe recalcar que la condición de empleo no indica necesariamente un empleo propio o que sea dentro del Centro Histórico, por tanto esta estadística representa solamente la condición laboral de la persona. Cabe recalcar que en los últimos años del período censal existe el cambio de moneda en el Ecuador como un factor de desestabilización económica.'
         }
 
         var textovariacionGraficoAniosTodo= 'El gráfico muestra como ha variado la cantidad de personas con más de 25 años de edad en el período censal entre '+anio1+ ' y '+anio2+'. Los estadísticas obtenidas son a partir del Total de Personas que existen en el barrio y el Total de Personas que tienen edad igual o mayor a 25. '+textovariacionGraficoAnios;
-        var textovariacionGracioEmpleoTodo='El gráfico muestra la variación de la cantidad de Personas con Empleo existentes en el barrio durante el período censal de '+anio1+' y '+anio2+ '. Los datos obtenidos son a partir de las respuestas obtenidas en la pregunta "¿Qué hizo la semana pasada?". Esta variable permite identificar la actividad principal de sustento para el hogar que realiza la persona encuestada, identificando así su condición laboral.'+ textoVarEmp;
+        var textovariacionGracioEmpleoTodo='El gráfico muestra la variación de la cantidad de Personas con Empleo existentes en el barrio durante el período censal de '+anio1+' y '+anio2+ '. Los datos obtenidos son a partir de las respuestas obtenidas en la pregunta "¿Qué hizo la semana pasada?". Esta variable permite identificar la actividad principal de sustento para el hogar que realiza la persona encuestada, identificando así su condición laboral. '+ textoVarEmp;
         document.getElementById('periodo').innerHTML = 'Período ' + periodo;
         document.getElementById('nombreBarrio').innerHTML = 'Nombre: ' + nombreBarrio;
         document.getElementById('fenomeno1').innerHTML = 'Estado Fenómeno ' + anio1+': '+estadoGent1;
