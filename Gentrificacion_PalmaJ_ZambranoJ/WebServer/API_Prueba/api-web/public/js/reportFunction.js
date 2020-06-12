@@ -20,15 +20,10 @@ var popUp2;
 var evento;
 var json1, json2;
 var myBarChart, myPieChart, myDonutChart, myPieChart1, myDonutChart1, myDoubleBarChart, myDoubleBarChart1,
-<<<<<<< HEAD
-    myDoubleBarChart2, myDoubleBarChart3, myDoubleBarChart4;
-//variables que cambian de acuerdo a la seleccion
-var canvas1,canvas2,canvas3,canvas4;
-=======
     myDoubleBarChart2, myDoubleBarChart3, myDoubleBarChart4,canvasMapa,nombreBarrio;
 //variables que cambian de acuerdo a la seleccion
 var canvas1,canvas2,canvas3,canvas4,estadoGent1,estadoGent2;
->>>>>>> DesarrolloJZ
+
 require([
         "esri/Map",
         "esri/views/MapView",
@@ -51,13 +46,7 @@ require([
         const map = new Map({
             basemap: "streets"
         });
-<<<<<<< HEAD
 
-
-        capaInicial = new FeatureLayer({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/Barrios_CentroHistorico_F/FeatureServer",
-            opacity: 1.0
-=======
         popUp1={
             "title": "BARRIO",
             "content": function () {
@@ -70,7 +59,7 @@ require([
             opacity: 1.0,
             outFields:['NOMBRE'],
             popupTemplate:popUp1
->>>>>>> DesarrolloJZ
+
 
         });
 
@@ -107,8 +96,7 @@ require([
         });
 
         view.ui.add(legend, "bottom-right");
-<<<<<<< HEAD
-=======
+
         if (evento) {
             evento.remove();
         }
@@ -122,20 +110,13 @@ require([
         evento = vista.on("click", (e) => {
             query.geometry = e.mapPoint;
 
-
             capaInicial.queryFeatures(query).then((results1) => {
-
-
 
                 }
             );
 
 
-
-
         });
-
->>>>>>> DesarrolloJZ
 
 
     });
@@ -162,203 +143,9 @@ function cambioCapa(arreglo) {
     mapa.removeAll();
     destruirGraficos();
     console.log("recibi mi arreglo " + arreglo);
-<<<<<<< HEAD
-    if (arreglo == "1") {
-        popUp1 = {
-            "title": "INFORMACIÓN DEL SECTOR",
-            "content": function () {
-                return "Total Viviendas: {T_VI_S}" +
-                    "<br> Total Personas: {T_PE_S}" +
-                    "<br> Total de Personas Gentrificables: {T_GENT_S}" +
-                    "<br> Total Personas >25 años: {T_PE_25_S}" +
-                    "<br> Total Personas con Educación Superior: {T_PE_ES_S}" +
-                    "<br> Total Personas con Empleo: {T_PE_EM_S}" +
-                    "<br> Total Personas sin Empleo: {T_PE_SE_S}" +
-                    "<br> Total Personas con Empleo Gerencial: {T_PE_EG_S}" +
-                    "<br> Promedio de Personas por Vivienda: {P_PE_V}";
-            }
-        }
-        capaResultados2010 = new FeatureLayerRico({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector_2010_f/FeatureServer",
-            outFields: ["T_VI_S", "T_PE_S", "T_GENT_S", "T_PE_25_S", "T_PE_ES_S", "T_PE_EM_S", "T_PE_SE_S", "T_PE_EG_S", "P_PE_V"],
-            popupTemplate: popUp1,
-            opacity: 0.1
-        });
 
-
-        mapa.add(capaInicial);
-
-
-        mapa.add(capaResultados2010);
-
-        vista.ui.add(legend, "bottom-right");
-
-        alistar(capaResultados2010);
-
-
-    } else if (arreglo == "2") {
-        popUp2 = {
-            "title": "INFORMACIÓN DEL SECTOR",
-            "content": function () {
-                return "Total Viviendas: {T_VI_S}" +
-                    "<br> Total Personas: {T_PE_S}" +
-                    "<br> Total de Personas Gentrificables: {T_GENT_S}" +
-                    "<br> Total Personas >25 años: {T_PE_25_S}" +
-                    "<br> Total Personas con Educación Superior: {T_PE_ES_S}" +
-                    "<br> Total Personas con Empleo: {T_PE_EM_S}" +
-                    "<br> Total Personas sin Empleo: {T_PE_SE_S}" +
-                    "<br> Total Personas con Empleo Gerencial: {T_PE_EG_S}" +
-                    "<br> Promedio de Personas por Vivienda: {P_PE_V}";
-            }
-        };
-        capaResultados2001 = new FeatureLayerRico({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector_2001_f/FeatureServer",
-            outFields: ["T_VI_S", "T_PE_S", "T_GENT_S", "T_PE_25_S", "T_PE_ES_S", "T_PE_EM_S", "T_PE_SE_S", "T_PE_EG_S", "P_PE_V"],
-            popupTemplate: popUp2,
-            opacity: 0.1
-        });
-
-        mapa.add(capaInicial);
-
-        mapa.add(capaResultados2001);
-        vista.ui.add(legend, "bottom-right");
-        alistar(capaResultados2001);
-
-
-    } else if (arreglo == "3") {
-        popUp2 = {
-            "title": "INFORMACIÓN DEL SECTOR",
-            "content": function () {
-                return "Total Viviendas: {T_VI_S}" +
-                    "<br> Total Personas: {T_PE_S}" +
-                    "<br> Total de Personas Gentrificables: {T_GENT_S}" +
-                    "<br> Total Personas >25 años: {T_PE_25_S}" +
-                    "<br> Total Personas con Educación Superior: {T_PE_ES_S}" +
-                    "<br> Total Personas con Empleo: {T_PE_EM_S}" +
-                    "<br> Total Personas sin Empleo: {T_PE_SE_S}" +
-                    "<br> Total Personas con Empleo Gerencial: {T_PE_EG_S}" +
-                    "<br> Promedio de Personas por Vivienda: {P_PE_V}";
-            }
-        };
-        capaResultados1990 = new FeatureLayerRico({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/datos_sector_1990_f/FeatureServer",
-            outFields: ["T_VI_S", "T_PE_S", "T_GENT_S", "T_PE_25_S", "T_PE_ES_S", "T_PE_EM_S", "T_PE_SE_S", "T_PE_EG_S", "P_PE_V"],
-            popupTemplate: popUp2,
-            opacity: 0.1
-        });
-
-        mapa.add(capaInicial);
-
-        mapa.add(capaResultados1990);
-        vista.ui.add(legend, "bottom-right");
-
-        alistar(capaResultados1990);
-
-    } else if (arreglo == "4") {
-        capaGentri1 = new FeatureLayerRico({
-
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_1990_f/FeatureServer",
-            outFields: ["T_PE_25_S", "T_PE_ES_S", "T_PE_EG_S", "PROM_POBR"],
-            opacity: 0.9
-        });
-        capaGentri2 = new FeatureLayerRico({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_2001_f/FeatureServer",
-            outFields: ["T_PE_25_S", "T_PE_ES_S", "T_PE_EG_S", "PROM_POBR"],
-            opacity: 0.9
-        });
-
-        swipe1 = new SwipeRico({
-            view: vista,
-            leadingLayers: [capaGentri1],
-            trailingLayers: [capaGentri2],
-            position: 50,
-            state: "ready"
-
-        });
-
-        legend2 = new Leyenda({
-            view: vista,
-            layerInfos: [
-                {
-                    layer: capaGentri1,
-                    title: "Gentrificación Sectores 1990"
-                }
-            ]
-        });
-        legend3 = new Leyenda({
-            view: vista,
-            layerInfos: [
-                {
-                    layer: capaGentri2,
-                    title: "Gentrificación Sectores 2001"
-                }
-            ]
-        });
-
-        mapa.add(capaGentri1);
-        mapa.add(capaGentri2);
-
-
-        vista.ui.remove(legend);
-        vista.ui.add(legend3, "bottom-right");
-        vista.ui.add(legend2, "bottom-left");
-
-        vista.ui.add(swipe1);
-        alistarGentrificacionSectores(capaGentri1, capaGentri2, "1990", "2001");
-
-
-    } else if (arreglo == "5") {
-        capaGentri3 = new FeatureLayerRico({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_2001_f/FeatureServer",
-            outFields: ["T_PE_25_S", "T_PE_ES_S", "T_PE_EG_S", "PROM_POBR"],
-            opacity: 0.9
-        });
-        capaGentri4 = new FeatureLayerRico({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_sectores_2010_f/FeatureServer",
-            outFields: ["T_PE_25_S", "T_PE_ES_S", "T_PE_EG_S", "PROM_POBR"],
-            opacity: 0.9
-        });
-
-        swipe2 = new SwipeRico({
-            view: vista,
-            leadingLayers: [capaGentri3],
-            trailingLayers: [capaGentri4],
-            position: 50,
-            state: "ready"
-
-        });
-
-        legend4 = new Leyenda({
-            view: vista,
-            layerInfos: [
-                {
-                    layer: capaGentri3,
-                    title: "Gentrificación Sectores 2001"
-                }
-            ]
-        });
-        legend5 = new Leyenda({
-            view: vista,
-            layerInfos: [
-                {
-                    layer: capaGentri4,
-                    title: "Gentrificación Sectores 2010"
-                }
-            ]
-        });
-
-        mapa.add(capaGentri3);
-        mapa.add(capaGentri4);
-
-        vista.ui.remove(legend);
-        vista.ui.add(legend4, "bottom-left");
-        vista.ui.add(legend5, "bottom-right");
-        vista.ui.add(swipe2);
-        alistarGentrificacionSectores(capaGentri3, capaGentri4, "2001", "2010");
-    } else if (arreglo == "6") {
-=======
     if (arreglo == "6") {
->>>>>>> DesarrolloJZ
+
         capaGentri5 = new FeatureLayerRico({
             url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_1990_f/FeatureServer",
             opacity: 0.9
@@ -396,17 +183,8 @@ function cambioCapa(arreglo) {
             ]
         });
 
-<<<<<<< HEAD
-        mapa.add(capaGentri5);
-        mapa.add(capaGentri6);
-        vista.ui.remove(legend);
-        vista.ui.add(legend6, "bottom-left");
-        vista.ui.add(legend7, "bottom-right");
-        vista.ui.add(swipe3);
-=======
         mapa.add();
         mapa.add(capaInicial);
->>>>>>> DesarrolloJZ
         alistarGentrificacionBarrios(capaGentri5, capaGentri6, "1990", "2001");
     } else if (arreglo == "7") {
         capaGentri7 = new FeatureLayerRico({
@@ -446,17 +224,8 @@ function cambioCapa(arreglo) {
             ]
         });
 
-<<<<<<< HEAD
-        mapa.add(capaGentri7);
-        mapa.add(capaGentri8);
-        vista.ui.remove(legend);
-        vista.ui.add(legend8, "bottom-left");
-        vista.ui.add(legend9, "bottom-right");
-        vista.ui.add(swipe4);
-=======
         mapa.add(capaInicial);
 
->>>>>>> DesarrolloJZ
         alistarGentrificacionBarrios(capaGentri7, capaGentri8, "2001", "2010");
 
     }
@@ -670,11 +439,7 @@ function mostrarDivs1() {
 function mostrarDivs2() {
     document.getElementById("content4").style.display = "flex";
     document.getElementById("content5").style.display = "flex";
-<<<<<<< HEAD
-
-=======
     document.getElementById("content3").style.display = "flex";
->>>>>>> DesarrolloJZ
     document.getElementById("footer1").style.display = "block";
 }
 
@@ -716,14 +481,9 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
     if (evento) {
         evento.remove();
     }
-<<<<<<< HEAD
-    var query = new QueryR();
-    query.outFields = ["T_PE_25_B", "P_POBR_B", "T_PE_EG_B", "T_PE_ES_B", "T_PE_GE_B", "T_PE_EM_B"];
-=======
     console.log('entre cargar 2')
     var query = new QueryR();
     query.outFields = ["BARRIO_ID","DESC_FEN","NOMBRE"];
->>>>>>> DesarrolloJZ
     query.where = "1=1";
     query.num = 50;
 
@@ -731,24 +491,6 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
 
     evento = vista.on("click", (e) => {
         query.geometry = e.mapPoint;
-<<<<<<< HEAD
-        capa.queryFeatures(query).then((results) => {
-
-
-                capa1.queryFeatures(query).then((results1) => {
-
-                        mostrarDivs2();
-
-                        canvas1=crearGraficoDobleBarra(results.features[0].attributes, results1.features[0].attributes, anio1, anio2);
-                        canvas2=crearGraficoDoblePobrPGent(results.features[0].attributes, results1.features[0].attributes, anio1, anio2);
-                        canvas3=crearGraficoDoblePobrPGent(results.features[0].attributes, results1.features[0].attributes, anio1, anio2);
-                        // esconderDivs();
-=======
-
-
-
-
-
         capaGentri5.queryFeatures(query).then((results1) => {
                 console.log('entre cargar 3')
                 capaGentri6.queryFeatures(query).then((results2) => {
@@ -761,27 +503,13 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
                         console.log('estadoGent1');
                         console.log(estadoGent1);
 
-
-
-
-
->>>>>>> DesarrolloJZ
-
                     }
                 );
 
             }
         );
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> DesarrolloJZ
     });
-
-
     // On view click, query the feature layer and pass the results to crearGraficoBarras function.
 
 
@@ -1343,8 +1071,7 @@ function tomaCaptura() {
         console.log(imageElement)
     });
 }
-<<<<<<< HEAD
-=======
+
 function cargarMapa(results){
     console.log("entre cargar mapa");
     console.log(results)
@@ -1394,4 +1121,4 @@ function pasarNombre(resultados){
 
 }
 
->>>>>>> DesarrolloJZ
+
