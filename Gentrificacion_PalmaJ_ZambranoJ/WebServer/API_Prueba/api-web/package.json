@@ -24,6 +24,8 @@
     "@nestjs/core": "^6.7.2",
     "@nestjs/platform-express": "^6.7.2",
     "chart.js": "^2.9.3",
+    "chartjs-plugin-datalabels": "^0.7.0",
+    "chartjs-plugin-labels": "^1.1.0",
     "dom-to-image": "^2.6.0",
     "ejs": "^3.0.1",
     "file-saver": "^2.0.2",

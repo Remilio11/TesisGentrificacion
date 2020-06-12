@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbd2c631-b293-4456-9a13-f8f82e101941" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/selectorBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/selectorBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/node_modules/" />
@@ -26,41 +17,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4453">
+            <state relative-caret-position="15334">
               <caret line="902" column="42" selection-start-line="902" selection-start-column="36" selection-end-line="902" selection-end-column="42" />
             </state>
           </provider>
@@ -78,17 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-816">
-              <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/node_modules/print-js/src/index.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="12" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="12" />
+            <state relative-caret-position="680">
+              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -96,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/selectorBox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="16" />
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -105,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="174" selection-start-line="174" selection-end-line="174" />
+            <state relative-caret-position="-261">
+              <caret line="156" selection-start-line="156" selection-end-line="169" />
             </state>
           </provider>
         </entry>
@@ -114,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-353">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="69">
+              <caret line="1526" column="28" selection-start-line="1526" selection-start-column="28" selection-end-line="1526" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -123,21 +73,43 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="175" column="48" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="48" />
+            <state relative-caret-position="283">
+              <caret line="422" column="456" selection-start-line="422" selection-start-column="456" selection-end-line="422" selection-end-column="456" />
               <folding>
-                <element signature="n#style#0;n#h2#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#3;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#canvas#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#5;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#7;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#canvas#0;n#div#0;n#div#7;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#8;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/src/main.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/images/mapa/03030001.PNG">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -161,20 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>canvas1</find>
-      <find>principa</find>
-      <find>principal</find>
-      <find>creargraficodob</find>
-      <find>creargraficobarras</find>
-      <find>grafico2</find>
-      <find>grafico4</find>
-      <find>grafico5</find>
-      <find>he</find>
-      <find>qué e</find>
-      <find>h5ed</find>
-      <find>modelo</find>
-      <find>col-xs-4</find>
-      <find>alistargentrificacionbar</find>
       <find>mostra</find>
       <find>tienes</find>
       <find>content3</find>
@@ -186,11 +144,25 @@
       <find>fenomeno</find>
       <find>HEADER</find>
       <find>entre cargar 2</find>
-      <find>popup</find>
       <find>cargar</find>
       <find>datos</find>
       <find>entre</find>
       <find>periodo</find>
+      <find>popup</find>
+      <find>viewDiv</find>
+      <find>bar</find>
+      <find>mapa</find>
+      <find>canvasmapa</find>
+      <find>CREARGRAFICOBARR</find>
+      <find>alistar</find>
+      <find>grafico2</find>
+      <find>textograficobarra</find>
+      <find>crearGraficoDobleBarraReporte</find>
+      <find>grafico1</find>
+      <find>anios</find>
+      <find>año2</find>
+      <find>grafico3</find>
+      <find>grafico</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -204,12 +176,12 @@
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/CollapsibleSelector.css" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/graphics.js" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/src/main.ts" />
-        <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/selectorBox.js" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/parametersBox.js" />
+        <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs" />
       </list>
@@ -297,8 +269,7 @@
               <item name="WebServer" type="462c0819:PsiDirectoryNode" />
               <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
               <item name="api-web" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -377,18 +348,20 @@
       <workItem from="1591676666200" duration="180000" />
       <workItem from="1591717330592" duration="26464000" />
       <workItem from="1591748629913" duration="38000" />
-      <workItem from="1591817255839" duration="20409000" />
+      <workItem from="1591817255839" duration="20717000" />
+      <workItem from="1591886576413" duration="992000" />
+      <workItem from="1591888561754" duration="27455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227678000" />
+    <option name="totallyTimeSpent" value="256433000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2676801" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2676801" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -403,8 +376,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.64111036" visible="true" weight="0.22905028" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.3588896" side_tool="true" visible="true" weight="0.22905028" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6397885" visible="true" weight="0.22905028" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.3602115" side_tool="true" visible="true" weight="0.22905028" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -434,6 +407,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js</url>
+          <line>1450</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/CollapsibleSelector.css">
@@ -491,15 +476,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa31736.14133/print.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa31736.14133/print.js" />
     <entry file="file://D:/print.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -519,13 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/node_modules/print-js/src/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -534,9 +504,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/images/acceder-azul.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/images/mapa/03030001.PNG">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/images/mapa/03030004.PNG">
@@ -575,6 +542,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/asdfsadfa" />
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15334">
+          <caret line="902" column="42" selection-start-line="902" selection-start-column="36" selection-end-line="902" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/CollapsibleSelector.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -584,22 +559,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816">
-          <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/selectorBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="174" selection-start-line="174" selection-end-line="174" />
+        <state relative-caret-position="680">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -610,34 +571,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/images/mapa/03030001.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4453">
-          <caret line="902" column="42" selection-start-line="902" selection-start-column="36" selection-end-line="902" selection-end-column="42" />
+        <state relative-caret-position="-261">
+          <caret line="156" selection-start-line="156" selection-end-line="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/selectorBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/src/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="69">
+          <caret line="1526" column="28" selection-start-line="1526" selection-start-column="28" selection-end-line="1526" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="175" column="48" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="48" />
+        <state relative-caret-position="283">
+          <caret line="422" column="456" selection-start-line="422" selection-start-column="456" selection-end-line="422" selection-end-column="456" />
           <folding>
-            <element signature="n#style#0;n#h2#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#3;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#6;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#7;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#8;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
