@@ -1,6 +1,6 @@
 .body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #404040;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #404040;
 }
 
 .wrapper {
@@ -83,31 +83,58 @@
 
 
 .bottom-border {
-  border-bottom: 1px groove #eee;
+    border-bottom: 1px groove #eee;
 }
 
 
 .sidebar-link {
-  transition: all .4s;
+    transition: all .4s;
 }
 
 .sidebar-link:hover {
-  background-color: #4E4E50;
-  border-radius: 5px;
+    background-color: #4E4E50;
+    border-radius: 5px;
 }
 
 .current {
-  background-color: #265077;
-  border-radius: 7px;
-  box-shadow: 2px 5px 10px #111;
-  transition: all .3s;
+    background-color: #265077;
+    border-radius: 7px;
+    box-shadow: 2px 5px 10px #111;
+    transition: all .3s;
 }
 
 .current:hover {
-  background-color: #374785;
-  border-radius: 7px;
-  box-shadow: 2px 5px 20px #111;
-  transform: translateY(-1px);
+    background-color: #374785;
+    border-radius: 7px;
+    box-shadow: 2px 5px 20px #111;
+    transform: translateY(-1px);
+}
+.card1{
+    margin-top: 400px;
+    margin-bottom: 400px;
+
+}
+
+.card-title1{
+    font-size: 100px;
+    color: white;
+
+}
+.card-text1{
+    font-size: 22px;
+    color: white;
+
+}
+
+.card-text2 {
+    font-size: 22px;
+
+}
+card-text3{
+    font-size: 18px;
+}
+.card-body-1{
+    height: 300px;
 }
 
 
@@ -145,49 +172,118 @@
     overflow: hidden;
 
 }
+.col-xs-6 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+
+}
 
 
+@media screen and (min-width: 817px) {
 
-@media screen and (max-width: 806px) {
+    .col-ll-4 {
+        width: 33.33%;
+        float: left;
+        padding: 10px;
+    }
+}
+
+/*Vista dispositivos medianos*/
+@media screen and (min-width: 750px) and (max-width: 816px) {
     .h5Ed {
         font-size: 2.5em;
         color: #ffffff
     }
+
+    .card-title1{
+        font-size: 50px;
+        color: white;
+
+    }
+
+    .card-text1{
+        font-size: 20px;
+        color: white;
+
+    }
+
+    .card-text2{
+        font-size: 16px;
+    }
+    .card-text3{
+        font-size: 16px;
+    }
+    .card-body-1{
+        height: 100%;
+    }
+    .col-xs-6 {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+
+
+    }
+
+    .col-mm-6 {
+        width: 50%;
+        float: left;
+        margin-bottom: 20px;
+        display: block;
+    }
+    .col-mm-12 {
+        width: 100%;
+        float: left;
+        margin-bottom: 20px;
+        display: block;
+    }
 }
-@media screen and (max-width: 500px) {
+/*Vista dispositivos pequeños*/
+@media screen and (max-width: 750px)  {
     .h5Ed {
         font-size: 2em;
         color: #ffffff
     }
-    #viewDiv{
-        padding: 0;
-        margin:0;
-        height: 900px;
-        width: 400px;
-        position:absolute;
+    .card1{
+        margin-top: 125px;
+        margin-bottom: 50px;
+
     }
-}
 
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-}
+    .card-title1{
+        font-size: 40px;
+        color: white;
 
-.col-xs-4 {
-    float: left;
-    width: 33%;
-    padding: 10px;
-    margin-left: -5px;
-}
+    }
 
-@media screen and (max-width: 750px){
-    .col-xs-4 {
+    .card-text1{
+        font-size: 20px;
+        color: white;
+
+    }
+    .card-text2{
+        font-size: 17px;
+    }
+    .card-text3{
+        font-size: 16px;
+    }
+    .card-body-1{
+        height: 100%;
+    }
+    .col-xs-6 {
+        float: left;
         width: 100%;
-        display: block;
-        margin-bottom: 20px;
-        margin-right:35px;
+        padding: 10px;
+        margin-left: 35px;
+        margin-right: 35px;
     }
 
+    .col-ss-12 {
+        float: left;
+        width: 100%;
+        margin-bottom: 20px;
+        display: block;
+    }
     .col-md-10 {
         width: 100%;
         display: block;
@@ -195,6 +291,19 @@
         align-items: center;
     }
 }
+
+
+
+
+
+
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+
 
 
 
@@ -207,22 +316,24 @@ canvas{
 
 }
 .chart-container {
-    position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
-    background: #404040;
-    font-color:white;
-    border-radius: 5px;
-    margin-top: 10px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: white;
-    height:450px;
+      position: relative;
+      margin-left: 10px;
+      margin-right: 10px;
+      background: #404040;
+      font-color:white;
+      border-radius: 5px;
+      margin-top: 10px;
+      border-style: solid;
+      border-width: 2px;
+      border-color: white;
+      height:450px;
 
 
 
 
-}
+  }
+
+
 
 .chart-container2 {
     position: relative;
@@ -241,5 +352,3 @@ canvas{
 
 
 }
-/* end of navbar */
-
