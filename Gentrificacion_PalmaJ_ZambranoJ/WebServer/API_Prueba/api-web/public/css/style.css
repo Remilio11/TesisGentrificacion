@@ -110,13 +110,13 @@
     transform: translateY(-1px);
 }
 .card1{
-    margin-top: 400px;
-    margin-bottom: 400px;
+    margin-top: 200px;
+    margin-bottom: 200px;
 
 }
 
 .card-title1{
-    font-size: 100px;
+    font-size: 5em;
     color: white;
 
 }
@@ -127,14 +127,14 @@
 }
 
 .card-text2 {
-    font-size: 22px;
+    font-size: 20px;
 
 }
-card-text3{
-    font-size: 18px;
+.card-text3{
+    font-size: 16px;
 }
 .card-body-1{
-    height: 300px;
+    height: 215px;
 }
 
 
@@ -161,7 +161,7 @@ card-text3{
 .dashImage{
     color:white;
     background: linear-gradient( 180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .6)), url(https://cdn.pixabay.com/photo/2014/04/02/19/06/quito-ecuador-308159_960_720.jpg);
-    background-position: center;
+    background-position:center;
     justify-items: center;
 
 }
@@ -178,7 +178,12 @@ card-text3{
     padding: 10px;
 
 }
+@media screen and (max-width: 1164px) {
 
+    .card-text2{
+        font-size: 16px;
+    }
+}
 
 @media screen and (min-width: 817px) {
 
@@ -190,7 +195,7 @@ card-text3{
 }
 
 /*Vista dispositivos medianos*/
-@media screen and (min-width: 750px) and (max-width: 816px) {
+@media screen and (min-width: 750px) and (max-width: 836px) {
     .h5Ed {
         font-size: 2.5em;
         color: #ffffff
@@ -310,28 +315,24 @@ card-text3{
 canvas{
     width: 400px;
     height:400px;
-    font-color:white;
+    color:white;
     border-width: 2px;
     border-color: white;
 
 }
 .chart-container {
-      position: relative;
-      margin-left: 10px;
-      margin-right: 10px;
-      background: #404040;
-      font-color:white;
-      border-radius: 5px;
-      margin-top: 10px;
-      border-style: solid;
-      border-width: 2px;
-      border-color: white;
-      height:450px;
-
-
-
-
-  }
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: #404040;
+    color:white;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    height:450px;
+}
 
 
 
@@ -340,7 +341,7 @@ canvas{
     margin-left: 10px;
     margin-right: 10px;
     background: #404040;
-    font-color:white;
+    color:white;
     border-radius: 5px;
     margin-top: 10px;
     border-style: solid;
