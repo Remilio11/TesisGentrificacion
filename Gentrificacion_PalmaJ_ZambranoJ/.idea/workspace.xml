@@ -16,11 +16,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>aos</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/WebServer/API_Prueba/api-web" />
   </component>
@@ -110,6 +105,9 @@
       <workItem from="1591819985919" duration="620000" />
       <workItem from="1591828160627" duration="1804000" />
       <workItem from="1591888138248" duration="2339000" />
+      <workItem from="1591977835400" duration="2925000" />
+      <workItem from="1592073297730" duration="1431000" />
+      <workItem from="1592088936507" duration="1233000" />
     </task>
     <servers />
   </component>
