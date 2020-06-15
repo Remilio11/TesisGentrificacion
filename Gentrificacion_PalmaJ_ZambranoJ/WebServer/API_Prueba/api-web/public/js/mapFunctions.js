@@ -423,7 +423,7 @@ function cambioCapa(arreglo) {
             }],
 
             labels:[
-                "Vivienda","Personas","Personas Gentrificables","Personas > 25 años","Personas con Educación Superior","Personas con empleo","Personas con empleo gerencial","Total Pobreza"
+                "Viviendas","Personas","Personas Gentrificables","Personas > 25 años","Personas con Educación Superior","Personas con empleo","Personas con empleo gerencial","Cambios de Vivienda"
 
             ], fontColor:"#fff", borderWidth:2
         };
@@ -974,7 +974,7 @@ function cambioCapa(arreglo) {
         var data = {
             datasets:[ {
                 label:'Total ',
-                data:[((resultados1.T_PE_EM_B-resultados.T_PE_EM_B))/100,((resultados1.T_PE_EG_B-resultados.T_PE_EG_B))/100],
+                data:[((resultados1.T_PE_EM_B-resultados.T_PE_EM_B))/resultados.T_PE_EM_B*100,((resultados1.T_PE_EG_B-resultados.T_PE_EG_B))/resultados.T_PE_EG_B*100],
                 backgroundColor: ["#d1ffa3","#005194"],
                 borderColor: ["#ffffff","#ffffff"],
                 borderWidth: [1,1]
@@ -1035,7 +1035,7 @@ function cambioCapa(arreglo) {
         var data = {
             datasets:[ {
                 label:'Total '+anio1,
-                data:[((resultados1.P_POBR_B-resultados.P_POBR_B))/100,((resultados1.T_PE_GE_B-resultados.T_PE_GE_B))/100],
+                data:[((resultados1.P_POBR_B-resultados.P_POBR_B))/resultados.P_POBR_B*100,((resultados1.T_PE_GE_B-resultados.T_PE_GE_B))/resultados.T_PE_GE_B*100],
                 backgroundColor: ["#af7aff","#acdf9f"],
                 borderColor: ["#ffffff","#ffffff"],
                 borderWidth: [1,1]
@@ -1090,7 +1090,7 @@ function cambioCapa(arreglo) {
         var data = {
             datasets:[ {
                 label:'Total '+anio1,
-                data:[((resultados1.T_PE_25_B-resultados.T_PE_25_B))/100,((resultados1.T_PE_ES_B-resultados.T_PE_ES_B))/100],
+                data:[((resultados1.T_PE_25_B-resultados.T_PE_25_B))/resultados.T_PE_25_B*100,((resultados1.T_PE_ES_B-resultados.T_PE_ES_B))/resultados.T_PE_ES_B*100],
                 backgroundColor: ["#378e2f","#f3b309"],
                 borderColor: ["#ffffff","#ffffff"],
                 borderWidth: [1,1]

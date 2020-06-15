@@ -1,5 +1,5 @@
 function obtenerValor(){
-    //esconderDivs();
+    esconderDivs();
     var rdb = document.getElementsByName("radio");
     for(var x=0;x<rdb.length;x++){
         if(rdb[x].checked){
