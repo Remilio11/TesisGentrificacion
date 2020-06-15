@@ -20,7 +20,7 @@ var popUp2;
 var evento;
 var json1, json2;
 var myBarChart, myPieChart, myDonutChart, myPieChart1, myDonutChart1, myDoubleBarChart, myDoubleBarChart1,
-    myDoubleBarChart2, myDoubleBarChart3, myDoubleBarChart4,myDoubleBarChart5,myDoubleBarChart6,canvasMapa,nombreBarrio,nombreBarrio1;
+    myDoubleBarChart2, myDoubleBarChart3, myDoubleBarChart4,myDoubleBarChart5,myDoubleBarChart6,myDoubleBarChart7,canvasMapa,nombreBarrio,nombreBarrio1;
 var datagrafico1=[];
 var datagrafico2=[];
 var backGroundColor1=[];
@@ -29,7 +29,7 @@ var bordercolorgrafico=[];
 var borderwidthgraifoc=[];
 var labelsgrafico=[];
 //variables que cambian de acuerdo a la seleccion
-var canvasGraficoDobleBarra,canvas2,canvas3,canvas4,estadoGent1,estadoGent2,canvasgraficoAniosReporte,canvasgraficoEmpReporte,canvasgraficoEmpGReporte,canvasgraficoESReporte,canvasgraficoGEReporte;
+var canvasGraficoDobleBarra,canvas2,canvas3,canvas4,estadoGent1,estadoGent2,canvasgraficoCVReporte,canvasgraficoAniosReporte,canvasgraficoEmpReporte,canvasgraficoEmpGReporte,canvasgraficoESReporte,canvasgraficoGEReporte;
 var resultadosquery1,resultadosquery2;
 require([
         "esri/Map",
@@ -191,7 +191,7 @@ function cambioCapa(arreglo) {
             ]
         });
 
-        mapa.add();
+
         mapa.add(capaInicial);
         alistarGentrificacionBarrios(capaGentri5, capaGentri6, "1990", "2001");
     } else if (arreglo == "7") {
@@ -232,8 +232,9 @@ function cambioCapa(arreglo) {
             ]
         });
 
-        mapa.add(capaInicial);
 
+
+        mapa.add(capaInicial);
         alistarGentrificacionBarrios(capaGentri7, capaGentri8, "2001", "2010");
 
     }
@@ -504,9 +505,9 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
 
 
 
-        capaGentri5.queryFeatures(query).then((results1) => {
+        capa.queryFeatures(query).then((results1) => {
                 console.log('entre cargar 3')
-                capaGentri6.queryFeatures(query).then((results2) => {
+                capa1.queryFeatures(query).then((results2) => {
                         console.log('entre cargar 4');
 
                         canvasMapa=cargarMapa(results1.features[0].attributes)
@@ -1411,7 +1412,7 @@ function crearGraficoDonaAnios(resultados, resultados1, anio1, anio2) {
     console.log(resultados);
     console.log(resultados1);
     var canvas = document.getElementById('grafico3');
-    var resultado = (resultados1.T_PE_25_B - resultados.T_PE_25_B) / 100;
+    var resultado = (resultados1.T_PE_25_B - resultados.T_PE_25_B) /resultados.T_PE_25_B* 100;
     var color;
     if (resultado >= 0) {
         color = "#1af304";
@@ -1422,7 +1423,7 @@ function crearGraficoDonaAnios(resultados, resultados1, anio1, anio2) {
     var data = {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
-            data: [(resultados1.T_PE_25_B - resultados.T_PE_25_B) / 100, (100-Math.abs(resultado))],
+            data: [(resultados1.T_PE_25_B - resultados.T_PE_25_B) / resultados.T_PE_25_B*100, (100-Math.abs(resultado))],
             backgroundColor: [color, "#a630e8"],
             borderColor: ["#000", "##000"],
             borderWidth: [1, 1]
@@ -1490,7 +1491,7 @@ function crearGraficoDonaEmp(resultados, resultados1, anio1, anio2) {
     console.log(resultados1);
     var canvas = document.getElementById('grafico4');
     var ctx = canvas.getContext("2d");
-    var resultado = (resultados1.T_PE_EM_B - resultados.T_PE_EM_B) / 100;
+    var resultado = (resultados1.T_PE_EM_B - resultados.T_PE_EM_B) / resultados.T_PE_EM_B*100;
     var color;
     if (resultado >= 0) {
         color = "#1af304";
@@ -1501,7 +1502,7 @@ function crearGraficoDonaEmp(resultados, resultados1, anio1, anio2) {
     var data = {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
-            data: [(resultados1.T_PE_EM_B - resultados.T_PE_EM_B) / 100, (100-Math.abs(resultado))],
+            data: [(resultados1.T_PE_EM_B - resultados.T_PE_EM_B) /resultados.T_PE_EM_B*100, (100-Math.abs(resultado))],
             backgroundColor: [color, "#f3b309"],
             borderColor: ["#000", "##000"],
             borderWidth: [1, 1]
@@ -1560,7 +1561,7 @@ function crearGraficoDonaEmpG(resultados, resultados1, anio1, anio2) {
     console.log(resultados1);
     var canvas = document.getElementById('grafico5');
     var ctx = canvas.getContext("2d");
-    var resultado = (resultados1.T_PE_EG_B - resultados.T_PE_EG_B) / 100;
+    var resultado = (resultados1.T_PE_EG_B - resultados.T_PE_EG_B) / resultados.T_PE_EG_B*100;
     var color;
     if (resultado >= 0) {
         color = "#1af304";
@@ -1571,7 +1572,7 @@ function crearGraficoDonaEmpG(resultados, resultados1, anio1, anio2) {
     var data = {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
-            data: [(resultados1.T_PE_EG_B - resultados.T_PE_EG_B) / 100, (100-Math.abs(resultado))],
+            data: [(resultados1.T_PE_EG_B - resultados.T_PE_EG_B) / resultados.T_PE_EG_B*100, (100-Math.abs(resultado))],
             backgroundColor: [color, "#f3b309"],
             borderColor: ["#000", "##000"],
             borderWidth: [1, 1]
@@ -1630,7 +1631,7 @@ function crearGraficoDonaES(resultados, resultados1, anio1, anio2) {
     console.log(resultados1);
     var canvas = document.getElementById('grafico6');
     var ctx = canvas.getContext("2d");
-    var resultado = (resultados1.T_PE_ES_B - resultados.T_PE_ES_B) / 100;
+    var resultado = (resultados1.T_PE_ES_B - resultados.T_PE_ES_B) / resultados.T_PE_ES_B*100;
     var color;
     if (resultado >= 0) {
         color = "#1af304";
@@ -1641,7 +1642,7 @@ function crearGraficoDonaES(resultados, resultados1, anio1, anio2) {
     var data = {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
-            data: [(resultados1.T_PE_ES_B - resultados.T_PE_ES_B) / 100, (100-Math.abs(resultado))],
+            data: [(resultados1.T_PE_ES_B - resultados.T_PE_ES_B) /resultados.T_PE_ES_B* 100, (100-Math.abs(resultado))],
             backgroundColor: [color, "#f3b309"],
             borderColor: ["#000", "##000"],
             borderWidth: [1, 1]
@@ -1700,7 +1701,7 @@ function crearGraficoDonaGE(resultados, resultados1, anio1, anio2) {
     console.log(resultados1);
     var canvas = document.getElementById('grafico7');
     var ctx = canvas.getContext("2d");
-    var resultado = (resultados1.T_PE_GE_B - resultados.T_PE_GE_B) / 100;
+    var resultado = (resultados1.T_PE_GE_B - resultados.T_PE_GE_B) /resultados.T_PE_GE_B* 100;
     var color;
     if (resultado >= 0) {
         color = "#1af304";
@@ -1711,7 +1712,7 @@ function crearGraficoDonaGE(resultados, resultados1, anio1, anio2) {
     var data = {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
-            data: [(resultados1.T_PE_GE_B - resultados.T_PE_GE_B) / 100, (100-Math.abs(resultado))],
+            data: [(resultados1.T_PE_GE_B - resultados.T_PE_GE_B) / resultados.T_PE_GE_B*100, (100-Math.abs(resultado))],
             backgroundColor: [color, "#f3b309"],
             borderColor: ["#000", "##000"],
             borderWidth: [1, 1]
@@ -1762,6 +1763,78 @@ function crearGraficoDonaGE(resultados, resultados1, anio1, anio2) {
 
     return canvas;
 }
+
+function crearGraficoDonaCV(resultados, resultados1, anio1, anio2) {
+    // Create a new canvas element, this is where the graph will be placed.
+    // Create a new canvas element, this is where the graph will be placed.
+    console.log("entre grafico")
+    console.log(resultados);
+    console.log(resultados1);
+    var canvas = document.getElementById('grafico8');
+    var ctx = canvas.getContext("2d");
+    var resultado = (resultados1.P_POBR_B - resultados.P_POBR_B) /resultados.P_POBR_B* 100;
+    var color;
+    if (resultado >= 0) {
+        color = "#1af304";
+    } else {
+        color = "#f35745";
+    }
+
+    var data = {
+        datasets: [{
+            label: 'Variación en el período '+anio1+'-'+anio2,
+            data: [(resultados1.P_POBR_B - resultados.P_POBR_B) / resultados.P_POBR_B*100, (100-Math.abs(resultado))],
+            backgroundColor: [color, "#f3b309"],
+            borderColor: ["#000", "##000"],
+            borderWidth: [1, 1]
+        }],
+
+        labels: [
+            resultado+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
+
+        ], fontColor: "#000", borderWidth: 2
+    }
+    console.log(data);
+
+    // Create a new Chart and hook it to the canvas and then return the canvas.
+
+    if (myDoubleBarChart7) {
+
+        myDoubleBarChart7.destroy();
+
+    }
+    myDoubleBarChart7 = new Chart(canvas, {
+        type: 'doughnut',
+        data: data,
+        options: {
+            animation:false,
+            rotation: 1 * Math.PI,
+            circumference: 1 * Math.PI,
+            legend: {
+                labels: {
+                    fontColor: "black",
+                    fontSize: 25,
+                    borderColor: "black",
+                    borderWidth: 6
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            title: {
+                display: true,
+                text: '% de Cambio de Vivienda',
+                fontSize: 32,
+                fontColor: "#000"
+            },
+            scaleShowValues: false
+
+        }
+
+    });
+
+    return canvas;
+}
+
 function capLetters_1 ( value ) {
     let line = value.toLowerCase().split(' ');
     for ( let i = 0; i < line.length; i += 1 ) {
