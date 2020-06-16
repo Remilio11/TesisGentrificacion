@@ -1430,7 +1430,7 @@ function crearGraficoDonaAnios(resultados, resultados1, anio1, anio2) {
         }],
 
         labels: [
-            resultado+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
+            resultado.toFixed(2)+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
 
         ], fontColor: "#000", borderWidth: 2
     }
@@ -1469,7 +1469,7 @@ function crearGraficoDonaAnios(resultados, resultados1, anio1, anio2) {
         maintainAspectRatio: false,
         title: {
             display: true,
-            text: 'Cambio del % Personas 25 > años',
+            text: 'Cambio del % Personas > 25  años',
             fontSize: 32,
             fontColor: "#000"
         },
@@ -1509,7 +1509,7 @@ function crearGraficoDonaEmp(resultados, resultados1, anio1, anio2) {
         }],
 
         labels: [
-           resultado+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
+            resultado.toFixed(2)+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
 
         ], fontColor: "#000", borderWidth: 2
     }
@@ -1579,7 +1579,7 @@ function crearGraficoDonaEmpG(resultados, resultados1, anio1, anio2) {
         }],
 
         labels: [
-            resultado+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
+            resultado.toFixed(2)+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
 
         ], fontColor: "#000", borderWidth: 2
     }
@@ -1649,7 +1649,7 @@ function crearGraficoDonaES(resultados, resultados1, anio1, anio2) {
         }],
 
         labels: [
-            resultado+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
+            resultado.toFixed(2)+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
 
         ], fontColor: "#000", borderWidth: 2
     }
@@ -1719,7 +1719,7 @@ function crearGraficoDonaGE(resultados, resultados1, anio1, anio2) {
         }],
 
         labels: [
-            resultado+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
+            resultado.toFixed(2)+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
 
         ], fontColor: "#000", borderWidth: 2
     }
@@ -1790,7 +1790,7 @@ function crearGraficoDonaCV(resultados, resultados1, anio1, anio2) {
         }],
 
         labels: [
-            resultado+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
+            resultado.toFixed(2)+'%' , (100-Math.abs(resultado)).toFixed(2)+"%"
 
         ], fontColor: "#000", borderWidth: 2
     }

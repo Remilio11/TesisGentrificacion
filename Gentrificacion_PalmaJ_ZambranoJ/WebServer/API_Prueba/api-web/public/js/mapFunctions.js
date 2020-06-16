@@ -1097,7 +1097,7 @@ function cambioCapa(arreglo) {
             }],
 
             labels:[
-                "Personas > 25 Años","Personas con educación superior"
+                "Personas > 25 Años","Personas con Educación Superior"
 
             ], fontColor:"#fff", borderWidth:2
         }
@@ -1114,6 +1114,7 @@ function cambioCapa(arreglo) {
             type: 'doughnut',
             data: data,
             options: {
+                maintainAspectRatio:true,
                 rotation:1*Math.PI,
                 circumference:1*Math.PI,
                 legend: {
@@ -1125,7 +1126,7 @@ function cambioCapa(arreglo) {
                     }},
                 responsive:true,
                 maintainAspectRatio:false,
-                title: {display:true,text:'Cambio del % Mayores a 25 años/Educación Superior',fontSize:18,fontColor:"#fff"},
+                title: {display:true,text:'Cambio del % Personas > a 25 años/Educación Superior',fontSize:18,fontColor:"#fff"},
                 scaleShowValues: false
 
             }
