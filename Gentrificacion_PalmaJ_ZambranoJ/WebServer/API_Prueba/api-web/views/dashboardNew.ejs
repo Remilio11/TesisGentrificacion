@@ -30,21 +30,48 @@
 
 
     <style>
-        html,
-        body, #viewDiv {
+        #viewDiv {
             padding: 0;
-            margin:0;
+            margin: 0;
             height: 100%;
             width: 100%;
-            position:absolute;
+
+
         }
+        @media screen and (max-width: 768px) {
+            #content2{
+                height:1000px;
+            }
+
+
+
+
+        }
+        @media screen and (min-width: 768px) and (max-width: 875px) {
+            #content2{
+                height:900px;
+            }
+
+
+
+
+        }
+        @media screen and (min-width: 876px) {
+            #content2{
+                height:650px;
+            }
+        }
+
+
+
+
     </style>
 
 
 
 </head>
 
-<body style="background-color: #404040">
+<body style="background-color: #404040" >
 <!--sidebar -->
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -83,38 +110,39 @@
         </div>
     </div>
 </section>
- <!--end navbar -->
+<!--end navbar -->
 
 <!--DASHBOARD----->
 
-<div id="content2" class="row" style="margin-top: 75px; height: 650px;">
+<div id="content2" class="row" style="margin-top: 75px; ">
 
     <!-- MAP -->
-    <div class="col-sm-9">
-            <div id="viewDiv"></div>
+    <div class="col-sm-12 col-md-9 col-lg-9" style="padding-right:0px; padding-left: 0px">
+        <div id="viewDiv"></div>
     </div>
     <!-- end MAP -->
 
     <!-- LAYER SELECTOR -->
-    <div class="col-sm-3 dashImage" style="width: 100%">
+    <div class="col-sm-12 col-md-3 col-lg-3 dashImage" style="">
 
-        <h2 style="margin-top: 5%; text-align: center; justify-self: center">Selector de Capas</h2>
 
+        <div style="font-size:22px;margin-top: 5%; text-align: center; justify-self: center">Selector de Capas</div>
+        <div style="margin-left: 7px">
         <button type="button" class="collapsible" style="border-radius: 10px 10px 0px 0px" >Resultados Censo</button>
         <div class="content" onclick="obtenerValor()">
-        <label class="container">Resultados Análisis 2010
-            <input id="1" type="radio"  name="radio" value="1">
-            <span class="checkmark" ></span>
+            <label class="container">Resultados Análisis 2010
+                <input id="1" type="radio"  name="radio" value="1">
+                <span class="checkmark" ></span>
 
-        </label>
-        <label class="container">Resultados Análisis 2001
-            <input type="radio" name="radio" value="2">
-            <span class="checkmark"> </span>
-        </label>
-        <label class="container">Resultados Análisis 1990
-            <input type="radio" name="radio" value="3">
-            <span class="checkmark"></span>
-        </label>
+            </label>
+            <label class="container">Resultados Análisis 2001
+                <input type="radio" name="radio" value="2">
+                <span class="checkmark"> </span>
+            </label>
+            <label class="container">Resultados Análisis 1990
+                <input type="radio" name="radio" value="3">
+                <span class="checkmark"></span>
+            </label>
         </div>
         <button type="button" class="collapsible" >Gentrificación - Sectores</button>
         <div class="content" onclick="obtenerValor()">
@@ -143,17 +171,16 @@
             </label>
 
         </div>
-
-
-
     </div>
-    <!-- end LAYER SELECTOR -->
+
+</div>
+<!-- end LAYER SELECTOR -->
 
 </div>
 
-<div id="content3" class="row" style="background-color:#404040;display: none ">
+<div id="content3" class="row" style="background-color:#404040;display: none; margin-left: 0px; margin-right: 0px ">
     <div class="col-sm-12" >
-        <div class="chart-container2">
+        <div class="chart-container " style="height: 600px">
             <canvas id="grafico1" style="height: 600px!important" >
 
 
@@ -164,8 +191,8 @@
     </div>
 
 </div>
-<div id="content4" class="row" style="background-color:#404040; margin-top:30px;display: none ">
-    <div class="col-sm-6" >
+<div id="content4" class="row" style="background-color:#404040; margin-top:30px;display: none;margin-left: 0px; margin-right: 0px  ">
+    <div class="col-ss-6" >
         <div class="chart-container">
             <canvas id="grafico2" style="margin-bottom: 10px">
 
@@ -175,7 +202,7 @@
         </div>
 
     </div>
-    <div class="col-sm-6" >
+    <div class="col-ss-6" >
         <div class="chart-container">
             <canvas id="grafico3" style="margin-bottom: 10px" >
 
@@ -187,8 +214,8 @@
     </div>
 
 </div>
-<div id="content5" class="row" style="background-color:#404040; margin-top:30px; display: none ">
-    <div class="col-sm-6" >
+<div id="content5" class="row" style="background-color:#404040; margin-top:30px; display: none;margin-left: 0px; margin-right: 0px  ">
+    <div class="col-ss-6" >
         <div class="chart-container" >
             <canvas id="grafico4"  style="margin-bottom: 10px">
 
@@ -199,7 +226,7 @@
 
     </div>
 
-    <div class="col-sm-6" >
+    <div class="col-ss-6" >
         <div class="chart-container">
             <canvas id="grafico5"  style="margin-bottom: 10px">
 
