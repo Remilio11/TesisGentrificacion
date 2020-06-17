@@ -150,7 +150,7 @@ function cambioCapa(arreglo) {
     vista.ui.remove(legend8);
     vista.ui.remove(legend9);
     vista.popup.close();
-
+    mapa.removeAll();
     destruirGraficos();
     console.log("recibi mi arreglo " + arreglo);
     if (arreglo == "6") {
@@ -191,8 +191,17 @@ function cambioCapa(arreglo) {
             ]
         });
 
-
+        legend = new Leyenda({
+            view: vista,
+            layerInfos: [
+                {
+                    layer: capaInicial,
+                    title: "Barrios - Centro Histórico"
+                }
+            ]
+        });
         mapa.add(capaInicial);
+        vista.ui.add(legend, "bottom-right");
         alistarGentrificacionBarrios(capaGentri5, capaGentri6, "1990", "2001");
     } else if (arreglo == "7") {
         capaGentri7 = new FeatureLayerRico({
@@ -232,9 +241,18 @@ function cambioCapa(arreglo) {
             ]
         });
 
-
+        legend = new Leyenda({
+            view: vista,
+            layerInfos: [
+                {
+                    layer: capaInicial,
+                    title: "Barrios - Centro Histórico"
+                }
+            ]
+        });
 
         mapa.add(capaInicial);
+        vista.ui.add(legend, "bottom-right");
         alistarGentrificacionBarrios(capaGentri7, capaGentri8, "2001", "2010");
 
     }
@@ -1417,7 +1435,7 @@ function crearGraficoDonaAnios(resultados, resultados1, anio1, anio2) {
     var resultado = (resultados1.T_PE_25_B - resultados.T_PE_25_B) /resultados.T_PE_25_B* 100;
     var color;
     if (resultado >= 0) {
-        color = "#1af304";
+        color = "#80aa31";
     } else {
         color = "#f35745";
     }
@@ -1426,8 +1444,8 @@ function crearGraficoDonaAnios(resultados, resultados1, anio1, anio2) {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
             data: [(resultados1.T_PE_25_B - resultados.T_PE_25_B) / resultados.T_PE_25_B*100, (100-Math.abs(resultado))],
-            backgroundColor: [color, "#a630e8"],
-            borderColor: ["#000", "##000"],
+            backgroundColor: [color, "#265077"],
+            borderColor: ["#000", "#000"],
             borderWidth: [1, 1]
         }],
 
@@ -1496,7 +1514,7 @@ function crearGraficoDonaEmp(resultados, resultados1, anio1, anio2) {
     var resultado = (resultados1.T_PE_EM_B - resultados.T_PE_EM_B) / resultados.T_PE_EM_B*100;
     var color;
     if (resultado >= 0) {
-        color = "#1af304";
+        color = "#80aa31";
     } else {
         color = "#f35745";
     }
@@ -1505,8 +1523,8 @@ function crearGraficoDonaEmp(resultados, resultados1, anio1, anio2) {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
             data: [(resultados1.T_PE_EM_B - resultados.T_PE_EM_B) /resultados.T_PE_EM_B*100, (100-Math.abs(resultado))],
-            backgroundColor: [color, "#f3b309"],
-            borderColor: ["#000", "##000"],
+            backgroundColor: [color, "#265077"],
+            borderColor: ["#000", "#000"],
             borderWidth: [1, 1]
         }],
 
@@ -1566,7 +1584,7 @@ function crearGraficoDonaEmpG(resultados, resultados1, anio1, anio2) {
     var resultado = (resultados1.T_PE_EG_B - resultados.T_PE_EG_B) / resultados.T_PE_EG_B*100;
     var color;
     if (resultado >= 0) {
-        color = "#1af304";
+        color = "#80aa31";
     } else {
         color = "#f35745";
     }
@@ -1575,8 +1593,8 @@ function crearGraficoDonaEmpG(resultados, resultados1, anio1, anio2) {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
             data: [(resultados1.T_PE_EG_B - resultados.T_PE_EG_B) / resultados.T_PE_EG_B*100, (100-Math.abs(resultado))],
-            backgroundColor: [color, "#f3b309"],
-            borderColor: ["#000", "##000"],
+            backgroundColor: [color, "#265077"],
+            borderColor: ["#000", "#000"],
             borderWidth: [1, 1]
         }],
 
@@ -1636,7 +1654,7 @@ function crearGraficoDonaES(resultados, resultados1, anio1, anio2) {
     var resultado = (resultados1.T_PE_ES_B - resultados.T_PE_ES_B) / resultados.T_PE_ES_B*100;
     var color;
     if (resultado >= 0) {
-        color = "#1af304";
+        color = "#80aa31";
     } else {
         color = "#f35745";
     }
@@ -1645,8 +1663,8 @@ function crearGraficoDonaES(resultados, resultados1, anio1, anio2) {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
             data: [(resultados1.T_PE_ES_B - resultados.T_PE_ES_B) /resultados.T_PE_ES_B* 100, (100-Math.abs(resultado))],
-            backgroundColor: [color, "#f3b309"],
-            borderColor: ["#000", "##000"],
+            backgroundColor: [color, "#265077"],
+            borderColor: ["#000", "#000"],
             borderWidth: [1, 1]
         }],
 
@@ -1706,7 +1724,7 @@ function crearGraficoDonaGE(resultados, resultados1, anio1, anio2) {
     var resultado = (resultados1.T_PE_GE_B - resultados.T_PE_GE_B) /resultados.T_PE_GE_B* 100;
     var color;
     if (resultado >= 0) {
-        color = "#1af304";
+        color = "#80aa31";
     } else {
         color = "#f35745";
     }
@@ -1715,8 +1733,8 @@ function crearGraficoDonaGE(resultados, resultados1, anio1, anio2) {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
             data: [(resultados1.T_PE_GE_B - resultados.T_PE_GE_B) / resultados.T_PE_GE_B*100, (100-Math.abs(resultado))],
-            backgroundColor: [color, "#f3b309"],
-            borderColor: ["#000", "##000"],
+            backgroundColor: [color, "#265077"],
+            borderColor: ["#000", "#000"],
             borderWidth: [1, 1]
         }],
 
@@ -1777,7 +1795,7 @@ function crearGraficoDonaCV(resultados, resultados1, anio1, anio2) {
     var resultado = (resultados1.P_POBR_B - resultados.P_POBR_B) /resultados.P_POBR_B* 100;
     var color;
     if (resultado >= 0) {
-        color = "#1af304";
+        color = "#80aa31";
     } else {
         color = "#f35745";
     }
@@ -1786,8 +1804,8 @@ function crearGraficoDonaCV(resultados, resultados1, anio1, anio2) {
         datasets: [{
             label: 'Variación en el período '+anio1+'-'+anio2,
             data: [(resultados1.P_POBR_B - resultados.P_POBR_B) / resultados.P_POBR_B*100, (100-Math.abs(resultado))],
-            backgroundColor: [color, "#f3b309"],
-            borderColor: ["#000", "##000"],
+            backgroundColor: [color, "#265077"],
+            borderColor: ["#000", "#000"],
             borderWidth: [1, 1]
         }],
 
