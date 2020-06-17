@@ -149,8 +149,8 @@ function cambioCapa(arreglo) {
     vista.ui.remove(legend7);
     vista.ui.remove(legend8);
     vista.ui.remove(legend9);
+    vista.popup.close();
 
-    mapa.removeAll();
     destruirGraficos();
     console.log("recibi mi arreglo " + arreglo);
     if (arreglo == "6") {
@@ -527,6 +527,8 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
                         console.log(resultadosquery2);
                         console.log('RESULTS2');
                         console.log(results2.features[0].attributes);
+                        document.getElementById('pdf').style.display=''
+                        document.getElementById('pdf').style.textAlign='center'
 
                         //llenarGrafico(results1.features[0].attributes,results2.features[0].attributes);
                         //console.log('pase LLENAR');

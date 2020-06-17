@@ -103,7 +103,7 @@ function cambioCapa(arreglo) {
     vista.ui.remove(legend7);
     vista.ui.remove(legend8);
     vista.ui.remove(legend9);
-
+    vista.popup.close();
     mapa.removeAll();
     destruirGraficos();
     console.log("recibi mi arreglo "+ arreglo);
