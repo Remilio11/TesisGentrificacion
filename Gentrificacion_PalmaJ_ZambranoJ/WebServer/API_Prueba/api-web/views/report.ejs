@@ -37,29 +37,49 @@
 
 
     <style>
-        html,
-        body, #viewDiv {
+        #viewDiv {
             padding: 0;
-            margin:0;
+            margin: 0;
             height: 100%;
             width: 100%;
-            position:absolute;
+
+
         }
-        @media screen and (max-width: 500px) {
-
-            #viewDiv{
-                padding: 0;
-                margin:0;
-                height: 100%;
-                width: 100%;
-                position:absolute;
+        @media screen and (max-width: 768px) {
+            #content2{
+                height:620px;
             }
-            #mapa{
-                padding: 0;
-                margin:0;
-                height: 400px;
-                width: 400px;
+            #viewDiv{
+                height:320px;
+            }
+            #selector{
+                height:300px;
+                overflow-y: scroll;
+            }
 
+
+
+
+        }
+        @media screen and (min-width: 768px) and (max-width: 875px) {
+            #content2{
+                height:900px;
+            }
+            #selector{
+                height:620px;
+                overflow-y: scroll;
+            }
+            #viewDiv{
+                height:620px;
+            }
+
+
+
+
+        }
+        @media screen and (min-width: 876px) {
+            #content2{
+                height:650px;
             }
         }
 
@@ -84,9 +104,9 @@
 
     <ul class="navbar-nav flex-column mt-4">
         <li class="nav-item"><a href="../api/home" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-home text-light fa-lg mr-3"></i>Inicio</a></li>
-        <li class="nav-item"><a href="../api/dashboardNew" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-map text-light fa-lg mr-3"></i>Mapa</a></li>
-        <li class="nav-item"><a href="../api/report" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-chart-bar text-light fa-lg mr-3"></i>Reportes</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-file-alt text-light fa-lg mr-3"></i>Documentación</a></li>
+        <li class="nav-item"><a href="../api/dashboardNew" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-map text-light fa-lg mr-3"></i>Mapa</a></li>
+        <li class="nav-item"><a href="../api/report" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-chart-bar text-light fa-lg mr-3"></i>Reportes</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fas fa-file-alt text-light fa-lg mr-3"></i>Ayuda</a></li>
     </ul>
     <a class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"></a>
 
@@ -118,24 +138,24 @@
 
 <!--DASHBOARD----->
 
-<div id="content2" class="row" style="margin-top: 75px; height: 650px;">
+<div id="content2" class="row" style="margin-top: 75px;margin-left: 0px;margin-right: 0px;overflow-y: auto  ">
 
     <!-- MAP -->
-    <div id="mapa"  class="col-sm-9">
+    <div class="col-sm-12 col-md-9 col-lg-9" style="padding-right:0px; padding-left: 0px">
         <div id="viewDiv"></div>
     </div>
     <!-- end MAP -->
 
     <!-- LAYER SELECTOR -->
-    <div id="selector" class="col-sm-3 dashImage" style="width: 100%">
+    <div id="selector" class="col-sm-12 col-md-3 col-lg-3 dashImage" style="">
 
-        <h2 style="margin-top: 5%; text-align: center; justify-self: center">Reportes</h2>
+        <div style="font-size:22px;margin-top: 5%; text-align: center; justify-self: center">Reportes</div>
 
 
 
 
         <button type="button" class="collapsible" style="border-radius: 10px 10px 0px 0px ">Periódo de Gentrificación</button>
-        <div class="content" onclick="obtenerValor()">
+        <div class="content" onclick="obtenerValor1()">
             <label class="container">1990-2001
                 <input id="r1" type="radio"  name="periodo" value="6">
                 <span class="checkmark" ></span>
@@ -185,7 +205,8 @@
             </label>
 
         </div>
-        <div> <button id="conv" type="button"  class="btn btn-primary" style="margin-top: 20px;margin-left: 125px;background-color: #265077;border-color: #265077" onclick="imprimirPDF1()">Imprimir Reporte</button></div>
+
+        <div id="pdf" style="text-align:center ;display:none"> <button id="conv" type="button"  class="btn btn-primary" style="text-align: center;margin-top: 20px;margin-bottom: 20px;background-color: #265077;border-color: #265077" onclick="imprimirPDF1()">Imprimir Reporte</button></div>
 
 
     </div>
@@ -309,8 +330,8 @@
     <div id="textoGraficoBarra" class="h2" style="background-color:white; text-align: justify;width: 1920px;height: 120px"></div>
 
     <div style="background-color: white">
-        <div class="chart-container" style="background-color: white">
-            <canvas id="grafico3" style="margin-bottom: 10px; color:black;background-color: white">
+        <div class="chart-container" style="background-color: white;height: 400px">
+            <canvas id="grafico3" style="margin-bottom: 10px; color:black;background-color: white;height: 400px">
 
 
             </canvas>
@@ -325,8 +346,8 @@
     </div>
 
     <div style="background-color: white">
-        <div class="chart-container" style="background-color: white">
-            <canvas id="grafico4" style="margin-bottom: 10px; color:black;background-color: white">
+        <div class="chart-container" style="background-color: white;height: 400px">
+            <canvas id="grafico4" style="margin-bottom: 10px; color:black;background-color: white;height: 400px">
 
 
             </canvas>
@@ -340,8 +361,8 @@
 
 
     <div style="background-color: white">
-        <div class="chart-container" style="background-color: white">
-            <canvas id="grafico5" style="margin-bottom: 10px; color:black;background-color: white" >
+        <div class="chart-container" style="background-color: white;height: 400px">
+            <canvas id="grafico5" style="margin-bottom: 10px; color:black;background-color: white;height: 400px" >
 
 
             </canvas>
@@ -355,8 +376,8 @@
 
 
     <div style="background-color: white">
-        <div class="chart-container"style="background-color: white">
-            <canvas id="grafico7" style="margin-bottom: 10px; color:black;background-color: white" >
+        <div class="chart-container"style="background-color: white;height: 400px">
+            <canvas id="grafico7" style="margin-bottom: 10px; color:black;background-color: white;height: 400px" >
 
 
             </canvas>
@@ -369,8 +390,8 @@
     <div id="varGE" class="h2" style="background-color:white; text-align: justify"></div>
 
     <div style="background-color: white">
-        <div class="chart-container"style="background-color: white" >
-            <canvas id="grafico6" style="margin-bottom: 10px; color:black;background-color: white" >
+        <div class="chart-container"style="background-color: white;height: 400px" >
+            <canvas id="grafico6" style="margin-bottom: 10px; color:black;background-color: white;height: 400px" >
 
 
             </canvas>
@@ -382,8 +403,8 @@
     <br>
     <div id="varES" class="h2" style="background-color:white; text-align: justify"></div>
     <div style="background-color: white">
-        <div class="chart-container"style="background-color: white" >
-            <canvas id="grafico8" style="margin-bottom: 10px; color:black;background-color: white" >
+        <div class="chart-container"style="background-color: white;height: 400px" >
+            <canvas id="grafico8" style="margin-bottom: 10px; color:black;background-color: white;height: 400px" >
 
 
             </canvas>
@@ -442,7 +463,7 @@
 <script src="/js/reportFunction.js"></script>
 <script src="/js/parametersBox.js"></script>
 <script src="/js/CollapsibleSelector.js"></script>
-
+<script src="/js/selectorBox.js"></script>
 
 <script >
 
@@ -453,8 +474,15 @@
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
         document.getElementById("content2").style.marginLeft = "250px";
-        document.getElementById("content3").style.marginLeft = "250px";
+
         document.getElementById('btn').style.visibility = 'hidden';
+    }
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("content2").style.marginLeft= "0";
+
+        document.getElementById('btn').style.visibility = 'visible';
     }
     function imprimirPDF() {
         var w = document.body.offsetWidth;
@@ -499,8 +527,8 @@
         var variacionGE=((resultadosquery2.T_PE_GE_B-resultadosquery1.T_PE_GE_B)/resultadosquery1.T_PE_GE_B*100).toFixed(2);
         var variacionCV=((resultadosquery2.P_POBR_B-resultadosquery1.P_POBR_B)/resultadosquery1.P_POBR_B*100).toFixed(2);
         llenarGrafico(resultadosquery1,resultadosquery2);
-        document.getElementById('mensaje').style.display='block';
 
+        document.getElementById('mensaje').style.display='block';
 
         canvasGraficoDobleBarra=crearGraficoDobleBarraReporte(resultadosquery1,resultadosquery2,anio1,anio2,datagrafico1,datagrafico2,backGroundColor1,backGroundColor2,bordercolorgrafico,borderwidthgraifoc,labelsgrafico);
         canvasgraficoAniosReporte=crearGraficoDonaAnios(resultadosquery1,resultadosquery2,anio1,anio2);
@@ -745,14 +773,20 @@
                                                                                                     arregloImprimir.push(canvas8.toDataURL("image/png"));
                                                                                                 }
                                                                                                 arregloImprimir.push(canvas10.toDataURL("image/png"));
-                                                                                                document.getElementById('print').style.display='none';
-                                                                                                document.getElementById('mensaje').style.display='none'
-                                                                                                console.log('arregloImprimir');
-                                                                                                console.log(arregloImprimir);
-                                                                                                console.log(canvasMapa.toDataURL("image/png"));
-                                                                                                printJS({printable:arregloImprimir,type:'image',style:'justify-content: center',documentTitle:'Reporte',onPdfOpen:true});
 
+                                                                                                if(!document.getElementById('todas').checked&&!document.getElementById('anios').checked&&!document.getElementById('empleo').checked&&!document.getElementById('empleog').checked&&!document.getElementById('gentrificables').checked&&!document.getElementById('gentrificables').checked&&!document.getElementById('edusup').checked&&!document.getElementById('vivienda').checked){
+                                                                                                    alert("No ha seleccionada ninguna variable! Seleccione al menos una");
+                                                                                                }else{
 
+                                                                                                    document.getElementById('print').style.display='none';
+
+                                                                                                    console.log('arregloImprimir');
+                                                                                                    console.log(arregloImprimir);
+                                                                                                    console.log(canvasMapa.toDataURL("image/png"));
+                                                                                                    printJS({printable:arregloImprimir,type:'image',style:'justify-content: center',documentTitle:'Reporte',onPdfOpen:true});
+                                                                                                    document.getElementById('mensaje').style.display='none'
+
+                                                                                                }
 
 
 
