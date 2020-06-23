@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+
+    <title>Ayuda</title>
+
+
+</head>
+<body>
+
+<!--sidebar-->
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+    <img href="../api/home" src="/images/logo-EPN-blanco.png" style="padding-top: 8px">
+    <a class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"></a>
+
+    <ul class="navbar-nav flex-column mt-4">
+        <li class="nav-item"><a href="../api/home" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                        class="fas fa-home text-light fa-lg mr-3"></i>Inicio</a></li>
+        <li class="nav-item"><a href="../api/dashboardNew" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                        class="fas fa-map text-light fa-lg mr-3"></i>Mapa</a></li>
+        <li class="nav-item"><a href="../api/report" class="nav-link text-white p-3 mb-2 sidebar-link"><i
+                        class="fas fa-chart-bar text-light fa-lg mr-3"></i>Reportes</a></li>
+        <li class="nav-item"><a href="../pdf/Reportes.pdf" target="_blank" class="nav-link text-white p-3 mb-2 current"><i
+                        class="fas fa-file-alt text-light fa-lg mr-3"></i>Ayuda</a></li>
+    </ul>
+    <a class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border"></a>
+
+    <p style="text-align: center; color:white ">Quito - 2020 </p>
+</div>
+<!-- end sidebar -->
+
+<!-- navbar -->
+<section>
+    <div id="main" style="background: #1A1A1D ">
+        <div class="row" style="background: #1A1A1D">
+            <div id="btn" class="col-sm-10 col-6">
+                <button class="openbtn btn-sm" onclick="openNav()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="col-sm-2 col-6" align="right">
+                <div class="col-sm-6 navbar-brand" style="color: #eeeeee; font-size: 20px; float:right;">
+                    <img src="/images/logo-epn.png" alt="Logo"
+                         style="height: 50px; margin-bottom: -10px; margin-top: -10px">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end navbar -->
+
+<section>
+    <div id="content2" class="row" style="padding:10px;background-color:#404040;margin-top: 75px;margin-left: 0px;margin-right: 0px;overflow-y: auto  ">
+
+
+
+        <div id="pdfcont" class="col-lg-12 col-md-12 col-sm-12" style="padding:10px;text-align: center;background-color: #404040">
+            <h5 style="color: white">En caso de no visualizar el documento haga  <a href="../pdf/Reportes.pdf" target="_blank">aquí</a>  para descargarlo.</h5>
+            <br>
+            <iframe src="../pdf/Reportes.pdf" overflow-x="hidden" width="100%" height="1000px" />
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+
+
+<!-- end Features-->
+<section>
+    <!-- Footer -->
+    <footer id="footer" class="font-small" style="background-color: #265077; bottom: 0px">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="color: white; font-weight: bold">
+            2020 - Escuela Politécnica Nacional
+        </div>
+        <!-- Copyright -->
+    </footer>
+</section>
+<!-- Footer -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="stylesheet" href="/css/style.css">
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("content2").style.marginLeft = "250px";
+        document.getElementById("footer").style.marginLeft = "250px";
+        document.getElementById('btn').style.visibility = 'hidden';
+    }
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("content2").style.marginLeft = "0";
+        document.getElementById("footer").style.marginLeft = "0";
+        document.getElementById('btn').style.visibility = 'visible';
+    }
+</script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>

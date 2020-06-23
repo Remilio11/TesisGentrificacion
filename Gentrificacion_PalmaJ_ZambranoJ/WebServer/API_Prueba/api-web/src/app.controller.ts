@@ -30,4 +30,9 @@ export class AppController {
         return res.render('report')
   }
 
+  @Get('help')
+  getHelp(@Response() res){
+    return res.render('help')
+  }
+
 }
