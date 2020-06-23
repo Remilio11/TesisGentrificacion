@@ -135,7 +135,9 @@ require([
 //******** LLAMADA A NUEVAS CAPAS ***********
 function cambioCapa(arreglo) {
 
-
+    if(evento){
+        evento.remove();
+    }
     vista.ui.remove(legend);
 
     vista.popup.close();
@@ -196,37 +198,6 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend, "bottom-right");
         alistarGentrificacionBarrios(capaGentri7R, capaGentri8R, "2001", "2010");
 
-    }else if (arreglo == "8") {
-
-        capaGentri7R = new FeatureLayerRico({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2010_f/FeatureServer",
-            opacity: 0.9
-        });
-
-        capaGentri8R = new FeatureLayerRico({
-            url: "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2001_f/FeatureServer",
-            opacity: 0.9
-        });
-
-
-
-
-
-
-        legend = new Leyenda({
-            view: vista,
-            layerInfos: [
-                {
-                    layer: capaInicial,
-                    title: "Barrios - Centro Histórico"
-                }
-            ]
-        });
-
-        mapa.add(capaInicial);
-        vista.ui.add(legend, "bottom-right");
-        alistarGentrificacionBarrios(capaGentri7R, capaGentri8R, "2010", "2001");
-
     }
 
 
@@ -264,7 +235,7 @@ function alistarGentrificacionBarrios(capa, capa1, anio1, anio2) {
     }
     console.log('entre cargar 2')
     var query = new QueryR();
-    query.outFields = ["BARRIO_ID","DESC_FEN","NOMBRE","T_PE_EG_B","T_PE_EM_B","T_PE_GE_B","T_PE_ES_B","T_PE_25_B","P_POBR_B"];
+    query.outFields = ["BARRIO_ID","DESC_FEN","NOMBRE","T_PE_EG_B","T_PE_EM_B","T_PE_GE_B","T_PE_ES_B","T_PE_25_B","P_POBR_B","TOTAL_PER_B"];
     query.where = "1=1";
     query.num = 50;
 
@@ -526,6 +497,13 @@ function llenarGrafico(r1,r2){
     bordercolorgrafico.length=0;
     bordercolorgrafico.length=0;
     labelsgrafico.length=0;
+    datagrafico1.push(r1.TOTAL_PER_B);
+    datagrafico2.push(r2.TOTAL_PER_B);
+    backGroundColor1.push("#066F6C");
+    backGroundColor2.push("#f3b309");
+    borderwidthgraifoc.push(1);
+    bordercolorgrafico.push("#000000");
+    labelsgrafico.push("Personas");
     console.log('entreGrafico');
     if (document.getElementById('anios').checked){
         console.log('entre anios');

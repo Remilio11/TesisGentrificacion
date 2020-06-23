@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20405">
-              <caret line="9" column="114" selection-start-line="9" selection-start-column="114" selection-end-line="9" selection-end-column="114" />
+            <state relative-caret-position="335">
+              <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -71,16 +71,16 @@
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/parametersBox.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="58" />
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="172" column="57" selection-start-line="172" selection-start-column="57" selection-end-line="172" selection-end-column="57" />
+            <state relative-caret-position="444">
+              <caret line="171" column="73" selection-start-line="171" selection-start-column="73" selection-end-line="171" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -88,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
+            <state relative-caret-position="4845">
               <caret line="285" column="73" selection-start-line="285" selection-start-column="73" selection-end-line="285" selection-end-column="73" />
             </state>
           </provider>
@@ -97,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2558">
-              <caret line="1030" column="41" selection-start-line="1030" selection-start-column="33" selection-end-line="1030" selection-end-column="41" />
+            <state relative-caret-position="119">
+              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
             </state>
           </provider>
         </entry>
@@ -106,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8483">
-              <caret line="541" column="45" lean-forward="true" selection-start-line="541" selection-start-column="31" selection-end-line="541" selection-end-column="49" />
+            <state>
+              <caret line="517" selection-start-line="517" selection-end-line="517" />
             </state>
           </provider>
         </entry>
@@ -124,13 +124,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>content3</find>
-      <find>cont</find>
-      <find>closenav</find>
       <find>content</find>
       <find>imprimi</find>
       <find>imprimir</find>
-      <find>alistar</find>
       <find>imprimirpdf</find>
       <find>obtenervalor</find>
       <find>mapa</find>
@@ -152,8 +148,12 @@
       <find>btn</find>
       <find>openbtn</find>
       <find>destruirgraficos</find>
-      <find>==</find>
       <find>p_POBR_B</find>
+      <find>== &quot;8&quot;</find>
+      <find>doblebarra</find>
+      <find>==</find>
+      <find>alistar</find>
+      <find>alistarGentrific</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,10 +172,10 @@
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/help.ejs" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs" />
-        <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs" />
-        <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js" />
+        <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js" />
+        <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs" />
       </list>
     </option>
   </component>
@@ -189,84 +189,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServer" type="462c0819:PsiDirectoryNode" />
-              <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServer" type="462c0819:PsiDirectoryNode" />
-              <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
-              <item name="api-web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServer" type="462c0819:PsiDirectoryNode" />
-              <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
-              <item name="api-web" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServer" type="462c0819:PsiDirectoryNode" />
-              <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
-              <item name="api-web" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServer" type="462c0819:PsiDirectoryNode" />
-              <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
-              <item name="api-web" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="pdf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TesisGentrificacion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TesisGentrificacion" type="462c0819:PsiDirectoryNode" />
-              <item name="Gentrificacion_PalmaJ_ZambranoJ" type="462c0819:PsiDirectoryNode" />
-              <item name="WebServer" type="462c0819:PsiDirectoryNode" />
-              <item name="API_Prueba" type="462c0819:PsiDirectoryNode" />
-              <item name="api-web" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -362,15 +285,21 @@
       <workItem from="1592322210194" duration="29317000" />
       <workItem from="1592421429432" duration="9263000" />
       <workItem from="1592513074203" duration="5613000" />
-      <workItem from="1592677083068" duration="7737000" />
+      <workItem from="1592677083068" duration="7939000" />
+      <workItem from="1592758691388" duration="747000" />
+      <workItem from="1592760815081" duration="384000" />
+      <workItem from="1592762486367" duration="36000" />
+      <workItem from="1592841514757" duration="5454000" />
+      <workItem from="1592929438773" duration="1876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391462000" />
+    <option name="totallyTimeSpent" value="400161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2676801" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -571,6 +500,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4845">
+          <caret line="285" column="73" selection-start-line="285" selection-start-column="73" selection-end-line="285" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="517" selection-start-line="517" selection-end-line="517" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/selectorBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -578,45 +535,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="285" column="73" selection-start-line="285" selection-start-column="73" selection-end-line="285" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/parametersBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="58" />
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="172" column="57" selection-start-line="172" selection-start-column="57" selection-end-line="172" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8483">
-          <caret line="541" column="45" lean-forward="true" selection-start-line="541" selection-start-column="31" selection-end-line="541" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2558">
-          <caret line="1030" column="41" selection-start-line="1030" selection-start-column="33" selection-end-line="1030" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20405">
-          <caret line="9" column="114" selection-start-line="9" selection-start-column="114" selection-end-line="9" selection-end-column="114" />
+        <state relative-caret-position="444">
+          <caret line="171" column="73" selection-start-line="171" selection-start-column="73" selection-end-line="171" selection-end-column="73" />
         </state>
       </provider>
     </entry>

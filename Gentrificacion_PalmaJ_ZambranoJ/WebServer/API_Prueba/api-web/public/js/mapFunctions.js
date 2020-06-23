@@ -88,7 +88,9 @@ require([
 
 //******** LLAMADA A NUEVAS CAPAS ***********
 function cambioCapa(arreglo) {
-
+    if(evento){
+        evento.remove();
+    }
     vista.ui.remove(swipe1);
 
     vista.ui.remove(legend);
@@ -405,14 +407,14 @@ function cambioCapa(arreglo) {
 
 
     else if(arreglo == "8"){
-
+        console.log("entre arreglo 8")
         capaGentri7 = new FeatureLayerRico({
             url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2010_f/FeatureServer",
             opacity: 0.9
         });
 
         capaGentri8 = new FeatureLayerRico({
-            url : "https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2001_f/FeatureServer",
+            url :"https://services9.arcgis.com/1dyQOpYtlvpIzdDa/arcgis/rest/services/gent_barrios_2020_f/FeatureServer",
             opacity: 0.9
         });
 
@@ -439,7 +441,7 @@ function cambioCapa(arreglo) {
             layerInfos: [
                 {
                     layer: capaGentri8,
-                    title: "Gentrificación Barrios 2001"
+                    title: "Gentrificación Barrios 2020"
                 }
             ]
         });
@@ -451,7 +453,7 @@ function cambioCapa(arreglo) {
         vista.ui.add(legend8,"bottom-left");
         vista.ui.add(legend9,"bottom-right");
         vista.ui.add(swipe1);
-        alistarGentrificacionBarrios(capaGentri7,capaGentri8,"2010","2001");
+
 
     }
 
@@ -772,7 +774,7 @@ function alistarGentrificacionBarrios(capa,capa1,anio1,anio2){
         evento.remove();
     }
     var query = new QueryR();
-    query.outFields = ["T_PE_25_B","P_POBR_B","T_PE_EG_B","T_PE_ES_B","T_PE_GE_B","T_PE_EM_B"];
+    query.outFields = ["T_PE_25_B","P_POBR_B","T_PE_EG_B","T_PE_ES_B","T_PE_GE_B","T_PE_EM_B","TOTAL_PER_B"];
     query.where = "1=1";
     query.num = 50;
 
@@ -828,20 +830,20 @@ function crearGraficoDobleBarraBarrios(resultados, resultados1, anio1, anio2){
     var data = {
         datasets:[{
             label:'Total '+anio1,
-            data:[resultados.T_PE_25_B,resultados.P_POBR_B,resultados.T_PE_GE_B,resultados.T_PE_EM_B,resultados.T_PE_EG_B,resultados.T_PE_ES_B],
-            backgroundColor: ["#066F6C","#066F6C","#066F6C","#066F6C","#066F6C","#066F6C"],
-            borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
-            borderWidth: [1,1,1,1,1,1]
+            data:[resultados.TOTAL_PER_B,resultados.T_PE_25_B,resultados.P_POBR_B,resultados.T_PE_GE_B,resultados.T_PE_EM_B,resultados.T_PE_EG_B,resultados.T_PE_ES_B],
+            backgroundColor: ["#066F6C","#066F6C","#066F6C","#066F6C","#066F6C","#066F6C","#066F6C"],
+            borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+            borderWidth: [1,1,1,1,1,1,1]
         },{
             label:'Total '+anio2,
-            data:[resultados1.T_PE_25_B,resultados1.P_POBR_B,resultados1.T_PE_GE_B,resultados1.T_PE_EM_B,resultados1.T_PE_EG_B,resultados1.T_PE_ES_B],
-            backgroundColor: ["#f3b309","#f3b309","#f3b309","#f3b309","#f3b309","#f3b309"],
-            borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
-            borderWidth: [1,1,1,1,1,1]
+            data:[resultados1.TOTAL_PER_B,resultados1.T_PE_25_B,resultados1.P_POBR_B,resultados1.T_PE_GE_B,resultados1.T_PE_EM_B,resultados1.T_PE_EG_B,resultados1.T_PE_ES_B],
+            backgroundColor: ["#f3b309","#f3b309","#f3b309","#f3b309","#f3b309","#f3b309","#f3b309"],
+            borderColor: ["#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff","#ffffff"],
+            borderWidth: [1,1,1,1,1,1,1]
         }],
 
         labels:[
-            "Personas > 25 años","Cambio de Viviendas","Personas Gentrificables","Personas con Empleo","Personas con Empleo G-T-ADM","Personas con Educación Superior"
+            "Total Personas","Personas > 25 años","Cambio de Viviendas","Personas Gentrificables","Personas con Empleo","Personas con Empleo G-T-ADM","Personas con Educación Superior"
 
         ], fontColor:"#fff", borderWidth:2
     };
