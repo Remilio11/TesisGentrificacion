@@ -16,11 +16,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>aos</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/WebServer/API_Prueba/api-web" />
   </component>
@@ -37,6 +32,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\node_modules\typescript\lib" />
   </component>
@@ -99,7 +95,28 @@
       <workItem from="1591027992814" duration="11819000" />
       <workItem from="1591249887948" duration="206000" />
       <workItem from="1591282483784" duration="2070000" />
-      <workItem from="1591372652037" duration="2961000" />
+      <workItem from="1591372652037" duration="3704000" />
+      <workItem from="1591402080745" duration="1612000" />
+      <workItem from="1591412083310" duration="5781000" />
+      <workItem from="1591461949683" duration="1290000" />
+      <workItem from="1591633964973" duration="2454000" />
+      <workItem from="1591718844955" duration="9097000" />
+      <workItem from="1591765408986" duration="148000" />
+      <workItem from="1591819985919" duration="620000" />
+      <workItem from="1591828160627" duration="1804000" />
+      <workItem from="1591888138248" duration="2339000" />
+      <workItem from="1591977835400" duration="2925000" />
+      <workItem from="1592073297730" duration="1431000" />
+      <workItem from="1592088936507" duration="1233000" />
+      <workItem from="1592246434203" duration="4478000" />
+      <workItem from="1592266401975" duration="787000" />
+      <workItem from="1592327385319" duration="2155000" />
+      <workItem from="1592334324166" duration="1836000" />
+      <workItem from="1592342706067" duration="1199000" />
+      <workItem from="1592409811769" duration="2821000" />
+      <workItem from="1592510451278" duration="1602000" />
+      <workItem from="1592599068340" duration="830000" />
+      <workItem from="1592937210146" duration="2279000" />
     </task>
     <servers />
   </component>
@@ -124,6 +141,10 @@
       <screen x="0" y="0" width="1440" height="870" />
     </state>
     <state x="221" y="80" key="SettingsEditor/1440.0.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1590170538542" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1592248299520">
+      <screen x="0" y="0" width="1440" height="870" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/1440.0.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1592248299520" />
     <state x="376" y="198" key="run.anything.popup" timestamp="1590767319615">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
