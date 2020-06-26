@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bbd2c631-b293-4456-9a13-f8f82e101941" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/node_modules/" />
@@ -43,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
+            <state relative-caret-position="1564">
               <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
             </state>
           </provider>
@@ -76,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="171" column="73" selection-start-line="171" selection-start-column="73" selection-end-line="171" selection-end-column="73" />
+            <state relative-caret-position="308">
+              <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -97,17 +94,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="2312">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="517" selection-start-line="517" selection-end-line="517" />
+            <state relative-caret-position="-1416">
+              <caret line="594" column="387" selection-start-line="594" selection-start-column="387" selection-end-line="594" selection-end-column="387" />
             </state>
           </provider>
         </entry>
@@ -172,10 +169,10 @@
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/help.ejs" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/css/style.css" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs" />
-        <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js" />
         <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs" />
+        <option value="$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs" />
       </list>
     </option>
   </component>
@@ -290,16 +287,16 @@
       <workItem from="1592760815081" duration="384000" />
       <workItem from="1592762486367" duration="36000" />
       <workItem from="1592841514757" duration="5454000" />
-      <workItem from="1592929438773" duration="1876000" />
+      <workItem from="1592929438773" duration="2505000" />
+      <workItem from="1592950163899" duration="703000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400161000" />
+    <option name="totallyTimeSpent" value="401493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2676801" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -493,38 +490,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/help.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2159">
           <caret line="127" selection-start-line="127" selection-end-line="127" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4845">
-          <caret line="285" column="73" selection-start-line="285" selection-start-column="73" selection-end-line="285" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="517" selection-start-line="517" selection-end-line="517" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/mapFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -542,10 +518,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/home.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4845">
+          <caret line="285" column="73" selection-start-line="285" selection-start-column="73" selection-end-line="285" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/public/js/reportFunction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/dashboardNew.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="171" column="73" selection-start-line="171" selection-start-column="73" selection-end-line="171" selection-end-column="73" />
+        <state relative-caret-position="308">
+          <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gentrificacion_PalmaJ_ZambranoJ/WebServer/API_Prueba/api-web/views/report.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1416">
+          <caret line="594" column="387" selection-start-line="594" selection-start-column="387" selection-end-line="594" selection-end-column="387" />
         </state>
       </provider>
     </entry>
