@@ -83,6 +83,61 @@
             }
         }
 
+        @media (max-height: 575px) {
+            #content2{
+                height:350px;
+            }
+            #viewDiv{
+                height:450px;
+                float: right;
+            }
+            #selector{
+                height:450px;
+                overflow-y: auto;
+                float: right;
+            }
+
+
+        }
+
+        @media (min-height: 575px) and (max-height: 699px) {
+            #content2{
+                height:500px;
+
+            }
+            #selector{
+                height:525px;
+                overflow-y: auto;
+
+            }
+            #viewDiv{
+                height:525px;
+            }
+        }
+
+
+        @media (min-height: 700px) and (max-height: 762px) {
+            #content2{
+                height:525px;
+
+            }
+            #selector{
+                height:550px;
+                overflow-y: auto;
+
+            }
+            #viewDiv{
+                height:550px;
+            }
+        }
+
+        @media (min-height: 763px) {
+            #content2{
+                height:650px;
+            }
+
+        }
+
     </style>
 
 
@@ -141,7 +196,7 @@
 <div id="content2" class="row" style="margin-top: 75px;margin-left: 0px;margin-right: 0px;overflow-y: auto  ">
 
     <!-- MAP -->
-    <div class="col-sm-12 col-md-9 col-lg-9" style="padding-right:0px; padding-left: 0px">
+    <div id="mapdiv" class="col-sm-12 col-md-9 col-lg-9 " style="padding-right:0px; padding-left: 0px">
         <div id="viewDiv"></div>
     </div>
     <!-- end MAP -->
