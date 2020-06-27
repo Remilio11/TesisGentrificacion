@@ -8,6 +8,8 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "limpiar": "rm -rf dist",
+    "produccion": "npm run limpiar && npm run build && npm run start:prod",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
