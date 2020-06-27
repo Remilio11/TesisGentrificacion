@@ -18,6 +18,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/WebServer/API_Prueba/api-web" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1cGzbhwIzRCzWFiuoGTJ0V7elOQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -33,7 +34,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="C:\Users\Dario\Documents\EPN\TESIS\TesisGentrificacion\Gentrificacion_PalmaJ_ZambranoJ\WebServer\API_Prueba\api-web\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -117,6 +118,10 @@
       <workItem from="1592510451278" duration="1602000" />
       <workItem from="1592599068340" duration="830000" />
       <workItem from="1592937210146" duration="2279000" />
+      <workItem from="1593189257588" duration="170000" />
+      <workItem from="1593189730306" duration="514000" />
+      <workItem from="1593190555997" duration="8864000" />
+      <workItem from="1593221960373" duration="272000" />
     </task>
     <servers />
   </component>
@@ -137,9 +142,14 @@
       <screen x="0" y="0" width="1440" height="870" />
     </state>
     <state x="312" y="76" key="#Plugins/1440.0.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1590170000140" />
-    <state x="221" y="80" key="SettingsEditor" timestamp="1590170538542">
-      <screen x="0" y="0" width="1440" height="870" />
+    <state x="448" y="159" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593191668017">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
+    <state x="448" y="159" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1593191668017" />
+    <state x="210" y="28" key="SettingsEditor" timestamp="1593190722518">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="210" y="28" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1593190722518" />
     <state x="221" y="80" key="SettingsEditor/1440.0.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1590170538542" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1592248299520">
       <screen x="0" y="0" width="1440" height="870" />
